@@ -1,0 +1,118 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../site.config';
+
+const socials = Object.entries(site.social).filter(([, url]) => url);
+const labels: Record<string, string> = {
+  instagram: 'Instagram',
+  facebook: 'Facebook',
+  whatsapp: 'WhatsApp group',
+  line: 'LINE',
+};
+---
+
+<Base title="Contact" description="How to reach the Osaka Indian Association and join the community.">
+  <section class="band head">
+    <div class="wrap wrap--narrow">
+      <h1>Contact</h1>
+      <p class="lede">
+        Email reaches the whole committee. The group chats are where most things
+        actually get answered.
+      </p>
+    </div>
+  </section>
+
+  <section class="band top">
+    <div class="wrap wrap--narrow">
+      {
+        site.joinFormUrl && (
+          <div class="joinbox">
+            <h2>Join the community</h2>
+            <p>
+              One short form. We use it to send event announcements and add you
+              to the group chat — nothing else.
+            </p>
+            <p>
+              <a class="btn" href={site.joinFormUrl}>
+                Open the form
+              </a>
+            </p>
+          </div>
+        )
+      }
+
+      <h2>Email</h2>
+      <p>
+        <a class="big" href={`mailto:${site.email}`}>{site.email}</a>
+      </p>
+      <p>
+        Replies come from a volunteer in their spare time, so give it a few
+        days. For anything about an event happening this week, the group chat is
+        faster.
+      </p>
+
+      {
+        socials.length > 0 && (
+          <>
+            <h2>Elsewhere</h2>
+            <ul class="socials">
+              {socials.map(([key, url]) => (
+                <li>
+                  <a href={url}>{labels[key] ?? key}</a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )
+      }
+
+      <h2>Press and partnerships</h2>
+      <p>
+        If you are a university office, a company, or another community group
+        looking to work with us, email the address above with “partnership” in
+        the subject line.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .head {
+    padding-block: clamp(2.5rem, 6vw, 4rem) 0;
+  }
+
+  .top {
+    padding-top: 2.5rem;
+  }
+
+  .joinbox {
+    background: var(--paper-sunk);
+    border-left: 5px solid var(--marigold);
+    padding: 1.5rem 1.6rem;
+    margin-bottom: 3rem;
+  }
+
+  .joinbox h2 {
+    margin-top: 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 2.8rem;
+  }
+
+  .big {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 3vw, 1.9rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .socials {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+</style>

@@ -1,0 +1,234 @@
+---
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+---
+
+<section class="comments" data-slug={slug} id="comments">
+  <h2>Comments</h2>
+
+  <p class="offline-note" hidden>
+    Comments couldn't load. Refresh the page, or check back in a moment.
+  </p>
+
+  <form class="comment-form">
+    <label>
+      <span>Name</span>
+      <input type="text" name="author_name" maxlength="60" required />
+    </label>
+    <label class="full">
+      <span>Comment</span>
+      <textarea name="body" maxlength="2000" rows="3" required></textarea>
+    </label>
+    <!-- Honeypot: invisible to people, catches the simplest spam bots that fill in every field they find. -->
+    <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <button type="submit" class="btn">Post comment</button>
+    <p class="form-status" role="status"></p>
+  </form>
+
+  <ol class="list"></ol>
+</section>
+
+<style>
+  .comments {
+    margin-top: var(--step);
+  }
+
+  .offline-note {
+    background: var(--paper-sunk);
+    border-left: 4px solid var(--indigo-soft);
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: var(--indigo);
+  }
+
+  .comment-form {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0 2.5rem;
+    max-width: 32rem;
+  }
+
+  .comment-form label {
+    display: grid;
+    gap: 0.35rem;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--indigo);
+  }
+
+  .comment-form input[type='text'],
+  .comment-form textarea {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.6rem 0.7rem;
+    border: 1.5px solid var(--rule);
+    border-radius: 2px;
+    background: var(--paper);
+    color: var(--ink);
+    resize: vertical;
+  }
+
+  .comment-form input[type='text']:focus,
+  .comment-form textarea:focus {
+    outline: none;
+    border-color: var(--indigo);
+  }
+
+  .comment-form .btn {
+    justify-self: start;
+  }
+
+  .hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .form-status {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--indigo);
+    min-height: 1.2em;
+  }
+
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.5rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+  }
+
+  .list li {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .meta {
+    margin: 0 0 0.35rem;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--indigo-soft);
+  }
+
+  .meta strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .body {
+    margin: 0;
+    white-space: pre-wrap;
+  }
+</style>
+
+<script>
+  import { supabase, hasSupabase } from '../lib/supabase';
+  import { relative } from '../lib/date';
+
+  type CommentRow = { author_name: string; body: string; created_at: string };
+
+  function renderComment(list: HTMLElement, row: CommentRow) {
+    const li = document.createElement('li');
+
+    const meta = document.createElement('p');
+    meta.className = 'meta';
+    const name = document.createElement('strong');
+    name.textContent = row.author_name;
+    const time = document.createElement('time');
+    time.dateTime = row.created_at;
+    time.textContent = relative(new Date(row.created_at));
+    meta.append(name, document.createTextNode(' · '), time);
+
+    const body = document.createElement('p');
+    body.className = 'body';
+    // textContent only — comment bodies are untrusted user input and must
+    // never be treated as HTML.
+    body.textContent = row.body;
+
+    li.append(meta, body);
+    list.append(li);
+  }
+
+  async function init(section: HTMLElement) {
+    const slug = section.dataset.slug!;
+    const list = section.querySelector('.list') as HTMLElement;
+    const form = section.querySelector('.comment-form') as HTMLFormElement;
+    const status = section.querySelector('.form-status') as HTMLElement;
+    const offlineNote = section.querySelector('.offline-note') as HTMLElement;
+
+    if (!hasSupabase || !supabase) {
+      offlineNote.hidden = false;
+      form.hidden = true;
+      return;
+    }
+
+    const { data, error } = await supabase
+      .from('comments')
+      .select('author_name, body, created_at')
+      .eq('post_slug', slug)
+      .order('created_at', { ascending: true });
+
+    if (error) {
+      offlineNote.hidden = false;
+    } else {
+      (data as CommentRow[]).forEach((row) => renderComment(list, row));
+    }
+
+    // Live: a comment posted by anyone reading this page right now — including
+    // this tab's own submission — appears without a refresh.
+    supabase
+      .channel(`comments-${slug}`)
+      .on(
+        'postgres_changes',
+        { event: 'INSERT', schema: 'public', table: 'comments', filter: `post_slug=eq.${slug}` },
+        (payload) => renderComment(list, payload.new as CommentRow)
+      )
+      .subscribe();
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+
+      if (fd.get('website')) return; // honeypot tripped — drop silently, no error shown
+
+      const author_name = String(fd.get('author_name') ?? '').trim();
+      const body = String(fd.get('body') ?? '').trim();
+      if (!author_name || !body) return;
+
+      const button = form.querySelector('button') as HTMLButtonElement;
+      button.disabled = true;
+      status.textContent = 'Posting…';
+
+      const { error: insertError } = await supabase
+        .from('comments')
+        .insert({ post_slug: slug, author_name, body });
+
+      button.disabled = false;
+
+      if (insertError) {
+        status.textContent = "Couldn't post that — try again in a moment.";
+      } else {
+        status.textContent = 'Posted.';
+        form.reset();
+        // Don't append it here — the realtime subscription above adds it
+        // for every open tab, including this one, so appending twice
+        // would show it doubled.
+      }
+    });
+  }
+
+  document.querySelectorAll<HTMLElement>('.comments[data-slug]').forEach(init);
+</script>

@@ -1,0 +1,215 @@
+/* ---------------------------------------------------------------------------
+   Design tokens.
+
+   The palette is indigo and marigold. Indigo because it is the one dye both
+   India and Japan built a craft tradition around (ai-zome in Japan, the indigo
+   of Gujarat and Bengal), marigold because it is the flower on every Indian
+   festival table. Change the hex values here and the whole site follows.
+--------------------------------------------------------------------------- */
+
+:root {
+  --ink: #111a33;
+  --indigo: #1e2f6b;
+  --indigo-soft: #5d6f9f;
+  --paper: #f4f5f2;
+  --paper-sunk: #e7e9e1;
+  --marigold: #e39b12;
+  --marigold-deep: #b56f04;
+  --rule: rgba(17, 26, 51, 0.15);
+
+  --font-display: 'Bricolage Grotesque', 'Noto Sans JP', system-ui, sans-serif;
+  --font-body: 'Source Serif 4', 'Noto Serif JP', Georgia, serif;
+  --font-ja: 'Noto Sans JP', system-ui, sans-serif;
+
+  --measure: 100ch;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+  --step: clamp(3.5rem, 8vw, 6.5rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: clamp(1.02rem, 0.35vw + 0.95rem, 1.15rem);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 7vw, 5rem);
+}
+h2 {
+  font-size: clamp(1.85rem, 3.6vw, 2.75rem);
+  margin-top: 2.8rem;
+  margin-bottom: 0.8em;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3px;
+  background: var(--marigold);
+  margin-top: 0.5em;
+}
+h3 {
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0 0 1.1em;
+  max-width: var(--measure);
+}
+
+a {
+  color: var(--indigo);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: var(--marigold-deep);
+}
+
+:focus-visible {
+  outline: 3px solid var(--marigold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Layout helpers ---------------------------------------------------------- */
+
+.wrap {
+  width: min(84rem, 100%);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.wrap--narrow {
+  width: min(60rem, 100%);
+}
+
+.band {
+  padding-block: var(--step);
+}
+
+.band--sunk {
+  background: var(--paper-sunk);
+}
+
+.band--ink {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.band--ink h2,
+.band--ink h3 {
+  color: var(--paper);
+}
+
+.band--ink a {
+  color: var(--marigold);
+}
+
+.ja {
+  font-family: var(--font-ja);
+  font-feature-settings: 'palt';
+}
+
+.lede {
+  font-size: clamp(1.15rem, 1.4vw, 1.4rem);
+  line-height: 1.5;
+  color: var(--indigo);
+  max-width: 60ch;
+}
+
+/* Buttons ----------------------------------------------------------------- */
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+  padding: 0.7em 1.4em;
+  border: 1.5px solid var(--ink);
+  border-radius: 2px;
+  background: var(--marigold);
+  color: var(--ink);
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.btn:hover {
+  background: var(--marigold-deep);
+  color: var(--paper);
+}
+
+.btn--quiet {
+  background: transparent;
+  color: var(--ink);
+}
+
+.btn--quiet:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+
+/* Skip link --------------------------------------------------------------- */
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.75rem 1rem;
+  z-index: 50;
+}
+
+.skip:focus {
+  left: 0;
+}
+

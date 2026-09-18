@@ -1,0 +1,155 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { weekdayDate, time, isUpcoming } from '../../lib/date';
+
+export async function getStaticPaths() {
+  const events = await getCollection('events', ({ data }) => !data.draft);
+  return events.map((event) => ({ params: { slug: event.id }, props: { event } }));
+}
+
+const { event } = Astro.props;
+const { Content } = await render(event);
+const d = event.data;
+const upcoming = isUpcoming(d.date);
+---
+
+<Base title={d.title} description={d.summary}>
+  <article>
+    <header class="band head">
+      <div class="wrap wrap--narrow">
+        <p class="back"><a href="/events/">All events</a></p>
+        {!upcoming && <p class="flag">This event has already happened.</p>}
+        <h1>{d.title}</h1>
+        <p class="summary">{d.summary}</p>
+
+        <dl class="facts">
+          <div>
+            <dt>When</dt>
+            <dd>
+              <time datetime={d.date.toISOString()}>
+                {weekdayDate(d.date)}, {time(d.date)}{d.endTime ? ` – ${d.endTime}` : ''}
+              </time>
+            </dd>
+          </div>
+          <div>
+            <dt>Where</dt>
+            <dd>
+              {d.mapUrl ? <a href={d.mapUrl}>{d.venue}</a> : d.venue}
+            </dd>
+          </div>
+        </dl>
+
+        {
+          upcoming && d.registerUrl && (
+            <p class="cta">
+              <a class="btn" href={d.registerUrl}>
+                Register for this event
+              </a>
+            </p>
+          )
+        }
+      </div>
+    </header>
+
+    {
+      d.cover && (
+        <div class="wrap coverwrap">
+          <img class="cover" src={d.cover} alt="" loading="lazy" />
+        </div>
+      )
+    }
+
+    <div class="band body">
+      <div class="wrap wrap--narrow prose">
+        <Content />
+      </div>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .head {
+    padding-block: clamp(2rem, 5vw, 3.5rem) 2.5rem;
+  }
+
+  .back {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .flag {
+    display: inline-block;
+    background: var(--paper-sunk);
+    border-left: 4px solid var(--indigo-soft);
+    padding: 0.45rem 0.8rem;
+    font-size: 0.9rem;
+    color: var(--indigo);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  }
+
+  .summary {
+    font-size: 1.2rem;
+    color: var(--indigo);
+    max-width: 48ch;
+  }
+
+  .facts {
+    margin: 2rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1.5rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+  }
+
+  dt {
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    color: var(--indigo-soft);
+    margin-bottom: 0.3rem;
+  }
+
+  dd {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .cta {
+    margin-top: 2rem;
+  }
+
+  .coverwrap {
+    margin-bottom: 1rem;
+  }
+
+  .cover {
+    width: 100%;
+    max-height: 26rem;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+
+  .body {
+    padding-block: 2.5rem var(--step);
+  }
+
+  .prose :global(h2) {
+    font-size: 1.5rem;
+    margin-top: 2.2rem;
+  }
+
+  .prose :global(ul) {
+    padding-left: 1.1rem;
+    max-width: var(--measure);
+  }
+
+  .prose :global(li) {
+    margin-bottom: 0.4rem;
+  }
+</style>

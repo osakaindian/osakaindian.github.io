@@ -1,0 +1,109 @@
+---
+import PostStats from './PostStats.astro';
+import { relative } from '../lib/date';
+import { postCategories } from '../content.config';
+
+interface Props {
+  slug: string;
+  title: string;
+  date: Date;
+  category: string;
+  author: string;
+  summary: string;
+  cover?: string;
+}
+
+const { slug, title, date, category, author, summary, cover } = Astro.props;
+const categoryLabel = postCategories.find((c) => c.slug === category)?.label ?? category;
+---
+
+<article class="card">
+  {
+    cover && (
+      <a class="thumb" href={`/posts/${slug}/`} tabindex="-1" aria-hidden="true">
+        <img src={cover} alt="" loading="lazy" />
+      </a>
+    )
+  }
+
+  <div class="text">
+    <p class="cat">{categoryLabel}</p>
+    <h3><a href={`/posts/${slug}/`}>{title}</a></h3>
+    <p class="summary">{summary}</p>
+
+    <div class="foot">
+      <span class="byline">{author} · {relative(date)}</span>
+      <PostStats slug={slug} mode="display" />
+    </div>
+  </div>
+</article>
+
+<style>
+  .card {
+    display: grid;
+    gap: 1rem;
+    padding-block: 1.8rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  @media (min-width: 30rem) {
+    .card {
+      grid-template-columns: 8rem 1fr;
+      align-items: start;
+    }
+
+    .card:has(.thumb) {
+      grid-template-columns: 8rem 1fr;
+    }
+
+    .card:not(:has(.thumb)) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .thumb img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+
+  .cat {
+    margin: 0 0 0.35rem;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--marigold-deep);
+  }
+
+  h3 {
+    margin-bottom: 0.35rem;
+  }
+
+  h3 a {
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  h3 a:hover {
+    color: var(--indigo);
+  }
+
+  .summary {
+    margin: 0 0 0.75rem;
+    color: var(--ink);
+  }
+
+  .foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 1rem;
+  }
+
+  .byline {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--indigo-soft);
+  }
+</style>

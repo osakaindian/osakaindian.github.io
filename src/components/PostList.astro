@@ -1,0 +1,94 @@
+---
+import PostCard from './PostCard.astro';
+import { postCategories } from '../content.config';
+
+interface PostEntry {
+  id: string;
+  data: {
+    title: string;
+    date: Date;
+    category: string;
+    author: string;
+    summary: string;
+    cover?: string;
+  };
+}
+
+interface Props {
+  posts: PostEntry[];
+  activeCategory?: string; // omit for "All posts"
+}
+
+const { posts, activeCategory } = Astro.props;
+---
+
+<nav class="tabs" aria-label="Post categories">
+  <a href="/posts/" aria-current={activeCategory ? undefined : 'page'}>All posts</a>
+  {
+    postCategories.map((c) => (
+      <a href={`/posts/category/${c.slug}/`} aria-current={activeCategory === c.slug ? 'page' : undefined}>
+        {c.label}
+      </a>
+    ))
+  }
+</nav>
+
+{
+  posts.length ? (
+    <div class="list">
+      {posts.map((p) => (
+        <PostCard
+          slug={p.id}
+          title={p.data.title}
+          date={p.data.date}
+          category={p.data.category}
+          author={p.data.author}
+          summary={p.data.summary}
+          cover={p.data.cover}
+        />
+      ))}
+    </div>
+  ) : (
+    <p class="empty">Nothing here yet.</p>
+  )
+}
+
+<style>
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tabs a {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--indigo);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 0.4rem 0.95rem;
+  }
+
+  .tabs a:hover {
+    border-color: var(--indigo-soft);
+    color: var(--ink);
+  }
+
+  .tabs a[aria-current='page'] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+  }
+
+  .list {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .empty {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    color: var(--indigo);
+  }
+</style>

@@ -1,0 +1,504 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../site.config';
+
+// Edit this list to change the guide. Each section renders as a block, and
+// the side navigation is generated from the same titles — add a section here
+// and a link appears automatically, nothing else to update.
+const sections = [
+  {
+    title: 'Arriving in Osaka',
+    items: [
+      [
+        'Resident registration',
+        'If you are a mid- to long-term resident, you generally need to register your address at the municipal office within 14 days of moving into your new home. Bring your residence card and any other documents required for your circumstances.'
+      ],
+      [
+        'My Number',
+        'After you establish your resident record, you will be assigned a My Number (Individual Number). Keep documents containing your number safe, as it may be required for administrative procedures, taxation, employment, and other official processes.'
+      ],
+      [
+        'National Health Insurance',
+        'Students who are not covered by another public health insurance scheme may need to enrol in National Health Insurance. Eligibility and procedures depend on your residence status and circumstances, so confirm the requirements with your municipality.'
+      ],
+      [
+        'National Pension',
+        'Students living in Japan may be required to enrol in the National Pension system. If paying the premiums is difficult, students may be eligible to apply for the Student Payment Special Exemption System. Check your eligibility with the pension office or your municipality.'
+      ],
+      [
+        'Bank account',
+        'Many students open a Japanese bank account soon after arriving. Requirements vary between banks and can depend on your residence status, length of stay, student status, and other circumstances. Check the bank’s current requirements before visiting.'
+      ],
+      [
+        'Mobile phone and SIM',
+        'Japan has many mobile and SIM providers, including both major carriers and lower-cost options. Compare monthly fees, data allowances, contract terms, and whether the provider accepts your residence status and payment method.'
+      ]
+    ]
+  },
+
+  // {
+  //   title: 'Food & Groceries',
+  //   intro:
+  //     "Osaka has a wide range of Indian, South Asian, vegetarian, and halal food options. We've put together some places that may be useful for students and newcomers.",
+  //   places: [
+  //     {
+  //       name: 'ABC Indian Restaurant',
+  //       area: 'Umeda',
+  //       types: ['Indian', 'Vegetarian'],
+  //       url: 'https://example.com'
+  //     },
+  //     {
+  //       name: 'XYZ Foods',
+  //       area: 'Namba',
+  //       types: ['Groceries'],
+  //       url: 'https://example.com'
+  //     },
+  //     {
+  //       name: 'XYZ Halal Restaurant',
+  //       area: 'Tennoji',
+  //       types: ['Indian', 'Halal'],
+  //       url: 'https://example.com'
+  //     }
+  //     // Add more places here — name, area, types (array), url.
+  //   ]
+  // },
+
+  {
+    title: 'Food & Groceries',
+    items: [
+      [
+        'Indian groceries',
+        'Rice, atta, dals, spices, and other Indian ingredients are available at specialist shops and some larger supermarkets. Availability varies by area, so ask other community members about shops near you.'
+      ],
+      [
+        'Vegetarian food',
+        'Vegetarian options are increasingly common, but ingredients such as fish stock, meat-based broth, or animal-derived ingredients can appear in dishes that otherwise look vegetarian. When in doubt, ask about the ingredients.'
+      ],
+      [
+        'Halal food',
+        'Halal restaurants and grocery stores are available in several parts of Osaka. Muslim students can also check whether their university provides information about nearby halal options.'
+      ],
+      [
+        'Supermarkets',
+        'Local supermarkets are generally the easiest place to buy everyday groceries. Discount supermarkets can be particularly useful for students managing a limited budget.'
+      ],
+      [
+        'Eating out',
+        'Restaurants in Osaka range from inexpensive student-friendly options to specialist Indian, South Asian, vegetarian, and halal restaurants. Sharing recommendations within the community can help newcomers find places that suit their needs.'
+      ]
+    ]
+  },
+
+  {
+    title: 'Getting Around',
+    items: [
+      [
+        'ICOCA',
+        'An ICOCA card can be used on many trains, subways, buses, and participating stores across the Kansai region. It is one of the easiest ways to handle everyday transport.'
+      ],
+      [
+        'Trains and subways',
+        'Osaka has an extensive rail and subway network. Check the route and final destination carefully, as several different railway companies operate in the same areas.'
+      ],
+      [
+        'Bicycles',
+        'A bicycle can be convenient for short trips and commuting. Make sure your bicycle is properly registered and follow local traffic rules.'
+      ],
+      [
+        'Walking',
+        'Many neighbourhoods around universities and railway stations are highly walkable. Exploring your immediate area on foot is often the easiest way to find supermarkets, pharmacies, restaurants, and other useful services.'
+      ],
+      [
+        'Late-night travel',
+        'Train and bus services generally become less frequent late at night and eventually stop. Check the last train before travelling, particularly when attending events in central Osaka.'
+      ]
+    ]
+  },
+
+  {
+    title: 'Healthcare',
+    items: [
+      [
+        'Finding a clinic',
+        'For routine medical problems, a nearby clinic is usually a useful first point of contact. Your university may maintain a list of hospitals and clinics that are familiar with international students.'
+      ],
+      [
+        'Health insurance',
+        'If you are enrolled in a public health insurance scheme, bring your insurance information when visiting a medical facility. The amount you pay at the clinic depends on your insurance coverage and the treatment you receive.'
+      ],
+      [
+        'Large hospitals',
+        'Some large hospitals may recommend visiting a local clinic first or may charge additional fees when you visit without a referral. Check the hospital’s current requirements before going.'
+      ],
+      [
+        'Language support',
+        'If you are not comfortable communicating in Japanese, look for clinics offering multilingual support or ask your university international office for recommendations.'
+      ],
+      [
+        'Emergency',
+        'For a serious medical emergency, call 119. If you are unsure whether a situation requires emergency assistance, seek help rather than trying to manage a serious emergency alone.'
+      ]
+    ]
+  },
+
+  {
+    title: 'When Something Goes Wrong',
+    items: [
+      [
+        'Lost residence card',
+        'If you lose your residence card, contact the appropriate authorities and follow the current replacement procedure. Keep a copy or photograph of your card somewhere secure to make the process easier.'
+      ],
+      [
+        'Lost wallet or belongings',
+        'Contact the nearest police station or kōban and report lost property. Japanese police stations and kōban routinely handle lost-and-found reports.'
+      ],
+      [
+        'Police emergency',
+        'Call 110 when you need emergency assistance from the police.'
+      ],
+      [
+        'Medical emergency',
+        'Call 119 for an ambulance or fire emergency. Give your location as clearly as possible and follow the operator’s instructions.'
+      ],
+      [
+        'Housing problems',
+        'For disputes with a landlord or property manager, keep copies of your contract and written communication. Your university international office or a local consultation service may be able to direct you to appropriate support.'
+      ],
+      [
+        'Immigration questions',
+        'For questions about your residence status, work permission, or other immigration matters, use official Immigration Services Agency information or consult your university’s international student office.'
+      ],
+      [
+        'Ask the community',
+        'If you are unsure where to start, ask the association. Someone in the community may have dealt with a similar situation and can help you identify the right office or service to contact.'
+      ]
+    ]
+  },  
+];
+
+const slugify = (s: string) =>
+  s.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+const tagKey = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+---
+
+<Base
+  title="Living in Osaka"
+  description="Practical notes for Indians arriving in Osaka: ward office, insurance, groceries, transport."
+>
+  <section class="band head">
+    <div class="wrap wrap--narrow">
+      <h1>Living in Osaka</h1>
+      <p class="lede">
+        A practical guide to settling into life in Osaka, from your first
+        administrative procedures to everyday essentials.
+      </p>
+    </div>
+  </section>
+
+  <section class="band top">
+    <div class="wrap layout">
+      <nav class="toc" aria-label="Sections on this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          {
+            sections.map((s) => (
+              <li>
+                <a href={`#${slugify(s.title)}`}>{s.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div class="content">
+        <p class="caveat">
+          This guide is based on experiences shared by members of our community and is intended as a practical starting point. Administrative procedures and eligibility 
+          requirements can change, so please confirm important matters with your municipality, university, or the relevant government office before taking action.
+        </p>
+
+        {
+          sections.map((s) => (
+            <section class="sect" id={slugify(s.title)}>
+              <h2>{s.title}</h2>
+
+              {s.places ? (
+                <>
+                  {s.intro && <p class="sect-intro">{s.intro}</p>}
+                  <div class="place-list">
+                    {s.places.map((place) => (
+                      <a class="place" href={place.url} target="_blank" rel="noopener">
+                        <div class="place-main">
+                          <span class="place-name">{place.name}</span>
+                          <span class="place-area">{place.area}</span>
+                        </div>
+                        <div class="tags">
+                          {place.types.map((type) => (
+                            <span class="tag" data-tag={tagKey(type)}>{type}</span>
+                          ))}
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <dl>
+                  {s.items.map(([term, body]) => (
+                    <div>
+                      <dt>{term}</dt>
+                      <dd>{body}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+            </section>
+          ))
+        }
+
+        <p class="ask">
+          Something missing? <a href={`mailto:${site.email}`}>Tell us</a> and we
+          will add it.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .head {
+    padding-block: clamp(2.5rem, 6vw, 4rem) 0;
+  }
+
+  .top {
+    padding-top: 2.5rem;
+  }
+
+  /* wrap--narrow caps line length for reading; this page needs the wider
+     wrap so the side nav has somewhere to sit. */
+  .layout {
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+
+  .content {
+    max-width: 48rem;
+  }
+
+  .toc {
+    position: sticky;
+    top: 1.5rem;
+  }
+
+  .toc-label {
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--indigo-soft);
+    margin: 0 0 0.75rem;
+  }
+
+  .toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.1rem;
+    border-left: 2px solid var(--rule);
+  }
+
+  .toc a {
+    display: block;
+    padding: 0.4rem 0 0.4rem 0.9rem;
+    margin-left: -2px;
+    border-left: 2px solid transparent;
+    font-family: var(--font-display);
+    font-size: 0.92rem;
+    text-decoration: none;
+    color: var(--indigo);
+    line-height: 1.3;
+  }
+
+  .toc a:hover {
+    color: var(--ink);
+    border-left-color: var(--indigo-soft);
+  }
+
+  .caveat {
+    background: var(--paper-sunk);
+    border-left: 4px solid var(--indigo-soft);
+    padding: 1rem 1.2rem;
+    font-size: 0.95rem;
+    color: var(--indigo);
+    max-width: none;
+  }
+
+  .sect {
+    margin-top: 3rem;
+    scroll-margin-top: 1.5rem;
+  }
+
+  .sect:first-of-type {
+    margin-top: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .sect-intro {
+    margin-top: 1.25rem;
+    max-width: var(--measure);
+  }
+
+  dl {
+    margin: 1.5rem 0 0;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  dt {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+  }
+
+  dd {
+    margin: 0;
+    max-width: var(--measure);
+  }
+
+  /* Place directory */
+  .place-list {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .place {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid var(--rule);
+    border-radius: 0.6rem;
+    text-decoration: none;
+    color: inherit;
+    background: var(--paper);
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .place:hover {
+    border-color: var(--indigo-soft);
+    background: var(--paper-sunk);
+  }
+
+  .place-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 10rem;
+  }
+
+  .place-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--indigo);
+  }
+
+  .place-area {
+    font-size: 0.85rem;
+    color: var(--ink);
+    opacity: 0.65;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tag {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: var(--paper-sunk);
+    color: var(--indigo);
+    border: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+
+  /* Subtle per-category tint — falls back to the default indigo tag above
+     if a type doesn't match one of these keys. */
+  .tag[data-tag='vegetarian'] {
+    color: #3f7d4a;
+    border-color: #bfe0c4;
+    background: #eef8ef;
+  }
+
+  .tag[data-tag='halal'] {
+    color: #8a5a10;
+    border-color: #ecd6ab;
+    background: #fbf3e3;
+  }
+
+  .tag[data-tag='groceries'] {
+    color: var(--indigo);
+    border-color: var(--rule);
+    background: var(--paper-sunk);
+  }
+
+  .ask {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* Below this width the side nav sits above the content as a horizontal
+     scroller instead of squeezing a two-column layout onto a phone. */
+  @media (max-width: 42rem) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+
+    .toc {
+      position: static;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+    }
+
+    .toc ul {
+      display: flex;
+      gap: 0.5rem;
+      border-left: none;
+      white-space: nowrap;
+    }
+
+    .toc a {
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      margin-left: 0;
+    }
+
+    .toc a:hover {
+      border-color: var(--indigo-soft);
+    }
+
+    .place {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

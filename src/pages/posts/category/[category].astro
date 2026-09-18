@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import PostList from '../../../components/PostList.astro';
+import { postCategories } from '../../../content.config';
+
+export async function getStaticPaths() {
+  return postCategories.map((c) => ({ params: { category: c.slug }, props: { category: c } }));
+}
+
+const { category } = Astro.props;
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft && data.category === category.slug)).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<Base
+  title={category.label}
+  description={`${category.label} posts from the Osaka Indian Association.`}
+>
+  <section class="band head">
+    <div class="wrap wrap--narrow">
+      <h1>{category.label}</h1>
+    </div>
+  </section>
+
+  <section class="band top">
+    <div class="wrap wrap--narrow">
+      <PostList posts={posts} activeCategory={category.slug} />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .head {
+    padding-block: clamp(2.5rem, 6vw, 4rem) 0;
+  }
+
+  .top {
+    padding-top: 2.5rem;
+  }
+</style>

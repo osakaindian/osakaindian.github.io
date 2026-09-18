@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import MemberCard from '../components/MemberCard.astro';
+import { team, site } from '../site.config';
+---
+
+<Base title="Team" description="Meet the volunteers who help organise and support the Osaka Indian Association.">
+  <section class="band head">
+    <div class="wrap wrap--narrow">
+      <h1>Our Team</h1>
+      <p class="lede">
+        Meet the volunteers who help organise activities and support the Indian
+        community in and around Osaka.
+      </p>
+    </div>
+  </section>
+
+  <section class="band top">
+    <div class="wrap wrap--narrow">
+      <div class="grid">
+        {team.map((m) => <MemberCard {...m} />)}
+      </div>
+
+      <p class="note">
+        The association is run by volunteers from within the community. If you
+        are interested in contributing your time, skills, or ideas, we would be
+        happy to hear from you.
+        <a href={`mailto:${site.email}`}>Get in touch</a>.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .head {
+    padding-block: clamp(2.5rem, 6vw, 4rem) 0;
+  }
+
+  .top {
+    padding-top: 2.5rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+    gap: 2rem 1.75rem;
+  }
+
+  .note {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    color: var(--indigo);
+  }
+</style>

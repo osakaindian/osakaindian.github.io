@@ -1,0 +1,208 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import EventRow from '../components/EventRow.astro';
+import { site, whoWeAre } from '../site.config';
+import { isUpcoming } from '../lib/date';
+
+const all = (await getCollection('events', ({ data }) => !data.draft)).sort(
+  (a, b) => a.data.date.getTime() - b.data.date.getTime()
+);
+
+const upcoming = all.filter((e) => isUpcoming(e.data.date));
+const recent = all
+  .filter((e) => !isUpcoming(e.data.date))
+  .reverse()
+  .slice(0, 3);
+
+const next = upcoming[0]
+  ? {
+      slug: upcoming[0].id,
+      title: upcoming[0].data.title,
+      date: upcoming[0].data.date,
+      venue: upcoming[0].data.venue,
+    }
+  : undefined;
+---
+
+<Base>
+  <Hero next={next} />
+
+  <section class="band">
+    <div class="wrap">
+      <h2>What’s coming up</h2>
+      {
+        upcoming.length > 1 ? (
+          <div class="list">
+            {upcoming.slice(1).map((e) => (
+              <EventRow
+                slug={e.id}
+                title={e.data.title}
+                date={e.data.date}
+                endTime={e.data.endTime}
+                venue={e.data.venue}
+                summary={e.data.summary}
+              />
+            ))}
+          </div>
+        ) : (
+          <p class="empty">
+            Nothing else on the calendar yet. Events usually go up two to three
+            weeks ahead — <a href="/contact/">tell us what you’d like to see</a>.
+          </p>
+        )
+      }
+    </div>
+  </section>
+
+  <section class="band band--sunk">
+    <div class="wrap two">
+      <div>
+        <h2>Who we are</h2>
+
+        <p>
+          The Osaka Indian Association is a community of Indian students,
+          researchers, professionals, families, and alumni living and working
+          in and around Osaka.
+        </p>
+
+        <p>
+          We bring people together through cultural celebrations, social
+          gatherings, and community activities, while helping newcomers
+          connect with others and find useful information about life in Osaka.
+        </p>
+
+        <p>
+          Whether you are new to Osaka, have been here for years, or simply
+          want to connect with the Indian community, you are welcome to join us.
+        </p>
+
+        <p><a href="/about/">Learn more about the association →</a></p>
+      </div>
+
+      <dl class="groups">
+        {
+          whoWeAre.map((g) => (
+            <div>
+              <dt>{g.group}</dt>
+              <dd>{g.note}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  {
+    recent.length > 0 && (
+      <section class="band">
+        <div class="wrap">
+          <h2>Recently</h2>
+          <div class="list">
+            {recent.map((e) => (
+              <EventRow
+                slug={e.id}
+                title={e.data.title}
+                date={e.data.date}
+                endTime={e.data.endTime}
+                venue={e.data.venue}
+                summary={e.data.summary}
+                past
+              />
+            ))}
+          </div>
+          <p class="more"><a href="/events/">All past events</a></p>
+        </div>
+      </section>
+    )
+  }
+
+  <section class="band band--ink">
+    <div class="wrap join">
+      <h2>New to Osaka?</h2>
+      <p>
+        Come to one thing. You don’t need to know anyone, and nobody will ask
+        you to volunteer for anything on your first visit.
+      </p>
+      <div class="acts">
+        <a class="btn" href={site.joinFormUrl || '/contact/'}>Join the community</a>
+        <a class="btn btn--quiet quiet-on-ink" href="/resources/">Settling-in guide</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .list {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .empty {
+    color: var(--indigo);
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+  }
+
+  .two {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+
+  .groups {
+    margin: 0;
+    display: grid;
+    gap: 1.25rem;
+    align-content: start;
+  }
+
+  .groups div {
+    padding-left: 1rem;
+    border-left: 2px solid var(--marigold);
+  }
+
+  dt {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+
+  dd {
+    margin: 0.2rem 0 0;
+    color: var(--indigo);
+    font-size: 0.97rem;
+  }
+
+  .more {
+    margin-top: 1.5rem;
+  }
+
+  .join p {
+    max-width: 46ch;
+    color: var(--paper);
+  }
+
+  .acts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+  }
+
+  .quiet-on-ink {
+    color: var(--paper);
+    border-color: var(--paper);
+  }
+
+  .quiet-on-ink:hover {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  @media (max-width: 52rem) {
+    .two {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

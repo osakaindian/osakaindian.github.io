@@ -1,0 +1,81 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  affiliation?: string;
+  photo?: string;
+}
+
+const { name, role, affiliation, photo } = Astro.props;
+
+const initials = name
+  .split(' ')
+  .filter(Boolean)
+  .slice(0, 2)
+  .map((w) => w[0])
+  .join('');
+---
+
+<div class="member">
+  {
+    photo ? (
+      <img src={photo} alt="" loading="lazy" />
+    ) : (
+      <span class="initials" aria-hidden="true">
+        {initials}
+      </span>
+    )
+  }
+  <p class="role">{role}</p>
+  <p class="name">{name}</p>
+  {affiliation && <p class="aff">{affiliation}</p>}
+</div>
+
+<style>
+  .member {
+    display: grid;
+    gap: 0;
+  }
+
+  img,
+  .initials {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-bottom: 0.9rem;
+  }
+
+  .initials {
+    display: grid;
+    place-items: center;
+    background: var(--paper-sunk);
+    border: 1px solid var(--rule);
+    color: var(--indigo-soft);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+  }
+
+  .role {
+    margin: 0 0 0.15rem;
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    color: var(--marigold-deep);
+  }
+
+  .name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+  }
+
+  .aff {
+    margin: 0.15rem 0 0;
+    font-size: 0.9rem;
+    color: var(--indigo);
+  }
+</style>

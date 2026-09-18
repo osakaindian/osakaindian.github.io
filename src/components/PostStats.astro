@@ -1,0 +1,119 @@
+---
+interface Props {
+  slug: string;
+  // "display": just show current counts (used on listing cards — cheap,
+  // batched, no realtime channel per card).
+  // "increment": count one view for this session, then keep the numbers
+  // live for as long as the page stays open (used on the single post page).
+  mode?: 'display' | 'increment';
+}
+
+const { slug, mode = 'display' } = Astro.props;
+---
+
+<span class="post-stats" data-slug={slug} data-mode={mode}>
+  <span class="stat"><span class="n">–</span> views</span>
+  <span class="dot" aria-hidden="true"></span>
+  <span class="stat"><span class="n">–</span> comments</span>
+</span>
+
+<style>
+  .post-stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--indigo-soft);
+  }
+
+  .dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+</style>
+
+<script>
+  import { supabase, hasSupabase } from '../lib/supabase';
+
+  type Row = { slug: string; view_count: number; comment_count: number };
+
+  function setCounts(el: HTMLElement, views: number, comments: number) {
+    const [viewsEl, commentsEl] = el.querySelectorAll('.stat .n');
+    if (viewsEl) viewsEl.textContent = String(views);
+    if (commentsEl) commentsEl.textContent = String(comments);
+  }
+
+  async function hydrate() {
+    const widgets = Array.from(document.querySelectorAll<HTMLElement>('.post-stats[data-slug]'));
+    if (!widgets.length) return;
+
+    if (!hasSupabase || !supabase) {
+      // No Supabase configured yet — hide the widgets rather than show
+      // permanent dashes.
+      widgets.forEach((w) => (w.hidden = true));
+      return;
+    }
+
+    const display = widgets.filter((w) => w.dataset.mode !== 'increment');
+    const increment = widgets.filter((w) => w.dataset.mode === 'increment');
+
+    // Listing page: one query for every card on the page, not one per card.
+    if (display.length) {
+      const slugs = display.map((w) => w.dataset.slug!);
+      const { data } = await supabase
+        .from('posts')
+        .select('slug, view_count, comment_count')
+        .in('slug', slugs);
+      const bySlug = new Map((data as Row[] | null ?? []).map((r) => [r.slug, r]));
+      for (const w of display) {
+        const row = bySlug.get(w.dataset.slug!);
+        setCounts(w, row?.view_count ?? 0, row?.comment_count ?? 0);
+      }
+    }
+
+    // Single post page: count the view once per browser tab (so refreshing
+    // doesn't inflate it), then subscribe so the numbers tick up live if
+    // someone else is reading the same post right now.
+    for (const w of increment) {
+      const slug = w.dataset.slug!;
+      const seenKey = `oia-viewed:${slug}`;
+
+      if (!sessionStorage.getItem(seenKey)) {
+        sessionStorage.setItem(seenKey, '1');
+        const { data: newCount } = await supabase.rpc('increment_view', { p_slug: slug });
+        if (typeof newCount === 'number') {
+          const { data: row } = await supabase
+            .from('posts')
+            .select('comment_count')
+            .eq('slug', slug)
+            .maybeSingle();
+          setCounts(w, newCount, row?.comment_count ?? 0);
+        }
+      } else {
+        const { data: row } = await supabase
+          .from('posts')
+          .select('view_count, comment_count')
+          .eq('slug', slug)
+          .maybeSingle();
+        setCounts(w, row?.view_count ?? 0, row?.comment_count ?? 0);
+      }
+
+      supabase
+        .channel(`post-stats-${slug}`)
+        .on(
+          'postgres_changes',
+          { event: 'UPDATE', schema: 'public', table: 'posts', filter: `slug=eq.${slug}` },
+          (payload) => {
+            const row = payload.new as Row;
+            setCounts(w, row.view_count, row.comment_count);
+          }
+        )
+        .subscribe();
+    }
+  }
+
+  hydrate();
+</script>

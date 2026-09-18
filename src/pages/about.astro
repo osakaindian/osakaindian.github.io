@@ -1,0 +1,111 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, whoWeAre } from '../site.config';
+---
+
+<Base title="About" description="What the Osaka Indian Association is and who it is for.">
+  <section class="band head">
+    <div class="wrap wrap--narrow">
+      <h1>About Us</h1>
+      <p class="lede">
+        A vibrant community connecting Indian students, researchers, professionals, alumni, and prospective students across Osaka.
+      </p>
+    </div>
+  </section>
+
+  <section class="band top">
+    <div class="wrap wrap--narrow">
+      <p>
+        The Osaka Indian Association is a community that brings together Indian students, researchers, professionals, and alumni living in and around Osaka. 
+        We aim to foster meaningful connections, support newcomers, celebrate Indian culture, and provide a welcoming community for Indians at every stage of their journey in Japan.
+      </p>
+      <p>
+        Whether you are a current student looking to connect with other Indians, a researcher or professional building your network in Osaka, or a prospective student preparing 
+        to come to Japan, the association is a place to connect, learn, and participate.
+      </p>
+
+      <!-- <h2>Who we are</h2>
+      <dl class="groups">
+        {
+          whoWeAre.map((g) => (
+            <div>
+              <dt>{g.group}</dt>
+              <dd>{g.note}</dd>
+            </div>
+          ))
+        }
+      </dl> -->
+
+      <h2>What we do</h2>
+      <p>
+        We organise events and activities throughout the year that bring the community together. These include cultural celebrations, social gatherings, sports activities, and 
+        opportunities to meet other members of the Indian community.
+      </p>
+      <p>
+        Beyond events, we aim to make it easier for people to settle into life in Osaka. Members share practical experiences and information about university life, housing, local 
+        procedures, daily life in Japan, and other matters that can be particularly useful for newcomers and prospective students.
+      </p>
+
+      <h2>For current and prospective students</h2>
+      <p>
+        For current students, the association provides an opportunity to meet people from different universities, academic fields, and professional backgrounds, while staying 
+        connected with the wider Indian community.
+      </p>
+      <p>
+        For prospective students and those preparing to move to Osaka, the community can be a useful starting point for learning about life in Japan, understanding the student 
+        experience, and connecting with people who have already made the transition.
+      </p>
+
+      <h2>How it works</h2>
+      <p>
+        The association is run by volunteers from within the community. There is no membership fee, and participation in the community does not require a formal application.
+      </p>
+      <p>
+        Events and activities may have associated costs, such as venue or catering expenses. Whenever applicable, these costs are communicated in advance.
+      </p>
+
+      <h2>Get involved</h2>
+      <p>
+        The association grows through the participation and contributions of its members. Whether you would like to help organise an event, contribute your skills, share 
+        useful information with newcomers, or simply meet other members of the community, we welcome your participation.
+      </p>
+      <p><a class="btn" href={site.joinFormUrl || '/contact/'}>Get in touch</a></p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .head {
+    padding-block: clamp(2.5rem, 6vw, 4rem) 0;
+  }
+
+  .top {
+    padding-top: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-top: 2.8rem;
+  }
+
+  .groups {
+    margin: 0;
+    display: grid;
+    gap: 1.1rem;
+  }
+
+  .groups div {
+    padding-left: 1rem;
+    border-left: 2px solid var(--marigold);
+  }
+
+  dt {
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+
+  dd {
+    margin: 0.15rem 0 0;
+    color: var(--indigo);
+  }
+</style>

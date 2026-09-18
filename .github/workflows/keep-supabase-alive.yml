@@ -1,0 +1,24 @@
+# Supabase pauses free-tier projects after 7 days with no API activity.
+# A student-org site can easily go quieter than that over a break, so this
+# sends one harmless read every few days to keep the project awake.
+# Needs the same two repository secrets as deploy.yml.
+name: Keep Supabase project alive
+
+on:
+  schedule:
+    - cron: '0 3 */3 * *' # every 3 days, 03:00 UTC
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read one row from posts
+        run: |
+          curl -sf "${PUBLIC_SUPABASE_URL}/rest/v1/posts?select=slug&limit=1" \
+            -H "apikey: ${PUBLIC_SUPABASE_ANON_KEY}" \
+            -H "Authorization: Bearer ${PUBLIC_SUPABASE_ANON_KEY}" \
+            > /dev/null
+        env:
+          PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
+          PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.PUBLIC_SUPABASE_ANON_KEY }}
