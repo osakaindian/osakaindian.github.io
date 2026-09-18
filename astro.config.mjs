@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 // and put the bare domain in public/CNAME. Until then, use the org Pages URL.
 export default defineConfig({
   site: 'https://osakaindian.github.io',
-  base: '/oia/'
+  // base: '/oia/'
   // No `base` needed: this repo is meant to live at
   // <org>/<org>.github.io, which serves from the root path.
 });

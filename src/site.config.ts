@@ -10,7 +10,7 @@ export const site = {
   tagline:
     'A community for Indian students, researchers, professionals and alumni living in Osaka.',
   // TODO: replace with the official address once the handover is done.
-  email: 'osakaindianassociation@gmail.com',
+  email: 'osakaindian@gmail.com',
   // Leave a value empty ('') and the link disappears from the site.
   social: {
     instagram: '',
