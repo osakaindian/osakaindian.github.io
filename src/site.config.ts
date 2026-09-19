@@ -43,7 +43,7 @@ export const team = [
     name: 'Vikas Pandey',
     role: 'Faculty Advisor',
     affiliation: 'The University of Osaka',
-    photo: '/images/team/vikasji.png',
+    photo: '/images/team/vikas_ji.png',
   },
   {
     name: 'Name Surname',
