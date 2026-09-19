@@ -27,7 +27,7 @@ export const nav = [
   { href: '/events', label: 'Events' },
   { href: '/posts', label: 'Posts' },
   { href: '/team', label: 'Team' },
-  { href: '/resources', label: 'Living in Osaka' },
+  { href: '/resources', label: 'FAQ' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -43,7 +43,7 @@ export const team = [
     name: 'Vikas Pandey',
     role: 'Faculty Advisor',
     affiliation: 'The University of Osaka',
-    photo: '/public/images/team/vikasji.png',
+    photo: '/images/team/vikasji.png',
   },
   {
     name: 'Name Surname',
