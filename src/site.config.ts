@@ -34,7 +34,7 @@ export const nav = [
 // Committee members. Order here is the order on the page.
 export const team = [
   {
-    name: 'Name Surname',
+    name: 'Vidhan Kashyap',
     role: 'President',
     affiliation: 'The University of Osaka',
     photo: '', // e.g. '/images/team/name.jpg' — blank shows initials instead
