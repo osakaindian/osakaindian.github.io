@@ -4,7 +4,7 @@ date: 2026-06-20T18:30
 endTime: "21:30"
 venue: Namba, Osaka
 summary: Sending off the graduating cohort before they scatter across the world.
-draft: false
+draft: true
 ---
 
 Every spring a group of people finish their study and leave Osaka. This dinner is how we mark it.

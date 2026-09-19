@@ -152,6 +152,14 @@ img {
   color: var(--marigold);
 }
 
+.band--ink .btn {
+  color: var(--ink);
+}
+
+.band--ink .btn:hover {
+  color: var(--paper);
+}
+
 .ja {
   font-family: var(--font-ja);
   font-feature-settings: 'palt';

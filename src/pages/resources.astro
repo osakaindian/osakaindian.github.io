@@ -6,91 +6,98 @@ import { site } from '../site.config';
 // the side navigation is generated from the same titles — add a section here
 // and a link appears automatically, nothing else to update.
 const sections = [
+
   {
-    title: 'Arriving in Osaka',
+    title: 'Getting Started',
     items: [
       [
         'Resident registration',
-        'If you are a mid- to long-term resident, you generally need to register your address at the municipal office within 14 days of moving into your new home. Bring your residence card and any other documents required for your circumstances.'
+        'After moving into your new home, register your address at your local City Hall or Ward Office within 14 days. Bring your Residence Card and any other documents requested for your registration.'
       ],
+
       [
         'My Number',
-        'After you establish your resident record, you will be assigned a My Number (Individual Number). Keep documents containing your number safe, as it may be required for administrative procedures, taxation, employment, and other official processes.'
+        'After registering your address, you will receive a My Number (Individual Number). You may need it for taxation, employment, social insurance, and other official procedures. Keep your My Number documents safe.'
       ],
+
       [
         'National Health Insurance',
-        'Students who are not covered by another public health insurance scheme may need to enrol in National Health Insurance. Eligibility and procedures depend on your residence status and circumstances, so confirm the requirements with your municipality.'
+        'If you are not covered by another public health insurance scheme, you will generally need to enrol in National Health Insurance (国民健康保険). Registration is handled at your City Hall or Ward Office. Ask about the student premium reduction if applicable.'
       ],
+
       [
         'National Pension',
-        'Students living in Japan may be required to enrol in the National Pension system. If paying the premiums is difficult, students may be eligible to apply for the Student Payment Special Exemption System. Check your eligibility with the pension office or your municipality.'
+        'People aged 20 or older living in Japan generally need to join the National Pension system. Students with limited income can apply for the Student Payment Special Exemption System (学生納付特例制度) through their City Hall, Ward Office, or Japan Pension Service office.'
       ],
+
       [
         'Bank account',
-        'Many students open a Japanese bank account soon after arriving. Requirements vary between banks and can depend on your residence status, length of stay, student status, and other circumstances. Check the bank’s current requirements before visiting.'
+        'A Japanese bank account is useful for receiving scholarships or salaries and paying bills. Japan Post Bank (ゆうちょ銀行) is a common option for international residents. Bring your Residence Card and check the bank’s current requirements before visiting.'
       ],
+
       [
         'Mobile phone and SIM',
-        'Japan has many mobile and SIM providers, including both major carriers and lower-cost options. Compare monthly fees, data allowances, contract terms, and whether the provider accepts your residence status and payment method.'
+        'You can choose from major carriers and lower-cost providers such as IIJmio, Rakuten Mobile, and GTN Mobile. Compare data allowances, monthly fees, and contract terms. If you have just arrived and do not yet have a Japanese bank account or credit card, consider a prepaid SIM first.'
       ]
+    ]
+  },
+
+
+  {
+    title: 'Food',
+    intro:
+      "Osaka has a wide range of Indian, South Asian, vegetarian, and halal food options. We've put together some places that may be useful for students and newcomers.",
+    places: [
+      {
+        name: 'ABC Indian Restaurant',
+        area: 'Umeda',
+        types: ['Indian', 'Vegetarian'],
+        url: 'https://example.com'
+      },
+      {
+        name: 'XYZ Foods',
+        area: 'Namba',
+        types: ['Groceries'],
+        url: 'https://example.com'
+      },
+      {
+        name: 'XYZ Halal Restaurant',
+        area: 'Tennoji',
+        types: ['Indian', 'Halal'],
+        url: 'https://example.com'
+      }
+      // Add more places here — name, area, types (array), url.
     ]
   },
 
   // {
   //   title: 'Food & Groceries',
-  //   intro:
-  //     "Osaka has a wide range of Indian, South Asian, vegetarian, and halal food options. We've put together some places that may be useful for students and newcomers.",
-  //   places: [
-  //     {
-  //       name: 'ABC Indian Restaurant',
-  //       area: 'Umeda',
-  //       types: ['Indian', 'Vegetarian'],
-  //       url: 'https://example.com'
-  //     },
-  //     {
-  //       name: 'XYZ Foods',
-  //       area: 'Namba',
-  //       types: ['Groceries'],
-  //       url: 'https://example.com'
-  //     },
-  //     {
-  //       name: 'XYZ Halal Restaurant',
-  //       area: 'Tennoji',
-  //       types: ['Indian', 'Halal'],
-  //       url: 'https://example.com'
-  //     }
-  //     // Add more places here — name, area, types (array), url.
+  //   items: [
+  //     [
+  //       'Indian groceries',
+  //       'Rice, atta, dals, spices, and other Indian ingredients are available at specialist shops and some larger supermarkets. Availability varies by area, so ask other community members about shops near you.'
+  //     ],
+  //     [
+  //       'Vegetarian food',
+  //       'Vegetarian options are increasingly common, but ingredients such as fish stock, meat-based broth, or animal-derived ingredients can appear in dishes that otherwise look vegetarian. When in doubt, ask about the ingredients.'
+  //     ],
+  //     [
+  //       'Halal food',
+  //       'Halal restaurants and grocery stores are available in several parts of Osaka. Muslim students can also check whether their university provides information about nearby halal options.'
+  //     ],
+  //     [
+  //       'Supermarkets',
+  //       'Local supermarkets are generally the easiest place to buy everyday groceries. Discount supermarkets can be particularly useful for students managing a limited budget.'
+  //     ],
+  //     [
+  //       'Eating out',
+  //       'Restaurants in Osaka range from inexpensive student-friendly options to specialist Indian, South Asian, vegetarian, and halal restaurants. Sharing recommendations within the community can help newcomers find places that suit their needs.'
+  //     ]
   //   ]
   // },
 
   {
-    title: 'Food & Groceries',
-    items: [
-      [
-        'Indian groceries',
-        'Rice, atta, dals, spices, and other Indian ingredients are available at specialist shops and some larger supermarkets. Availability varies by area, so ask other community members about shops near you.'
-      ],
-      [
-        'Vegetarian food',
-        'Vegetarian options are increasingly common, but ingredients such as fish stock, meat-based broth, or animal-derived ingredients can appear in dishes that otherwise look vegetarian. When in doubt, ask about the ingredients.'
-      ],
-      [
-        'Halal food',
-        'Halal restaurants and grocery stores are available in several parts of Osaka. Muslim students can also check whether their university provides information about nearby halal options.'
-      ],
-      [
-        'Supermarkets',
-        'Local supermarkets are generally the easiest place to buy everyday groceries. Discount supermarkets can be particularly useful for students managing a limited budget.'
-      ],
-      [
-        'Eating out',
-        'Restaurants in Osaka range from inexpensive student-friendly options to specialist Indian, South Asian, vegetarian, and halal restaurants. Sharing recommendations within the community can help newcomers find places that suit their needs.'
-      ]
-    ]
-  },
-
-  {
-    title: 'Getting Around',
+    title: 'Travel',
     items: [
       [
         'ICOCA',
@@ -142,7 +149,7 @@ const sections = [
   },
 
   {
-    title: 'When Something Goes Wrong',
+    title: 'Emergency',
     items: [
       [
         'Lost residence card',
@@ -190,8 +197,7 @@ const tagKey = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-');
     <div class="wrap wrap--narrow">
       <h1>Living in Osaka</h1>
       <p class="lede">
-        A practical guide to settling into life in Osaka, from your first
-        administrative procedures to everyday essentials.
+        A practical guide to living and settling in Osaka, covering essential administrative procedures, daily necessities, and other aspects of everyday life.
       </p>
     </div>
   </section>

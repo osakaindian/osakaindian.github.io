@@ -23,11 +23,11 @@ export const site = {
 };
 
 export const nav = [
-  { href: '/about', label: 'About' },
   { href: '/events', label: 'Events' },
   { href: '/posts', label: 'Posts' },
-  { href: '/team', label: 'Team' },
   { href: '/resources', label: 'FAQ' },
+  { href: '/team', label: 'Team' },
+  { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -40,7 +40,7 @@ export const team = [
     photo: '/images/team/vidhan.jpg', // e.g. '/images/team/name.jpg' — blank shows initials instead
   },
   {
-    name: 'Vikas Pandey',
+    name: 'Prof. Vikas Pandey',
     role: 'Faculty Advisor',
     affiliation: 'The University of Osaka',
     photo: '/images/team/vikas_ji.png',

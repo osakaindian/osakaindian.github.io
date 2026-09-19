@@ -4,13 +4,13 @@ import MemberCard from '../components/MemberCard.astro';
 import { team, site } from '../site.config';
 ---
 
-<Base title="Team" description="Meet the volunteers who help organise and support the Osaka Indian Association.">
+<Base title="Team" description="Meet the team supporting the Osaka Indian Association and its activities across the community.">
   <section class="band head">
     <div class="wrap wrap--narrow">
       <h1>Our Team</h1>
       <p class="lede">
-        Meet the volunteers who help organise activities and support the Indian
-        community in and around Osaka.
+        Osaka Indian Association brings together members of the Indian community from a range of backgrounds who contribute their experience, ideas, and time to support the 
+        association's activities.  
       </p>
     </div>
   </section>
@@ -21,11 +21,11 @@ import { team, site } from '../site.config';
         {team.map((m) => <MemberCard {...m} />)}
       </div>
 
+      <h2>Get Involved</h2>
       <p class="note">
-        The association is run by volunteers from within the community. If you
-        are interested in contributing your time, skills, or ideas, we would be
-        happy to hear from you.
-        <a href={`mailto:${site.email}`}>Get in touch</a>.
+        OIA welcomes members of the community who would like to contribute. Whether you have an idea for an event, a particular skill to share, or simply an interest in 
+        supporting the community, we would be pleased to hear from you.
+        <a href={`mailto:${site.email}`}>Contact us</a> to learn more about getting involved.
       </p>
     </div>
   </section>

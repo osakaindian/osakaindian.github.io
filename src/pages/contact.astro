@@ -16,8 +16,7 @@ const labels: Record<string, string> = {
     <div class="wrap wrap--narrow">
       <h1>Contact</h1>
       <p class="lede">
-        Email reaches the whole committee. The group chats are where most things
-        actually get answered.
+        For general enquiries, please contact us by email. You can also join our community groups for event updates, announcements, and discussions.
       </p>
     </div>
   </section>
@@ -29,12 +28,11 @@ const labels: Record<string, string> = {
           <div class="joinbox">
             <h2>Join the community</h2>
             <p>
-              One short form. We use it to send event announcements and add you
-              to the group chat — nothing else.
+              Please complete the short registration form to receive community announcements and, where applicable, join our group communication channels.
             </p>
             <p>
               <a class="btn" href={site.joinFormUrl}>
-                Open the form
+                Join the Community
               </a>
             </p>
           </div>
@@ -46,15 +44,14 @@ const labels: Record<string, string> = {
         <a class="big" href={`mailto:${site.email}`}>{site.email}</a>
       </p>
       <p>
-        Replies come from a volunteer in their spare time, so give it a few
-        days. For anything about an event happening this week, the group chat is
-        faster.
+        Our communications are managed by volunteers, so responses may take some time. For time sensitive questions regarding upcoming events, community group 
+        channels may be more suitable.
       </p>
 
       {
         socials.length > 0 && (
           <>
-            <h2>Elsewhere</h2>
+            <h2>Social Media & Community Channels</h2>
             <ul class="socials">
               {socials.map(([key, url]) => (
                 <li>
@@ -66,11 +63,10 @@ const labels: Record<string, string> = {
         )
       }
 
-      <h2>Press and partnerships</h2>
+      <h2>Partnerships & Collaborations</h2>
       <p>
-        If you are a university office, a company, or another community group
-        looking to work with us, email the address above with “partnership” in
-        the subject line.
+        University offices, companies, student organizations, and community groups interested in collaborating with the Osaka Indian Association are welcome to 
+        contact us by email.
       </p>
     </div>
   </section>
