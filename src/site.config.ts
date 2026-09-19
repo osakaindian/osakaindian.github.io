@@ -37,13 +37,13 @@ export const team = [
     name: 'Vidhan Kashyap',
     role: 'President',
     affiliation: 'The University of Osaka',
-    photo: '', // e.g. '/images/team/name.jpg' — blank shows initials instead
+    photo: '/images/team/vidhan.jpg', // e.g. '/images/team/name.jpg' — blank shows initials instead
   },
   {
-    name: 'Name Surname',
-    role: 'Vice President',
+    name: 'Vikas Pandey',
+    role: 'Faculty Advisor',
     affiliation: 'The University of Osaka',
-    photo: '',
+    photo: '/images/team/vikasji.png',
   },
   {
     name: 'Name Surname',
