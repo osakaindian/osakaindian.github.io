@@ -3,11 +3,12 @@ title: "Travelling from Japan as an Indian: Flights, Transit & Visas"
 date: 2026-09-25T09:00
 category: community
 author: "OIA Committee"
-summary: "A practical guide for Indians in Japan travelling to India and other countries, covering flight costs, transit airports, visa requirements, and common routes through China, Hong Kong, and Thailand."
+summary: "A practical guide for Indian in Japan travelling to India and other countries, covering flight costs, transit airports, visa requirements, and common routes through China, Hong Kong, and Thailand."
 draft: false
 ---
 
-# ✈️ Travelling from Japan as an Indian
+<a id="top"></a>
+# ✈️ Travelling from Japan as an Indian Student
 
 Living in Japan gives us many opportunities to travel abroad—for conferences, academic programs, university visits, internships, holidays, or simply to explore a new country.
 
@@ -76,7 +77,7 @@ Before leaving Japan:
 
 Do not confuse the original Japanese visa in your passport with your current residence status in Japan. For residents temporarily travelling abroad, the Residence Card and applicable re-entry procedure are important for returning to Japan.
 
-[⬆ Back to top](#table-of-contents)
+[⬆ Back to top](#top)
 
 ---
 
@@ -168,7 +169,7 @@ If the application asks for a particular document, photograph, format, or piece 
 
 Do not assume that a different format will be accepted simply because it worked for someone else.
 
-[⬆ Back to top](#table-of-contents)
+[⬆ Back to top](#top)
 
 ---
 
@@ -205,7 +206,7 @@ So:
 
 If you have separate tickets, also check whether you need to collect your baggage and check in again.
 
-[⬆ Back to top](#table-of-contents)
+[⬆ Back to top](#top)
 
 ---
 
@@ -263,7 +264,7 @@ If both flights use the same airport and you have a long layover, you can curren
 
 This can make Bangkok a convenient place for a longer layover if you have enough time.
 
-[⬆ Back to top](#table-of-contents)
+[⬆ Back to top](#top)
 
 ---
 
@@ -298,7 +299,7 @@ If you are travelling to the United States for a conference, keep the following 
 
 These documents help explain the purpose of your visit.
 
-[⬆ Back to top](#table-of-contents)
+[⬆ Back to top](#top)
 
 ---
 
@@ -331,7 +332,7 @@ For university-related programs, the host professor or university may need to pr
 
 If you are participating in an academic program, ask for this document early rather than waiting until the visa application deadline.
 
-[⬆ Back to top](#table-of-contents)
+[⬆ Back to top](#top)
 
 ---
 
@@ -360,7 +361,7 @@ ready for the application.
 
 Apply early because processing times can vary.
 
-[⬆ Back to top](#table-of-contents)
+[⬆ Back to top](#top)
 
 ---
 
@@ -388,7 +389,7 @@ A cheaper flight may involve:
 
 Sometimes paying a little more for a simpler route is worth it.
 
-[⬆ Back to top](#table-of-contents)
+[⬆ Back to top](#top)
 
 ---
 
@@ -433,7 +434,7 @@ Before leaving Japan, check all of the following.
 
 ☐ Visa application completed early
 
-[⬆ Back to top](#table-of-contents)
+[⬆ Back to top](#top)
 
 ---
 
@@ -470,7 +471,7 @@ A little preparation before booking can save you from a lot of trouble at the ai
 
 Safe travels! 🇮🇳 🇯🇵 🌏
 
-[⬆ Back to top](#table-of-contents)
+[⬆ Back to top](#top)
 
 ---
 
