@@ -41,15 +41,15 @@ export const team = [
   },
   {
     name: 'Prof. Vikas Pandey',
-    role: 'Faculty Advisor',
+    role: 'Advisor',
     affiliation: 'The University of Osaka',
     photo: '/images/team/vikas_ji.png',
   },
   {
-    name: 'Name Surname',
-    role: 'Events',
-    affiliation: 'Kansai University',
-    photo: '',
+    name: 'Yuvraj Singh',
+    role: 'Public Relations',
+    affiliation: 'The University of Osaka',
+    photo: '/images/team/yuvraj_temp.jpg',
   },
   {
     name: 'Name Surname',
