@@ -3,7 +3,7 @@ title: "Travelling from Japan as an Indian: Flights, Transit & Visas"
 date: 2026-09-25T09:00
 category: community
 author: "OIA Committee"
-summary: "A practical guide for Indian in Japan travelling to India and other countries, covering flight costs, transit airports, visa requirements, and common routes through China, Hong Kong, and Thailand."
+summary: "A practical guide for Indians in Japan travelling to India and other countries, covering flight costs, transit airports, visa requirements, and common routes through China, Hong Kong, and Thailand."
 draft: false
 ---
 
