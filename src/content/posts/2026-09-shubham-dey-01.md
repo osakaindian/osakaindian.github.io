@@ -4,7 +4,7 @@ date: 2025-11-11T09:00
 category: research
 author: "Shubham Dey"
 summary: "A comparative look at Japan's One Village One Product (OVOP) and India's One District One Product (ODOP) initiatives, exploring how regional branding, cultural commodities, and local innovation can support rural economic revitalization—and why economic success does not always prevent population decline."
-draft: false
+draft: true
 ---
 
 ## 🌾 Can local products help rural communities survive?
