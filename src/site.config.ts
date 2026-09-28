@@ -45,18 +45,6 @@ export const team = [
     affiliation: 'The University of Osaka',
     photo: '/images/team/vikas_ji.png',
   },
-  {
-    name: 'Yuvraj Singh',
-    role: 'Public Relations',
-    affiliation: 'The University of Osaka',
-    photo: '/images/team/yuvraj_temp.jpg',
-  },
-  {
-    name: 'Name Surname',
-    role: 'Treasurer',
-    affiliation: 'The University of Osaka',
-    photo: '',
-  },
 ];
 
 export const whoWeAre = [
