@@ -1,6 +1,6 @@
 ---
 title: Janmashtami and Ganesh Chaturthi
-date: 2026-09-05T18:30
+date: 2026-09-05T18:30:00+09:00
 endTime: "22:00"
 
 venue: Minoh Semba Lifelong Learning Center, 6th Floor, Rooms 605–606, Osaka
