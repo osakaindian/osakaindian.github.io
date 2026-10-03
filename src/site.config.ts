@@ -10,7 +10,7 @@ export const site = {
   tagline:
     'A community for Indian students, researchers, professionals and alumni living in Osaka.',
   // TODO: replace with the official address once the handover is done.
-  email: 'hello@example.org',
+  email: 'osakaindian@gmail.com',
   // Leave a value empty ('') and the link disappears from the site.
   social: {
     instagram: '',
@@ -23,57 +23,45 @@ export const site = {
 };
 
 export const nav = [
-  { href: '/about', label: 'About' },
   { href: '/events', label: 'Events' },
   { href: '/posts', label: 'Posts' },
+  { href: '/resources', label: 'FAQ' },
   { href: '/team', label: 'Team' },
-  { href: '/resources', label: 'Living in Osaka' },
+  { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact' },
 ];
 
 // Committee members. Order here is the order on the page.
 export const team = [
   {
-    name: 'Name Surname',
+    name: 'Vidhan Kashyap',
     role: 'President',
-    affiliation: 'Osaka University',
-    photo: '', // e.g. '/images/team/name.jpg' — blank shows initials instead
+    affiliation: 'The University of Osaka',
+    photo: '/images/team/vidhan.jpg', // e.g. '/images/team/name.jpg' — blank shows initials instead
   },
   {
-    name: 'Name Surname',
-    role: 'Vice President',
-    affiliation: 'Osaka Metropolitan University',
-    photo: '',
-  },
-  {
-    name: 'Name Surname',
-    role: 'Events',
-    affiliation: 'Kansai University',
-    photo: '',
-  },
-  {
-    name: 'Name Surname',
-    role: 'Treasurer',
-    affiliation: 'Osaka University',
-    photo: '',
+    name: 'Prof. Vikas Pandey',
+    role: 'Advisor',
+    affiliation: 'The University of Osaka',
+    photo: '/images/team/vikas_ji.png',
   },
 ];
 
 export const whoWeAre = [
   {
     group: 'Students',
-    note: 'Undergraduates and masters students across Osaka’s universities.',
+    note: 'Students pursuing undergraduate, graduate, and research programs at universities across Osaka and the Kansai region. Prospective students and newcomers looking for practical information and connections before and after arriving in Japan.',
   },
   {
     group: 'Researchers',
-    note: 'PhD candidates, postdocs and visiting scholars.',
+    note: 'Researchers, Doctors and academics working at universities and research institutions.',
   },
   {
     group: 'Professionals',
-    note: 'Engineers, doctors and staff working in and around Osaka.',
+    note: 'Working professionals from a wide range of industries and backgrounds.',
   },
   {
     group: 'Alumni',
-    note: 'People who studied here and stayed in touch.',
+    note: 'Alumni who continue to contribute to and support the Indian community in Osaka. People who studied here and stayed in touch.',
   },
 ];

@@ -1,17 +1,14 @@
 ---
 import { site, nav } from '../site.config';
-import { withBase } from '../lib/base';
 const path = Astro.url.pathname;
-const isCurrent = (href: string) => {
-  const full = withBase(href);
-  return path === full || path.startsWith(full + '/');
-};
+const isCurrent = (href: string) => path === href || path.startsWith(href + '/');
 ---
 
 <header>
   <div class="wrap bar">
-    <a class="brand" href={withBase('/')}>
-      <span class="brand-mark" aria-hidden="true"></span>
+    <a class="brand" href="/">
+      <img class="brand-logo" src="/images/logo.png" alt="Osaka Indian Association" />
+
       <span class="brand-text">
         <span class="brand-name">{site.short}</span>
         <span class="brand-full">{site.name}</span>
@@ -23,7 +20,7 @@ const isCurrent = (href: string) => {
         {
           nav.map((item) => (
             <li>
-              <a href={withBase(item.href)} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+              <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
                 {item.label}
               </a>
             </li>
@@ -58,13 +55,10 @@ const isCurrent = (href: string) => {
   }
 
   /* A marigold bloom reduced to its simplest form: a filled disc inside a ring. */
-  .brand-mark {
-    width: 1.6rem;
-    height: 1.6rem;
-    border-radius: 50%;
-    border: 2px solid var(--indigo);
-    background:
-      radial-gradient(circle at center, var(--marigold) 0 42%, transparent 43%);
+  .brand-logo {
+    width: 5rem;
+    height: 3rem;
+    object-fit: cover;
     flex: none;
   }
 
