@@ -4,7 +4,7 @@ date: 2026-09-20T09:00
 category: announcements
 author: OIA Committee
 summary: A new space for the Indian community at Osaka University to connect, share information, and discover research and other opportunities.
-cover: /posts/Job_Hunting_in_Japan.jpg
+cover: /posts/website_live.jpeg
 draft: false
 ---
 
