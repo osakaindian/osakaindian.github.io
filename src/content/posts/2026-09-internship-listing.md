@@ -1,7 +1,7 @@
 ---
 title: Summer internship listing — Osaka-based manufacturing firm
 date: 2026-09-05T14:00
-category: jobs
+category: opportunities
 author: OIA Committee
 summary: A member's company is hiring interns for next summer; English is fine for the first round.
 draft: false
