@@ -1,7 +1,7 @@
 ---
 title: Job Hunting in Japan. A Guide for International Students
 date: 2026-09-20T09:00
-category: opportunities
+category: community
 author: OIA Committee
 summary: A practical guide to Japan's recruiting timeline, internships, applications, language requirements, and useful career resources for international students.
 cover: /posts/Job_Hunting_in_Japan.jpg
