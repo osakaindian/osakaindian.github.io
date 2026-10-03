@@ -4,6 +4,7 @@ date: 2026-09-20T09:00
 category: opportunities
 author: OIA Committee
 summary: A practical guide to Japan's recruiting timeline, internships, applications, language requirements, and useful career resources for international students.
+cover: /posts/website_live.jpeg
 draft: false
 ---
 
