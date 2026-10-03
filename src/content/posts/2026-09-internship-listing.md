@@ -4,7 +4,7 @@ date: 2026-09-05T14:00
 category: opportunities
 author: OIA Committee
 summary: A member's company is hiring interns for next summer; English is fine for the first round.
-draft: false
+draft: true
 ---
 
 Passing this along from a member working at a manufacturing company in

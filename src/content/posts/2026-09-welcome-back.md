@@ -4,7 +4,7 @@ date: 2026-09-10T09:00
 category: announcements
 author: OIA Committee
 summary: A short note on what's coming this semester, and how to get added to the group chat.
-draft: false
+draft: true
 ---
 
 New semester, new arrivals, and a handful of familiar faces heading into their
