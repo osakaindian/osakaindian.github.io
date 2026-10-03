@@ -4,6 +4,7 @@ date: 2026-09-25T09:00
 category: community
 author: "OIA Committee"
 summary: "A practical guide for Indians in Japan travelling to India and other countries, covering flight costs, transit airports, visa requirements, and common routes through China, Hong Kong, and Thailand."
+cover: /posts/indian-visa.jpg
 draft: false
 ---
 
