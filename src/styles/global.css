@@ -21,7 +21,7 @@
   --font-body: 'Source Serif 4', 'Noto Serif JP', Georgia, serif;
   --font-ja: 'Noto Sans JP', system-ui, sans-serif;
 
-  --measure: 100ch;
+  --measure: 64ch;
   --gutter: clamp(1.25rem, 5vw, 4rem);
   --step: clamp(3.5rem, 8vw, 6.5rem);
 }
@@ -75,17 +75,6 @@ h1 {
 }
 h2 {
   font-size: clamp(1.85rem, 3.6vw, 2.75rem);
-  margin-top: 2.8rem;
-  margin-bottom: 0.8em;
-}
-
-h2::after {
-  content: '';
-  display: block;
-  width: 3rem;
-  height: 3px;
-  background: var(--marigold);
-  margin-top: 0.5em;
 }
 h3 {
   font-size: clamp(1.2rem, 1.6vw, 1.45rem);
@@ -121,13 +110,13 @@ img {
 /* Layout helpers ---------------------------------------------------------- */
 
 .wrap {
-  width: min(84rem, 100%);
+  width: min(72rem, 100%);
   margin-inline: auto;
   padding-inline: var(--gutter);
 }
 
 .wrap--narrow {
-  width: min(60rem, 100%);
+  width: min(48rem, 100%);
 }
 
 .band {
@@ -152,14 +141,6 @@ img {
   color: var(--marigold);
 }
 
-.band--ink .btn {
-  color: var(--ink);
-}
-
-.band--ink .btn:hover {
-  color: var(--paper);
-}
-
 .ja {
   font-family: var(--font-ja);
   font-feature-settings: 'palt';
@@ -169,7 +150,7 @@ img {
   font-size: clamp(1.15rem, 1.4vw, 1.4rem);
   line-height: 1.5;
   color: var(--indigo);
-  max-width: 60ch;
+  max-width: 34ch;
 }
 
 /* Buttons ----------------------------------------------------------------- */
@@ -204,7 +185,6 @@ img {
   color: var(--paper);
 }
 
-
 /* Skip link --------------------------------------------------------------- */
 
 .skip {
@@ -220,4 +200,3 @@ img {
 .skip:focus {
   left: 0;
 }
-

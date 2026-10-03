@@ -1,14 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
 import { site, whoWeAre } from '../site.config';
+import { withBase } from '../lib/base';
 ---
 
 <Base title="About" description="What the Osaka Indian Association is and who it is for.">
   <section class="band head">
     <div class="wrap wrap--narrow">
-      <h1>About Us</h1>
+      <h1>About</h1>
       <p class="lede">
-        A vibrant community connecting Indian students, researchers, professionals, alumni, and prospective students across Osaka.
+        A volunteer-run community, not an official body. Nobody here works for a
+        government or a university.
       </p>
     </div>
   </section>
@@ -16,15 +18,19 @@ import { site, whoWeAre } from '../site.config';
   <section class="band top">
     <div class="wrap wrap--narrow">
       <p>
-        The Osaka Indian Association is a community that brings together Indian students, researchers, professionals, and alumni living in and around Osaka. 
-        We aim to foster meaningful connections, support newcomers, celebrate Indian culture, and provide a welcoming community for Indians at every stage of their journey in Japan.
+        The Osaka Indian Association brings together Indian students,
+        researchers, professionals and alumni living in and around Osaka. We run
+        festivals through the year, help people find their footing when they
+        first arrive, and give everyone a reason to be in the same room every
+        few weeks.
       </p>
       <p>
-        Whether you are a current student looking to connect with other Indians, a researcher or professional building your network in Osaka, or a prospective student preparing 
-        to come to Japan, the association is a place to connect, learn, and participate.
+        Most of what we do is small: a lunch, a cricket afternoon, a group chat
+        where someone answers your question about the ward office at eleven at
+        night. Twice a year it gets bigger — Diwali and Holi fill a hall.
       </p>
 
-      <!-- <h2>Who we are</h2>
+      <h2>Who comes</h2>
       <dl class="groups">
         {
           whoWeAre.map((g) => (
@@ -34,42 +40,24 @@ import { site, whoWeAre } from '../site.config';
             </div>
           ))
         }
-      </dl> -->
-
-      <h2>What we do</h2>
-      <p>
-        We organise events and activities throughout the year that bring the community together. These include cultural celebrations, social gatherings, sports activities, and 
-        opportunities to meet other members of the Indian community.
-      </p>
-      <p>
-        Beyond events, we aim to make it easier for people to settle into life in Osaka. Members share practical experiences and information about university life, housing, local 
-        procedures, daily life in Japan, and other matters that can be particularly useful for newcomers and prospective students.
-      </p>
-
-      <h2>For current and prospective students</h2>
-      <p>
-        For current students, the association provides an opportunity to meet people from different universities, academic fields, and professional backgrounds, while staying 
-        connected with the wider Indian community.
-      </p>
-      <p>
-        For prospective students and those preparing to move to Osaka, the community can be a useful starting point for learning about life in Japan, understanding the student 
-        experience, and connecting with people who have already made the transition.
-      </p>
+      </dl>
 
       <h2>How it works</h2>
       <p>
-        The association is run by volunteers from within the community. There is no membership fee, and participation in the community does not require a formal application.
-      </p>
-      <p>
-        Events and activities may have associated costs, such as venue or catering expenses. Whenever applicable, these costs are communicated in advance.
+        There is no membership fee and no form to fill in before you turn up.
+        A committee of volunteers organises events for a year at a time and then
+        hands over to the next group. If something at an event costs money —
+        usually a hall booking or catering — we say so in advance.
       </p>
 
-      <h2>Get involved</h2>
+      <h2>Helping out</h2>
       <p>
-        The association grows through the participation and contributions of its members. Whether you would like to help organise an event, contribute your skills, share 
-        useful information with newcomers, or simply meet other members of the community, we welcome your participation.
+        The association only exists because people give it a few hours. If you
+        can cook, carry chairs, take photographs, keep accounts, or read a
+        Japanese rental contract without panicking, we would like to hear from
+        you.
       </p>
-      <p><a class="btn" href={site.joinFormUrl || '/contact/'}>Get in touch</a></p>
+      <p><a class="btn" href={withBase(site.joinFormUrl || '/contact/')}>Get in touch</a></p>
     </div>
   </section>
 </Base>

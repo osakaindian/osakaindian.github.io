@@ -2,6 +2,7 @@
 import PostStats from './PostStats.astro';
 import { relative } from '../lib/date';
 import { postCategories } from '../content.config';
+import { withBase } from '../lib/base';
 
 interface Props {
   slug: string;
@@ -15,20 +16,17 @@ interface Props {
 
 const { slug, title, date, category, author, summary, cover } = Astro.props;
 const categoryLabel = postCategories.find((c) => c.slug === category)?.label ?? category;
+const href = withBase(`/posts/${slug}/`);
 ---
 
 <article class="card">
-  {
-    cover && (
-      <a class="thumb" href={`/posts/${slug}/`} tabindex="-1" aria-hidden="true">
-        <img src={cover} alt="" loading="lazy" />
-      </a>
-    )
-  }
+  <a class="thumb" href={href} aria-hidden="true" tabindex="-1">
+    {cover ? <img src={withBase(cover)} alt="" loading="lazy" /> : <span class="thumb-fallback" />}
+    <span class="cat-badge">{categoryLabel}</span>
+  </a>
 
   <div class="text">
-    <p class="cat">{categoryLabel}</p>
-    <h3><a href={`/posts/${slug}/`}>{title}</a></h3>
+    <h3><a href={href}>{title}</a></h3>
     <p class="summary">{summary}</p>
 
     <div class="foot">
@@ -40,44 +38,70 @@ const categoryLabel = postCategories.find((c) => c.slug === category)?.label ?? 
 
 <style>
   .card {
-    display: grid;
-    gap: 1rem;
-    padding-block: 1.8rem;
-    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+    transition: border-color 0.15s ease, transform 0.15s ease;
   }
 
-  @media (min-width: 30rem) {
-    .card {
-      grid-template-columns: 8rem 1fr;
-      align-items: start;
-    }
+  .card:hover {
+    border-color: var(--indigo-soft);
+    transform: translateY(-2px);
+  }
 
-    .card:has(.thumb) {
-      grid-template-columns: 8rem 1fr;
-    }
-
-    .card:not(:has(.thumb)) {
-      grid-template-columns: 1fr;
-    }
+  .thumb {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 10;
   }
 
   .thumb img {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    height: 100%;
     object-fit: cover;
-    border-radius: 2px;
   }
 
-  .cat {
-    margin: 0 0 0.35rem;
+  /* On-brand placeholder for posts without a photo — a soft marigold-on-paper
+     field so the grid stays visually consistent even before every post has
+     a cover image. Deliberately quieter than the event-card fallback (which
+     uses the indigo field) so posts and events still read as distinct. */
+  .thumb-fallback {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--paper-sunk);
+    background-image: radial-gradient(circle at 75% 25%, var(--marigold) 0 3px, transparent 4px),
+      radial-gradient(circle at 15% 70%, var(--marigold) 0 3px, transparent 4px),
+      radial-gradient(circle at 50% 50%, var(--indigo-soft) 0 2px, transparent 3px);
+    opacity: 0.8;
+  }
+
+  .cat-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background: var(--ink);
+    color: var(--paper);
     font-family: var(--font-display);
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 600;
-    color: var(--marigold-deep);
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+  }
+
+  .text {
+    padding: 1.1rem 1.2rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 
   h3 {
-    margin-bottom: 0.35rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
   }
 
   h3 a {
@@ -90,20 +114,25 @@ const categoryLabel = postCategories.find((c) => c.slug === category)?.label ?? 
   }
 
   .summary {
-    margin: 0 0 0.75rem;
+    margin: 0 0 1rem;
     color: var(--ink);
+    font-size: 0.95rem;
+    flex: 1;
   }
 
   .foot {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
     gap: 0.4rem 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--rule);
   }
 
   .byline {
     font-family: var(--font-display);
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--indigo-soft);
   }
 </style>

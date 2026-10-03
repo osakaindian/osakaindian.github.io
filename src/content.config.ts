@@ -7,9 +7,9 @@ import { glob } from 'astro/loaders';
 // error instead of silently vanishing from the site.
 export const postCategories = [
   { slug: 'announcements', label: 'Announcements' },
-  { slug: 'community', label: 'Community' },
-  { slug: 'research', label: 'Research' },
-  { slug: 'opportunities', label: 'Opportunities' },
+  { slug: 'jobs', label: 'Jobs & Internships' },
+  { slug: 'scholarships', label: 'Scholarships' },
+  { slug: 'community', label: 'Community Board' },
 ] as const;
 
 const postCategorySlugs = postCategories.map((c) => c.slug) as [string, ...string[]];

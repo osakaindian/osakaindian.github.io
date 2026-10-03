@@ -10,14 +10,14 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
 
 <Base title="Posts" description="Announcements, job postings, scholarships and community notices from the Osaka Indian Association.">
   <section class="band head">
-    <div class="wrap wrap--narrow">
+    <div class="wrap">
       <h1>Posts</h1>
       <p class="lede">Announcements, opportunities and anything worth sharing with the community.</p>
     </div>
   </section>
 
   <section class="band top">
-    <div class="wrap wrap--narrow">
+    <div class="wrap">
       <PostList posts={posts} />
     </div>
   </section>

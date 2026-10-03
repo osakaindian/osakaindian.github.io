@@ -1,10 +1,10 @@
 ---
 title: MEXT-adjacent scholarship — deadline reminder
 date: 2026-08-28T12:00
-category: opportunities
+category: scholarships
 author: OIA Committee
 summary: A reminder that applications for one of the private scholarships close at the end of next month.
-draft: true
+draft: false
 ---
 
 A reminder for anyone who mentioned they were applying: this scholarship's

@@ -1,6 +1,7 @@
 ---
 import { site } from '../site.config';
 import { weekdayDate, time } from '../lib/date';
+import { withBase } from '../lib/base';
 
 interface Props {
   next?: {
@@ -26,7 +27,7 @@ const { next } = Astro.props;
 
       {
         next ? (
-          <a class="next" href={`/events/${next.slug}/`}>
+          <a class="next" href={withBase(`/events/${next.slug}/`)}>
             <span class="next-label">Next gathering</span>
             <span class="next-title">{next.title}</span>
             <span class="next-meta">
@@ -45,8 +46,8 @@ const { next } = Astro.props;
       }
 
       <div class="acts">
-        <a class="btn" href={site.joinFormUrl || '/contact/'}>Join the community</a>
-        <a class="btn btn--quiet" href="/events/">See all events</a>
+        <a class="btn" href={withBase(site.joinFormUrl || '/contact/')}>Join the community</a>
+        <a class="btn btn--quiet" href={withBase('/events/')}>See all events</a>
       </div>
     </div>
   </div>

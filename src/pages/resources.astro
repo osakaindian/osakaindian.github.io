@@ -6,187 +6,41 @@ import { site } from '../site.config';
 // the side navigation is generated from the same titles — add a section here
 // and a link appears automatically, nothing else to update.
 const sections = [
-
   {
-    title: 'Getting Started',
+    title: 'Your first two weeks',
     items: [
-      [
-        'Resident registration',
-        'After moving into your new home, register your address at your local City Hall or Ward Office within 14 days. Bring your Residence Card and any other documents requested for your registration.'
-      ],
-
-      [
-        'My Number',
-        'After registering your address, you will receive a My Number (Individual Number). You may need it for taxation, employment, social insurance, and other official procedures. Keep your My Number documents safe.'
-      ],
-
-      [
-        'National Health Insurance',
-        'If you are not covered by another public health insurance scheme, you will generally need to enrol in National Health Insurance (国民健康保険). Registration is handled at your City Hall or Ward Office. Ask about the student premium reduction if applicable.'
-      ],
-
-      [
-        'National Pension',
-        'People aged 20 or older living in Japan generally need to join the National Pension system. Students with limited income can apply for the Student Payment Special Exemption System (学生納付特例制度) through their City Hall, Ward Office, or Japan Pension Service office.'
-      ],
-
-      [
-        'Bank account',
-        'A Japanese bank account is useful for receiving scholarships or salaries and paying bills. Japan Post Bank (ゆうちょ銀行) is a common option for international residents. Bring your Residence Card and check the bank’s current requirements before visiting.'
-      ],
-
-      [
-        'Mobile phone and SIM',
-        'You can choose from major carriers and lower-cost providers such as IIJmio, Rakuten Mobile, and GTN Mobile. Compare data allowances, monthly fees, and contract terms. If you have just arrived and do not yet have a Japanese bank account or credit card, consider a prepaid SIM first.'
-      ]
-    ]
+      ['Residence card and ward office', 'Register your address at the ward office within 14 days of arriving. Bring your residence card and passport. Enrolment in National Health Insurance usually happens at the same counter on the same visit.'],
+      ['My Number', 'The card arrives by post a few weeks after you register. You will need it for a bank account and for most part-time work.'],
+      ['Bank account', 'Japan Post Bank accepts new arrivals with the fewest questions. Most other banks want six months of residence first.'],
+      ['SIM Card', 'Cheap SIM providers like IIJmio or Rakuten cost far less than the big three carriers and only need your residence card.'],
+    ],
   },
-
-
   {
-    title: 'Food',
-    intro:
-      'A few real, verified online stores that ship Indian, South Asian, and halal groceries across Japan — handy if you can\'t make it to a physical shop.',
-    places: [
-      {
-        name: 'Vishwas Spices Japan',
-        area: 'Amagasaki, Hyogo (ships nationwide)',
-        types: ['Groceries'],
-        url: 'https://vishwasjapan.com'
-      },
-      {
-        name: 'Ambika Japan',
-        area: 'Tokyo (ships nationwide)',
-        types: ['Vegetarian', 'Groceries'],
-        url: 'https://shop.ambikajapan.com'
-      },
-      {
-        name: 'Shinjuku Halal Food',
-        area: 'Tokyo (ships nationwide)',
-        types: ['Halal', 'Groceries'],
-        url: 'https://shinjukuhalalfood.com'
-      }
-      // Add more places here — name, area, types (array), url.
-    ]
-  },
-
-  // {
-  //   title: 'Food & Groceries',
-  //   items: [
-  //     [
-  //       'Indian groceries',
-  //       'Rice, atta, dals, spices, and other Indian ingredients are available at specialist shops and some larger supermarkets. Availability varies by area, so ask other community members about shops near you.'
-  //     ],
-  //     [
-  //       'Vegetarian food',
-  //       'Vegetarian options are increasingly common, but ingredients such as fish stock, meat-based broth, or animal-derived ingredients can appear in dishes that otherwise look vegetarian. When in doubt, ask about the ingredients.'
-  //     ],
-  //     [
-  //       'Halal food',
-  //       'Halal restaurants and grocery stores are available in several parts of Osaka. Muslim students can also check whether their university provides information about nearby halal options.'
-  //     ],
-  //     [
-  //       'Supermarkets',
-  //       'Local supermarkets are generally the easiest place to buy everyday groceries. Discount supermarkets can be particularly useful for students managing a limited budget.'
-  //     ],
-  //     [
-  //       'Eating out',
-  //       'Restaurants in Osaka range from inexpensive student-friendly options to specialist Indian, South Asian, vegetarian, and halal restaurants. Sharing recommendations within the community can help newcomers find places that suit their needs.'
-  //     ]
-  //   ]
-  // },
-
-  {
-    title: 'Travel',
+    title: 'Groceries',
     items: [
-      [
-        'ICOCA',
-        'An ICOCA card can be used on many trains, subways, buses, and participating stores across the Kansai region. It is one of the easiest ways to handle everyday transport.'
-      ],
-      [
-        'Trains and subways',
-        'Osaka has an extensive rail and subway network. Check the route and final destination carefully, as several different railway companies operate in the same areas.'
-      ],
-      [
-        'Bicycles',
-        'A bicycle can be convenient for short trips and commuting. Make sure your bicycle is properly registered and follow local traffic rules.'
-      ],
-      [
-        'Walking',
-        'Many neighbourhoods around universities and railway stations are highly walkable. Exploring your immediate area on foot is often the easiest way to find supermarkets, pharmacies, restaurants, and other useful services.'
-      ],
-      [
-        'Late-night travel',
-        'Train and bus services generally become less frequent late at night and eventually stop. Check the last train before travelling, particularly when attending events in central Osaka.'
-      ]
-    ]
+      ['Spices and Lentils', 'Several Indian and halal shops around Nipponbashi and Namba carry atta, dals and fresh coriander. Ask in the group chat for the current favourite — they open and close often.'],
+      ['Vegetarian and Halal', 'Read labels for dashi and pork gelatine, which appear in unexpected places. Gyomu Supa stocks large frozen vegetable bags cheaply.'],
+    ],
   },
-
   {
-    title: 'Healthcare',
+    title: 'Getting Around',
     items: [
-      [
-        'Finding a clinic',
-        'For routine medical problems, a nearby clinic is usually a useful first point of contact. Your university may maintain a list of hospitals and clinics that are familiar with international students.'
-      ],
-      [
-        'Health insurance',
-        'If you are enrolled in a public health insurance scheme, bring your insurance information when visiting a medical facility. The amount you pay at the clinic depends on your insurance coverage and the treatment you receive.'
-      ],
-      [
-        'Large hospitals',
-        'Some large hospitals may recommend visiting a local clinic first or may charge additional fees when you visit without a referral. Check the hospital’s current requirements before going.'
-      ],
-      [
-        'Language support',
-        'If you are not comfortable communicating in Japanese, look for clinics offering multilingual support or ask your university international office for recommendations.'
-      ],
-      [
-        'Emergency',
-        'For a serious medical emergency, call 119. If you are unsure whether a situation requires emergency assistance, seek help rather than trying to manage a serious emergency alone.'
-      ]
-    ]
+      ['ICOCA card', 'One card for trains, subways, buses and convenience stores. Buy it at any station machine.'],
+      ['Bicycle registration', 'Register your bike at the shop where you buy it. Unregistered bikes get stopped, and abandoned bikes get impounded quickly.'],
+    ],
   },
-
   {
-    title: 'Emergency',
+    title: 'When something goes wrong',
     items: [
-      [
-        'Lost residence card',
-        'If you lose your residence card, contact the appropriate authorities and follow the current replacement procedure. Keep a copy or photograph of your card somewhere secure to make the process easier.'
-      ],
-      [
-        'Lost wallet or belongings',
-        'Contact the nearest police station or kōban and report lost property. Japanese police stations and kōban routinely handle lost-and-found reports.'
-      ],
-      [
-        'Police emergency',
-        'Call 110 when you need emergency assistance from the police.'
-      ],
-      [
-        'Medical emergency',
-        'Call 119 for an ambulance or fire emergency. Give your location as clearly as possible and follow the operator’s instructions.'
-      ],
-      [
-        'Housing problems',
-        'For disputes with a landlord or property manager, keep copies of your contract and written communication. Your university international office or a local consultation service may be able to direct you to appropriate support.'
-      ],
-      [
-        'Immigration questions',
-        'For questions about your residence status, work permission, or other immigration matters, use official Immigration Services Agency information or consult your university’s international student office.'
-      ],
-      [
-        'Ask the community',
-        'If you are unsure where to start, ask the association. Someone in the community may have dealt with a similar situation and can help you identify the right office or service to contact.'
-      ]
-    ]
-  },  
+      ['Medical Care', 'Your insurance card covers 70% at any clinic. Large hospitals prefer a referral letter from a small clinic first.'],
+      ['Japanese-language help', 'Osaka Prefecture runs a free multilingual consultation service for foreign residents covering visas, housing and work trouble.'],
+      ['Ask Us', 'Someone in the community has almost certainly dealt with your problem before.'],
+    ],
+  },
 ];
 
 const slugify = (s: string) =>
   s.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-
-const tagKey = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 ---
 
 <Base
@@ -197,7 +51,8 @@ const tagKey = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-');
     <div class="wrap wrap--narrow">
       <h1>Living in Osaka</h1>
       <p class="lede">
-        A practical guide to living and settling in Osaka, covering essential administrative procedures, daily necessities, and other aspects of everyday life.
+        The things we find ourselves explaining to every new arrival, written
+        down once.
       </p>
     </div>
   </section>
@@ -219,44 +74,23 @@ const tagKey = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
       <div class="content">
         <p class="caveat">
-          This guide is based on experiences shared by members of our community and is intended as a practical starting point. Administrative procedures and eligibility 
-          requirements can change, so please confirm important matters with your municipality, university, or the relevant government office before taking action.
+          Written by volunteers from experience, not by lawyers. Rules change —
+          check with your ward office (which is city hall) or university
+          international student office before acting on anything here.
         </p>
 
         {
           sections.map((s) => (
             <section class="sect" id={slugify(s.title)}>
               <h2>{s.title}</h2>
-
-              {s.places ? (
-                <>
-                  {s.intro && <p class="sect-intro">{s.intro}</p>}
-                  <div class="place-list">
-                    {s.places.map((place) => (
-                      <a class="place" href={place.url} target="_blank" rel="noopener">
-                        <div class="place-main">
-                          <span class="place-name">{place.name}</span>
-                          <span class="place-area">{place.area}</span>
-                        </div>
-                        <div class="tags">
-                          {place.types.map((type) => (
-                            <span class="tag" data-tag={tagKey(type)}>{type}</span>
-                          ))}
-                        </div>
-                      </a>
-                    ))}
+              <dl>
+                {s.items.map(([term, body]) => (
+                  <div>
+                    <dt>{term}</dt>
+                    <dd>{body}</dd>
                   </div>
-                </>
-              ) : (
-                <dl>
-                  {s.items.map(([term, body]) => (
-                    <div>
-                      <dt>{term}</dt>
-                      <dd>{body}</dd>
-                    </div>
-                  ))}
-                </dl>
-              )}
+                ))}
+              </dl>
             </section>
           ))
         }
@@ -355,11 +189,6 @@ const tagKey = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-');
     border-bottom: 1px solid var(--rule);
   }
 
-  .sect-intro {
-    margin-top: 1.25rem;
-    max-width: var(--measure);
-  }
-
   dl {
     margin: 1.5rem 0 0;
     display: grid;
@@ -376,93 +205,6 @@ const tagKey = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   dd {
     margin: 0;
     max-width: var(--measure);
-  }
-
-  /* Place directory */
-  .place-list {
-    margin-top: 1.5rem;
-    display: grid;
-    gap: 0.75rem;
-  }
-
-  .place {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem 1.5rem;
-    padding: 0.9rem 1.1rem;
-    border: 1px solid var(--rule);
-    border-radius: 0.6rem;
-    text-decoration: none;
-    color: inherit;
-    background: var(--paper);
-    transition: border-color 0.15s ease, background 0.15s ease;
-  }
-
-  .place:hover {
-    border-color: var(--indigo-soft);
-    background: var(--paper-sunk);
-  }
-
-  .place-main {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    min-width: 10rem;
-  }
-
-  .place-name {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 1.02rem;
-    color: var(--indigo);
-  }
-
-  .place-area {
-    font-size: 0.85rem;
-    color: var(--ink);
-    opacity: 0.65;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-
-  .tag {
-    font-family: var(--font-display);
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    padding: 0.25rem 0.6rem;
-    border-radius: 999px;
-    background: var(--paper-sunk);
-    color: var(--indigo);
-    border: 1px solid var(--rule);
-    white-space: nowrap;
-  }
-
-  /* Subtle per-category tint — falls back to the default indigo tag above
-     if a type doesn't match one of these keys. */
-  .tag[data-tag='vegetarian'] {
-    color: #3f7d4a;
-    border-color: #bfe0c4;
-    background: #eef8ef;
-  }
-
-  .tag[data-tag='halal'] {
-    color: #8a5a10;
-    border-color: #ecd6ab;
-    background: #fbf3e3;
-  }
-
-  .tag[data-tag='groceries'] {
-    color: var(--indigo);
-    border-color: var(--rule);
-    background: var(--paper-sunk);
   }
 
   .ask {
@@ -500,11 +242,6 @@ const tagKey = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
     .toc a:hover {
       border-color: var(--indigo-soft);
-    }
-
-    .place {
-      flex-direction: column;
-      align-items: flex-start;
     }
   }
 </style>

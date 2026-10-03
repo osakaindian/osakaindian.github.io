@@ -20,13 +20,13 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft && data.ca
   description={`${category.label} posts from the Osaka Indian Association.`}
 >
   <section class="band head">
-    <div class="wrap wrap--narrow">
+    <div class="wrap">
       <h1>{category.label}</h1>
     </div>
   </section>
 
   <section class="band top">
-    <div class="wrap wrap--narrow">
+    <div class="wrap">
       <PostList posts={posts} activeCategory={category.slug} />
     </div>
   </section>

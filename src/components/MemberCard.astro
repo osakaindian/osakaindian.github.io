@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../lib/base';
+
 interface Props {
   name: string;
   role: string;
@@ -19,7 +21,7 @@ const initials = name
 <div class="member">
   {
     photo ? (
-      <img src={photo} alt="" loading="lazy" />
+      <img src={withBase(photo)} alt="" loading="lazy" />
     ) : (
       <span class="initials" aria-hidden="true">
         {initials}

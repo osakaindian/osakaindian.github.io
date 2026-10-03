@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import EventRow from '../../components/EventRow.astro';
+import EventCard from '../../components/EventCard.astro';
 import { isUpcoming, year } from '../../lib/date';
 
 const all = (await getCollection('events', ({ data }) => !data.draft)).sort(
@@ -19,42 +19,37 @@ for (const e of past) {
 }
 ---
 
-<Base
-  title="Events"
-  description="Cultural celebrations, community gatherings and activities organised by the Osaka Indian Association."
->
+<Base title="Events" description="Gatherings, festivals and meetups run by the Osaka Indian Association.">
   <section class="band head">
-    <div class="wrap wrap--narrow">
+    <div class="wrap">
       <h1>Events</h1>
       <p class="lede">
-        Bringing the Indian community in Osaka together through cultural
-        celebrations, social gatherings, and activities throughout the year.
+        Festivals, welcome dinners and casual meetups. Most are free; a few ask
+        for a small contribution towards food.
       </p>
     </div>
   </section>
 
   <section class="band">
-    <div class="wrap wrap--narrow">
-      <h2>Upcoming Events</h2>
-
+    <div class="wrap">
+      <h2>Upcoming</h2>
       {
         upcoming.length ? (
-          <div class="list">
+          <div class="grid">
             {upcoming.map((e) => (
-              <EventRow
+              <EventCard
                 slug={e.id}
                 title={e.data.title}
                 date={e.data.date}
                 endTime={e.data.endTime}
                 venue={e.data.venue}
                 summary={e.data.summary}
+                cover={e.data.cover}
               />
             ))}
           </div>
         ) : (
-          <p class="empty">
-            There are no upcoming events at the moment. Please check back soon for new announcements.
-          </p>
+          <p class="empty">Nothing scheduled right now. Check back soon.</p>
         )
       }
     </div>
@@ -63,27 +58,27 @@ for (const e of past) {
   {
     past.length > 0 && (
       <section class="band band--sunk">
-        <div class="wrap wrap--narrow">
-          <h2>Past Events</h2>
-
-          {
-            past.length ? (
-              <div class="list">
-                {past.map((e) => (
-                  <EventRow
+        <div class="wrap">
+          <h2>Past events</h2>
+          {[...byYear.entries()].map(([y, items]) => (
+            <div class="yeargroup">
+              <h3 class="y">{y}</h3>
+              <div class="grid">
+                {items.map((e) => (
+                  <EventCard
                     slug={e.id}
                     title={e.data.title}
                     date={e.data.date}
                     endTime={e.data.endTime}
                     venue={e.data.venue}
                     summary={e.data.summary}
+                    cover={e.data.cover}
+                    past
                   />
                 ))}
               </div>
-            ) : (
-              <p class="empty">Our event archive will appear here.</p>
-            )
-          }
+            </div>
+          ))}
         </div>
       </section>
     )
@@ -99,8 +94,10 @@ for (const e of past) {
     font-size: clamp(2.6rem, 6vw, 4rem);
   }
 
-  .list {
-    border-bottom: 1px solid var(--rule);
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 1.75rem;
   }
 
   .empty {
@@ -116,6 +113,6 @@ for (const e of past) {
   .y {
     font-size: 1rem;
     color: var(--indigo-soft);
-    margin-bottom: 0.4rem;
+    margin-bottom: 1rem;
   }
 </style>

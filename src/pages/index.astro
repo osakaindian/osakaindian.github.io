@@ -2,9 +2,10 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
-import EventRow from '../components/EventRow.astro';
+import EventCard from '../components/EventCard.astro';
 import { site, whoWeAre } from '../site.config';
 import { isUpcoming } from '../lib/date';
+import { withBase } from '../lib/base';
 
 const all = (await getCollection('events', ({ data }) => !data.draft)).sort(
   (a, b) => a.data.date.getTime() - b.data.date.getTime()
@@ -34,22 +35,23 @@ const next = upcoming[0]
       <h2>What’s coming up</h2>
       {
         upcoming.length > 1 ? (
-          <div class="list">
+          <div class="grid">
             {upcoming.slice(1).map((e) => (
-              <EventRow
+              <EventCard
                 slug={e.id}
                 title={e.data.title}
                 date={e.data.date}
                 endTime={e.data.endTime}
                 venue={e.data.venue}
                 summary={e.data.summary}
+                cover={e.data.cover}
               />
             ))}
           </div>
         ) : (
           <p class="empty">
             Nothing else on the calendar yet. Events usually go up two to three
-            weeks ahead — <a href="/contact/">tell us what you’d like to see</a>.
+            weeks ahead — <a href={withBase('/contact/')}>tell us what you’d like to see</a>.
           </p>
         )
       }
@@ -60,25 +62,18 @@ const next = upcoming[0]
     <div class="wrap two">
       <div>
         <h2>Who we are</h2>
-
         <p>
-          The Osaka Indian Association is a community of Indian students,
-          researchers, professionals, families, and alumni living and working
-          in and around Osaka.
+          The association started with a handful of Indian students who wanted
+          somewhere to spend Diwali. It has grown into a few hundred people
+          spread across Osaka’s universities, hospitals and companies — some
+          here for a semester, some for a decade.
         </p>
-
         <p>
-          We bring people together through cultural celebrations, social
-          gatherings, and community activities, while helping newcomers
-          connect with others and find useful information about life in Osaka.
+          There is no membership fee and no application. If you are Indian, of
+          Indian origin, or simply interested in the community, you are welcome
+          at anything we run.
         </p>
-
-        <p>
-          Whether you are new to Osaka, have been here for years, or simply
-          want to connect with the Indian community, you are welcome to join us.
-        </p>
-
-        <p><a href="/about/">Learn more about the association →</a></p>
+        <p><a href={withBase('/about/')}>More about the association</a></p>
       </div>
 
       <dl class="groups">
@@ -99,20 +94,21 @@ const next = upcoming[0]
       <section class="band">
         <div class="wrap">
           <h2>Recently</h2>
-          <div class="list">
+          <div class="grid">
             {recent.map((e) => (
-              <EventRow
+              <EventCard
                 slug={e.id}
                 title={e.data.title}
                 date={e.data.date}
                 endTime={e.data.endTime}
                 venue={e.data.venue}
                 summary={e.data.summary}
+                cover={e.data.cover}
                 past
               />
             ))}
           </div>
-          <p class="more"><a href="/events/">All past events</a></p>
+          <p class="more"><a href={withBase('/events/')}>All past events</a></p>
         </div>
       </section>
     )
@@ -126,16 +122,18 @@ const next = upcoming[0]
         you to volunteer for anything on your first visit.
       </p>
       <div class="acts">
-        <a class="btn" href={site.joinFormUrl || '/contact/'}>Join the community</a>
-        <a class="btn btn--quiet quiet-on-ink" href="/resources/">Settling-in guide</a>
+        <a class="btn" href={withBase(site.joinFormUrl || '/contact/')}>Join the community</a>
+        <a class="btn btn--quiet quiet-on-ink" href={withBase('/resources/')}>Settling-in guide</a>
       </div>
     </div>
   </section>
 </Base>
 
 <style>
-  .list {
-    border-bottom: 1px solid var(--rule);
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 1.75rem;
   }
 
   .empty {

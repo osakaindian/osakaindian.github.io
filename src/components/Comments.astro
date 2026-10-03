@@ -7,24 +7,45 @@ const { slug } = Astro.props;
 ---
 
 <section class="comments" data-slug={slug} id="comments">
-  <h2>Comments</h2>
+  <h2>Leave a Reply</h2>
+  <p class="privacy-note">
+    Your email address will not be published. Required fields are marked <span class="req">*</span>.
+  </p>
 
   <p class="offline-note" hidden>
     Comments couldn't load. Refresh the page, or check back in a moment.
   </p>
 
   <form class="comment-form">
-    <label>
-      <span>Name</span>
-      <input type="text" name="author_name" maxlength="60" required />
-    </label>
     <label class="full">
-      <span>Comment</span>
-      <textarea name="body" maxlength="2000" rows="3" required></textarea>
+      <span>Comment <span class="req">*</span></span>
+      <textarea name="body" maxlength="2000" rows="4" required></textarea>
     </label>
+
+    <div class="row3">
+      <label>
+        <span>Name <span class="req">*</span></span>
+        <input type="text" name="author_name" maxlength="60" required />
+      </label>
+      <label>
+        <span>Email <span class="req">*</span></span>
+        <input type="email" name="author_email" maxlength="120" required />
+      </label>
+      <label>
+        <span>Website</span>
+        <input type="url" name="author_website" maxlength="200" placeholder="https://" />
+      </label>
+    </div>
+
+    <label class="remember">
+      <input type="checkbox" name="remember" />
+      <span>Save my name, email and website in this browser for the next time I comment.</span>
+    </label>
+
     <!-- Honeypot: invisible to people, catches the simplest spam bots that fill in every field they find. -->
-    <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
-    <button type="submit" class="btn">Post comment</button>
+    <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+    <button type="submit" class="btn">Post Comment</button>
     <p class="form-status" role="status"></p>
   </form>
 
@@ -34,6 +55,20 @@ const { slug } = Astro.props;
 <style>
   .comments {
     margin-top: var(--step);
+  }
+
+  h2 {
+    margin-bottom: 0.3rem;
+  }
+
+  .privacy-note {
+    font-size: 0.88rem;
+    color: var(--indigo-soft);
+    margin-bottom: 1.5rem;
+  }
+
+  .req {
+    color: var(--marigold-deep);
   }
 
   .offline-note {
@@ -46,9 +81,9 @@ const { slug } = Astro.props;
 
   .comment-form {
     display: grid;
-    gap: 1rem;
-    margin: 1.5rem 0 2.5rem;
-    max-width: 32rem;
+    gap: 1.1rem;
+    margin: 0 0 2.5rem;
+    max-width: 36rem;
   }
 
   .comment-form label {
@@ -59,7 +94,15 @@ const { slug } = Astro.props;
     color: var(--indigo);
   }
 
+  .row3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+    gap: 1rem;
+  }
+
   .comment-form input[type='text'],
+  .comment-form input[type='email'],
+  .comment-form input[type='url'],
   .comment-form textarea {
     font-family: var(--font-body);
     font-size: 1rem;
@@ -71,10 +114,24 @@ const { slug } = Astro.props;
     resize: vertical;
   }
 
-  .comment-form input[type='text']:focus,
+  .comment-form input:focus,
   .comment-form textarea:focus {
     outline: none;
     border-color: var(--indigo);
+  }
+
+  .remember {
+    display: flex !important;
+    flex-direction: row;
+    align-items: start;
+    gap: 0.55rem;
+    font-size: 0.88rem !important;
+    color: var(--indigo) !important;
+  }
+
+  .remember input {
+    margin-top: 0.2rem;
+    flex: none;
   }
 
   .comment-form .btn {
@@ -128,9 +185,20 @@ const { slug } = Astro.props;
     font-weight: 600;
   }
 
+  .meta a {
+    color: var(--ink);
+    text-decoration-color: var(--marigold);
+  }
+
   .body {
     margin: 0;
     white-space: pre-wrap;
+  }
+
+  @media (max-width: 26rem) {
+    .row3 {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 
@@ -138,19 +206,47 @@ const { slug } = Astro.props;
   import { supabase, hasSupabase } from '../lib/supabase';
   import { relative } from '../lib/date';
 
-  type CommentRow = { author_name: string; body: string; created_at: string };
+  type CommentRow = {
+    author_name: string;
+    author_website: string | null;
+    body: string;
+    created_at: string;
+  };
+
+  const STORAGE_KEY = 'oia-commenter';
+
+  function loadRemembered(): { name: string; email: string; website: string } | null {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch {
+      return null;
+    }
+  }
 
   function renderComment(list: HTMLElement, row: CommentRow) {
     const li = document.createElement('li');
 
     const meta = document.createElement('p');
     meta.className = 'meta';
-    const name = document.createElement('strong');
-    name.textContent = row.author_name;
+
+    if (row.author_website) {
+      const link = document.createElement('a');
+      link.href = row.author_website;
+      link.target = '_blank';
+      link.rel = 'nofollow ugc noopener';
+      link.textContent = row.author_name;
+      meta.appendChild(link);
+    } else {
+      const name = document.createElement('strong');
+      name.textContent = row.author_name;
+      meta.appendChild(name);
+    }
+
     const time = document.createElement('time');
     time.dateTime = row.created_at;
     time.textContent = relative(new Date(row.created_at));
-    meta.append(name, document.createTextNode(' · '), time);
+    meta.append(document.createTextNode(' · '), time);
 
     const body = document.createElement('p');
     body.className = 'body';
@@ -169,15 +265,27 @@ const { slug } = Astro.props;
     const status = section.querySelector('.form-status') as HTMLElement;
     const offlineNote = section.querySelector('.offline-note') as HTMLElement;
 
+    // Prefill from a previous visit, if they ticked "remember me" before.
+    const remembered = loadRemembered();
+    if (remembered) {
+      (form.elements.namedItem('author_name') as HTMLInputElement).value = remembered.name;
+      (form.elements.namedItem('author_email') as HTMLInputElement).value = remembered.email;
+      (form.elements.namedItem('author_website') as HTMLInputElement).value = remembered.website;
+      (form.elements.namedItem('remember') as HTMLInputElement).checked = true;
+    }
+
     if (!hasSupabase || !supabase) {
       offlineNote.hidden = false;
       form.hidden = true;
       return;
     }
 
+    // Email is never requested here — it's collected for the commenter's own
+    // reference (and so a committee member moderating in Supabase can see
+    // it), not shown publicly, mirroring how WordPress comments behave.
     const { data, error } = await supabase
       .from('comments')
-      .select('author_name, body, created_at')
+      .select('author_name, author_website, body, created_at')
       .eq('post_slug', slug)
       .order('created_at', { ascending: true });
 
@@ -202,31 +310,57 @@ const { slug } = Astro.props;
       e.preventDefault();
       const fd = new FormData(form);
 
-      if (fd.get('website')) return; // honeypot tripped — drop silently, no error shown
+      if (fd.get('company')) return; // honeypot tripped — drop silently, no error shown
 
       const author_name = String(fd.get('author_name') ?? '').trim();
+      const author_email = String(fd.get('author_email') ?? '').trim();
+      const author_website = String(fd.get('author_website') ?? '').trim();
       const body = String(fd.get('body') ?? '').trim();
-      if (!author_name || !body) return;
+      if (!author_name || !author_email || !body) return;
 
       const button = form.querySelector('button') as HTMLButtonElement;
       button.disabled = true;
       status.textContent = 'Posting…';
 
-      const { error: insertError } = await supabase
-        .from('comments')
-        .insert({ post_slug: slug, author_name, body });
+      const { error: insertError } = await supabase.from('comments').insert({
+        post_slug: slug,
+        author_name,
+        author_email,
+        author_website: author_website || null,
+        body,
+      });
 
       button.disabled = false;
 
       if (insertError) {
         status.textContent = "Couldn't post that — try again in a moment.";
-      } else {
-        status.textContent = 'Posted.';
-        form.reset();
-        // Don't append it here — the realtime subscription above adds it
-        // for every open tab, including this one, so appending twice
-        // would show it doubled.
+        return;
       }
+
+      status.textContent = 'Posted.';
+
+      const rememberChecked = (form.elements.namedItem('remember') as HTMLInputElement).checked;
+      try {
+        if (rememberChecked) {
+          localStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify({ name: author_name, email: author_email, website: author_website })
+          );
+        } else {
+          localStorage.removeItem(STORAGE_KEY);
+        }
+      } catch {
+        // Private browsing or storage disabled — remembering is a nicety,
+        // not required, so just skip it.
+      }
+
+      // Reset the comment body only — keep whatever is in the name/email/
+      // website fields so a "remember me" commenter isn't stuck retyping if
+      // they submit a second comment on the same page.
+      (form.elements.namedItem('body') as HTMLTextAreaElement).value = '';
+      // Don't append the new comment here — the realtime subscription
+      // above adds it for every open tab, including this one, so
+      // appending twice would show it doubled.
     });
   }
 

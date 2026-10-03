@@ -1,0 +1,174 @@
+---
+import { day, month, time } from '../lib/date';
+import { withBase } from '../lib/base';
+
+interface Props {
+  slug: string;
+  title: string;
+  date: Date;
+  endTime?: string;
+  venue: string;
+  summary: string;
+  cover?: string;
+  past?: boolean;
+}
+
+const { slug, title, date, endTime, venue, summary, cover, past = false } = Astro.props;
+const href = withBase(`/events/${slug}/`);
+---
+
+<article class:list={['card', { past }]}>
+  <a class="thumb" href={href} aria-hidden="true" tabindex="-1">
+    {cover ? <img src={withBase(cover)} alt="" loading="lazy" /> : <span class="thumb-fallback" />}
+    <span class="date-badge">
+      <span class="d">{day(date)}</span>
+      <span class="m">{month(date)}</span>
+    </span>
+  </a>
+
+  <div class="text">
+    <h3><a href={href}>{title}</a></h3>
+    <p class="meta">
+      <time datetime={date.toISOString()}>
+        {time(date)}{endTime ? ` – ${endTime}` : ''}
+      </time>
+      <span class="sep" aria-hidden="true"></span>
+      <span class="venue">{venue}</span>
+    </p>
+    <p class="summary">{summary}</p>
+  </div>
+</article>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .card:hover {
+    border-color: var(--indigo-soft);
+    transform: translateY(-2px);
+  }
+
+  .thumb {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 10;
+  }
+
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* On-brand placeholder for events without a photo yet — a scatter of
+     marigold dots on an indigo field, built from CSS alone so there's no
+     image to forget to add. */
+  .thumb-fallback {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--indigo);
+    background-image:
+      radial-gradient(circle at 20% 30%, var(--marigold) 0 5px, transparent 6px),
+      radial-gradient(circle at 70% 60%, var(--marigold) 0 7px, transparent 8px),
+      radial-gradient(circle at 85% 20%, var(--marigold) 0 4px, transparent 5px),
+      radial-gradient(circle at 40% 80%, var(--marigold) 0 4px, transparent 5px);
+    opacity: 0.9;
+  }
+
+  .date-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background: var(--paper);
+    border-radius: 2px;
+    padding: 0.4rem 0.6rem;
+    text-align: center;
+    line-height: 1;
+    box-shadow: 0 1px 3px rgba(17, 26, 51, 0.25);
+  }
+
+  .d {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+
+  .m {
+    display: block;
+    margin-top: 0.1rem;
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    color: var(--indigo);
+  }
+
+  .past .date-badge {
+    opacity: 0.75;
+  }
+
+  .text {
+    padding: 1.1rem 1.2rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+  }
+
+  h3 a {
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  h3 a:hover {
+    color: var(--indigo);
+  }
+
+  .meta {
+    margin: 0 0 0.6rem;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--indigo);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .sep {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--marigold-deep);
+    flex: none;
+  }
+
+  .summary {
+    margin: 0;
+    color: var(--ink);
+    font-size: 0.95rem;
+  }
+
+  .past .summary,
+  .past .meta,
+  .past h3 a {
+    color: var(--indigo-soft);
+  }
+
+  .past .thumb {
+    filter: grayscale(0.4);
+  }
+</style>
