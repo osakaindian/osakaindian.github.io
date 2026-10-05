@@ -1,4 +1,5 @@
 const TZ = 'Asia/Tokyo';
+const JST_OFFSET = 9 * 60 * 60 * 1000;
 
 export function day(d: Date) {
   return new Intl.DateTimeFormat('en-GB', { day: '2-digit', timeZone: TZ }).format(d);
@@ -31,9 +32,12 @@ export function time(d: Date) {
   }).format(d);
 }
 
-export function isUpcoming(d: Date) {
-  // Events stay "upcoming" until the end of the day they happen on.
-  return d.getTime() > Date.now() - 12 * 60 * 60 * 1000;
+export function isUpcoming(start: Date, end?: Date, now = new Date()) {
+  const last = end ?? start;
+  const jst = new Date(last.getTime() + JST_OFFSET);
+  const endOfDay =
+    Date.UTC(jst.getUTCFullYear(), jst.getUTCMonth(), jst.getUTCDate() + 1) - JST_OFFSET;
+  return now.getTime() < endOfDay;
 }
 
 const RELATIVE_UNITS: [number, Intl.RelativeTimeFormatUnit][] = [

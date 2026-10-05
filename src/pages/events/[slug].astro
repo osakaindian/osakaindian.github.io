@@ -12,7 +12,11 @@ export async function getStaticPaths() {
 const { event } = Astro.props;
 const { Content } = await render(event);
 const d = event.data;
-const upcoming = isUpcoming(d.date);
+const upcoming = isUpcoming(d.date, d.endDate);
+const external = d.organizer === 'external';
+
+// Show a date range when the event runs over more than one day.
+const multiDay = d.endDate && weekdayDate(d.endDate) !== weekdayDate(d.date);
 ---
 
 <Base title={d.title} description={d.summary}>
@@ -24,12 +28,25 @@ const upcoming = isUpcoming(d.date);
         <h1>{d.title}</h1>
         <p class="summary">{d.summary}</p>
 
+        {
+          external && (
+            <p class="notice">
+              This event is not organised by us. We are sharing it for information,
+              so please check the organiser’s page for the latest details.
+            </p>
+          )
+        }
+
         <dl class="facts">
           <div>
             <dt>When</dt>
             <dd>
               <time datetime={d.date.toISOString()}>
-                {weekdayDate(d.date)}, {time(d.date)}{d.endTime ? ` – ${d.endTime}` : ''}
+                {
+                  multiDay
+                    ? `${weekdayDate(d.date)} – ${weekdayDate(d.endDate!)}, ${time(d.date)}${d.endTime ? ` – ${d.endTime}` : ''}`
+                    : `${weekdayDate(d.date)}, ${time(d.date)}${d.endTime ? ` – ${d.endTime}` : ''}`
+                }
               </time>
             </dd>
           </div>
@@ -45,7 +62,7 @@ const upcoming = isUpcoming(d.date);
           upcoming && d.registerUrl && (
             <p class="cta">
               <a class="btn" href={d.registerUrl}>
-                Register for this event
+                {external ? 'Visit the organiser’s page' : 'Register for this event'}
               </a>
             </p>
           )
@@ -98,6 +115,16 @@ const upcoming = isUpcoming(d.date);
     font-size: 1.2rem;
     color: var(--indigo);
     max-width: 48ch;
+  }
+
+  .notice {
+    max-width: 52ch;
+    margin-top: 1.25rem;
+    padding: 0.6rem 0.9rem;
+    background: var(--paper-sunk);
+    border-left: 4px solid var(--marigold);
+    font-size: 0.95rem;
+    color: var(--indigo);
   }
 
   .facts {

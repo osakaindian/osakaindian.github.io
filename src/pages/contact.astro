@@ -16,7 +16,7 @@ const labels: Record<string, string> = {
     <div class="wrap wrap--narrow">
       <h1>Contact</h1>
       <p class="lede">
-        For general enquiries, please contact us by email. You can also join our community groups for event updates, announcements, and discussions.
+        Email us with any questions, or join our community groups for event updates and announcements.
       </p>
     </div>
   </section>
@@ -28,12 +28,10 @@ const labels: Record<string, string> = {
           <div class="joinbox">
             <h2>Join the community</h2>
             <p>
-              Please complete the short registration form to receive community announcements and, where applicable, join our group communication channels.
+              Fill in the short registration form to get announcements and join our group channels.
             </p>
             <p>
-              <a class="btn" href={site.joinFormUrl}>
-                Join the Community
-              </a>
+              <a class="btn" href={site.joinFormUrl}>Join the Community</a>
             </p>
           </div>
         )
@@ -44,18 +42,18 @@ const labels: Record<string, string> = {
         <a class="big" href={`mailto:${site.email}`}>{site.email}</a>
       </p>
       <p>
-        Our communications are managed by volunteers, so responses may take some time. For time sensitive questions regarding upcoming events, community group 
-        channels may be more suitable.
+        We are a small team, so replies may take a little time. For urgent questions about an
+        upcoming event, our group channels are usually faster.
       </p>
 
       {
         socials.length > 0 && (
           <>
-            <h2>Social Media & Community Channels</h2>
+            <h2>Community channels</h2>
             <ul class="socials">
               {socials.map(([key, url]) => (
                 <li>
-                  <a href={url}>{labels[key] ?? key}</a>
+                  <a href={url} rel="noopener">{labels[key] ?? key}</a>
                 </li>
               ))}
             </ul>
@@ -63,10 +61,11 @@ const labels: Record<string, string> = {
         )
       }
 
-      <h2>Partnerships & Collaborations</h2>
+      <h2>Collaborations and event listings</h2>
       <p>
-        University offices, companies, student organizations, and community groups interested in collaborating with the Osaka Indian Association are welcome to 
-        contact us by email.
+        Universities, companies, student groups, and community organisations are welcome to
+        email us about collaborations. If you know of an event across Kansai that the
+        community might enjoy, tell us and we may share it.
       </p>
     </div>
   </section>
@@ -94,7 +93,7 @@ const labels: Record<string, string> = {
 
   h2 {
     font-size: 1.5rem;
-    margin-top: 2.8rem;
+    margin-top: 2.4rem;
   }
 
   .big {
@@ -102,6 +101,7 @@ const labels: Record<string, string> = {
     font-size: clamp(1.3rem, 3vw, 1.9rem);
     font-weight: 600;
     letter-spacing: -0.02em;
+    overflow-wrap: anywhere; /* stops a long email address overflowing on phones */
   }
 
   .socials {

@@ -8,8 +8,8 @@ const all = (await getCollection('events', ({ data }) => !data.draft)).sort(
   (a, b) => a.data.date.getTime() - b.data.date.getTime()
 );
 
-const upcoming = all.filter((e) => isUpcoming(e.data.date));
-const past = all.filter((e) => !isUpcoming(e.data.date)).reverse();
+const upcoming = all.filter((e) => isUpcoming(e.data.date, e.data.endDate));
+const past = all.filter((e) => !isUpcoming(e.data.date, e.data.endDate)).reverse();
 
 // Group past events by year so the archive stays readable as it grows.
 const byYear = new Map<string, typeof past>();
@@ -19,13 +19,17 @@ for (const e of past) {
 }
 ---
 
-<Base title="Events" description="Gatherings, festivals and meetups run by the Osaka Indian Association.">
+<Base title="Events" description="Events by the Osaka Indian Association, plus other events across Kansai that may interest the community.">
   <section class="band head">
     <div class="wrap">
       <h1>Events</h1>
       <p class="lede">
-        Festivals, welcome dinners and casual meetups. Most are free; a few ask
-        for a small contribution towards food.
+        Cultural celebrations, community gatherings, and events across Kansai that may
+        interest the community. Events organised by the Osaka Indian Association are
+        listed alongside others we share for information.
+      </p>
+      <p class="note">
+        Events marked “Info only” are not organised by us, so please check the organisers’ pages for the latest details.
       </p>
     </div>
   </section>
@@ -45,6 +49,7 @@ for (const e of past) {
                 venue={e.data.venue}
                 summary={e.data.summary}
                 cover={e.data.cover}
+                organizer={e.data.organizer}
               />
             ))}
           </div>
@@ -73,6 +78,7 @@ for (const e of past) {
                     venue={e.data.venue}
                     summary={e.data.summary}
                     cover={e.data.cover}
+                    organizer={e.data.organizer}
                     past
                   />
                 ))}

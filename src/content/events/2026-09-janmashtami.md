@@ -2,12 +2,12 @@
 title: Janmashtami and Ganesh Chaturthi
 date: 2026-09-05T18:30:00+09:00
 endTime: "22:00"
-
+endData: 2026-09-05
 venue: Minoh Semba Lifelong Learning Center, 6th Floor, Rooms 605–606, Osaka
 mapUrl: https://maps.app.goo.gl/cJJP2usnVZPpYhTL7
 
-summary: Celebrate Janmashtami and Ganesh Chaturthi with Utsavmanch, featuring vibrant performances, festive activities, and community celebrations.
-
+summary: Celebrate Janmashtami and Ganesh Chaturthi with Utsavmanch, featuring vibrant performances, festive activities, and community celebrations. (Listed for information, not organized by us.)
+organizer: external
 registerUrl: https://docs.google.com/forms/d/e/1FAIpQLSfewdpvNe1RM9jP9d_DrXoEXSjVjT0lHmzuK-JkhXiDJJg2ew/viewform?usp=send_form
 draft: false
 ---

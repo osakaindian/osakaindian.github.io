@@ -172,6 +172,13 @@ img {
   max-width: 60ch;
 }
 
+.note {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--indigo);
+  max-width: 60ch;
+}
+
 /* Buttons ----------------------------------------------------------------- */
 
 .btn {
@@ -230,6 +237,8 @@ img {
 
 table {
   width: 100%;
+  min-width: 720px;        /* on narrow screens, scroll instead of squashing */
+  table-layout: fixed;     /* makes the width rules below actually apply */
   border-collapse: collapse;
   font-size: 0.95em;
   line-height: 1.45;
@@ -242,25 +251,18 @@ td {
   text-align: left;
   vertical-align: top;
   border: 1px solid var(--rule);
+  overflow-wrap: anywhere; /* long words and Japanese text wrap cleanly */
 }
 
-thead th {
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  background: var(--indigo);
-  color: var(--paper);
-  border-color: var(--indigo);
-  border-bottom: 3px solid var(--marigold);
-}
-
-tbody tr:nth-child(even) {
-  background: rgba(30, 47, 107, 0.05);
-}
+/* Column widths: Step | Where | What happens | Bring */
+.checklist th:nth-child(1) { width: 20%; }
+.checklist th:nth-child(2) { width: 16%; }
+.checklist th:nth-child(3) { width: 40%; }
+.checklist th:nth-child(4) { width: 24%; }
 
 tbody td:first-child {
   font-family: var(--font-display);
   font-weight: 600;
   color: var(--indigo);
-  white-space: nowrap;
+  /* white-space: nowrap;  <- removed so long labels can wrap */
 }

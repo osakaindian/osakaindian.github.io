@@ -9,9 +9,19 @@ interface Props {
   venue: string;
   summary: string;
   past?: boolean;
+  organizer?: 'oia' | 'external';
 }
 
-const { slug, title, date, endTime, venue, summary, past = false } = Astro.props;
+const {
+  slug,
+  title,
+  date,
+  endTime,
+  venue,
+  summary,
+  past = false,
+  organizer = 'oia',
+} = Astro.props;
 ---
 
 <article class:list={['row', { past }]}>
@@ -21,7 +31,10 @@ const { slug, title, date, endTime, venue, summary, past = false } = Astro.props
   </div>
 
   <div class="what">
-    <h3><a href={`/events/${slug}/`}>{title}</a></h3>
+    <h3>
+      <a href={`/events/${slug}/`}>{title}</a>
+      {organizer === 'external' && <span class="tag">Info only</span>}
+    </h3>
     <p class="meta">
       <time datetime={date.toISOString()}>
         {time(date)}{endTime ? ` – ${endTime}` : ''}
@@ -93,6 +106,19 @@ const { slug, title, date, endTime, venue, summary, past = false } = Astro.props
   h3 a:focus-visible {
     background-size: 100% 3px;
     color: var(--ink);
+  }
+
+  .tag {
+    display: inline-block;
+    margin-left: 0.6rem;
+    padding: 0.1rem 0.5rem;
+    border: 1px solid var(--rule);
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--indigo);
+    vertical-align: middle;
   }
 
   .meta {

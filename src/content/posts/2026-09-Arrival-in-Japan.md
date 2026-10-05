@@ -23,7 +23,7 @@ The first city hall step matters most. Your SIM provider, your bank, and almost 
 
 ## Checklist at a glance
 
-<div class="table-scroll">
+<div class="table-scroll checklist">
 <table>
 <thead>
 <tr>
@@ -79,8 +79,7 @@ The first city hall step matters most. Your SIM provider, your bank, and almost 
 <tr>
 <td>Consulate registration</td>
 <td>Consulate General of India, Osaka-Kobe</td>
-<td>Let the consulate know you are in the region. It helps with passport services and emergency contact.</td>
-<td>Passport, residence card, a passport-size photo, and your Japanese address and phone number</td>
+<td>Let the consulate know you are in the region <a href="https://www.indconosaka.gov.in/Registration_of_Indian_Nationals">here</a>. It helps with passport services and disaster emergency contact.</td>
 </tr>
 </tbody>
 </table>

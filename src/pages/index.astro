@@ -5,26 +5,32 @@ import Hero from '../components/Hero.astro';
 import EventRow from '../components/EventRow.astro';
 import { site, whoWeAre } from '../site.config';
 import { isUpcoming } from '../lib/date';
-import StatLine from '../components/Statline.astro';
-import PhotoStrip from '../components/Photostrip.astro';
-import MemberVoice from '../components/Membervoice.astro';
+import StatLine from '../components/StatLine.astro';
+import PhotoStrip from '../components/PhotoStrip.astro';
+import MemberVoice from '../components/MemberVoice.astro';
 
 const all = (await getCollection('events', ({ data }) => !data.draft)).sort(
   (a, b) => a.data.date.getTime() - b.data.date.getTime()
 );
 
-const upcoming = all.filter((e) => isUpcoming(e.data.date));
+const upcoming = all.filter((e) => isUpcoming(e.data.date, e.data.endDate));
+
 const recent = all
-  .filter((e) => !isUpcoming(e.data.date))
+  .filter((e) => !isUpcoming(e.data.date, e.data.endDate))
   .reverse()
   .slice(0, 3);
 
-const next = upcoming[0]
+// Hero shows only our own events
+const heroEvent = upcoming[0];
+const rest = upcoming.slice(1);
+const listed = rest.slice(0, 3);
+
+const next = heroEvent
   ? {
-      slug: upcoming[0].id,
-      title: upcoming[0].data.title,
-      date: upcoming[0].data.date,
-      venue: upcoming[0].data.venue,
+      slug: heroEvent.id,
+      title: heroEvent.data.title,
+      date: heroEvent.data.date,
+      venue: heroEvent.data.venue,
     }
   : undefined;
 ---
@@ -32,27 +38,35 @@ const next = upcoming[0]
 <Base>
   <Hero next={next} />
   <!-- <StatLine /> -->
+
   <section class="band">
     <div class="wrap">
       <h2>What’s coming up</h2>
       {
-        upcoming.length > 1 ? (
-          <div class="list">
-            {upcoming.slice(1).map((e) => (
-              <EventRow
-                slug={e.id}
-                title={e.data.title}
-                date={e.data.date}
-                endTime={e.data.endTime}
-                venue={e.data.venue}
-                summary={e.data.summary}
-              />
-            ))}
-          </div>
+        listed.length > 0 ? (
+          <>
+            <div class="list">
+              {listed.map((e) => (
+                <EventRow
+                  slug={e.id}
+                  title={e.data.title}
+                  date={e.data.date}
+                  endTime={e.data.endTime}
+                  venue={e.data.venue}
+                  summary={e.data.summary}
+                  organizer={e.data.organizer}
+                />
+              ))}
+            </div>
+            {rest.length > listed.length && (
+              <p class="more"><a href="/events/">All upcoming events</a></p>
+            )}
+          </>
         ) : (
           <p class="empty">
-            Nothing else on the calendar yet. Events usually go up two to three
-            weeks ahead — <a href="/contact/">tell us what you’d like to see</a>.
+            {heroEvent ? 'Nothing else on the calendar yet.' : 'Nothing on the calendar yet.'}
+            Events usually go up two to three weeks ahead —
+            <a href="/contact/">tell us what you’d like to see</a>.
           </p>
         )
       }
@@ -75,6 +89,7 @@ const next = upcoming[0]
                 endTime={e.data.endTime}
                 venue={e.data.venue}
                 summary={e.data.summary}
+                organizer={e.data.organizer}
                 past
               />
             ))}
@@ -111,40 +126,16 @@ const next = upcoming[0]
     }/> -->
 
   <section class="band band--sunk">
-    <div class="wrap two">
-      <div>
-        <h2>Who we are</h2>
-
-        <p>
-          The Osaka Indian Association is a community of Indian students,
-          researchers, professionals, families, and alumni living and working
-          in and around Osaka.
-        </p>
-
-        <p>
-          We bring people together through cultural celebrations, social
-          gatherings, and community activities, while helping newcomers
-          connect with others and find useful information about life in Osaka.
-        </p>
-
-        <p>
-          Whether you are new to Osaka, have been here for years, or simply
-          want to connect with the Indian community, you are welcome to join us.
-        </p>
-
-        <p><a href="/about/">Learn more about the association →</a></p>
-      </div>
-
-      <dl class="groups">
-        {
-          whoWeAre.map((g) => (
-            <div>
-              <dt>{g.group}</dt>
-              <dd>{g.note}</dd>
-            </div>
-          ))
-        }
-      </dl>
+    <div class="wrap about">
+      <h2>Who we are</h2>
+      <p>
+        A community of Indian students, researchers, professionals,
+        families, and alumni in and around Osaka. New here or here for years, you're welcome.
+      </p>
+      <ul class="groups">
+        {whoWeAre.map((g) => <li>{g.group}</li>)}
+      </ul>
+      <p><a href="/about/">Learn more about the association →</a></p>
     </div>
   </section>
 
@@ -174,34 +165,26 @@ const next = upcoming[0]
     padding-top: 1.5rem;
   }
 
-  .two {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
-    gap: clamp(2rem, 5vw, 4rem);
+  .about p {
+    max-width: 60ch;
   }
 
   .groups {
-    margin: 0;
-    display: grid;
-    gap: 1.25rem;
-    align-content: start;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
   }
 
-  .groups div {
-    padding-left: 1rem;
-    border-left: 2px solid var(--marigold);
-  }
-
-  dt {
+  .groups li {
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--marigold);
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 1.05rem;
-  }
-
-  dd {
-    margin: 0.2rem 0 0;
-    color: var(--indigo);
-    font-size: 0.97rem;
+    font-size: 0.95rem;
   }
 
   .more {
@@ -228,11 +211,5 @@ const next = upcoming[0]
   .quiet-on-ink:hover {
     background: var(--paper);
     color: var(--ink);
-  }
-
-  @media (max-width: 52rem) {
-    .two {
-      grid-template-columns: 1fr;
-    }
   }
 </style>

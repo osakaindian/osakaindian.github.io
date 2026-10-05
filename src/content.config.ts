@@ -22,6 +22,7 @@ const events = defineCollection({
     date: z.coerce.date(),
     // Optional end time, shown as "18:00 – 21:00"
     endTime: z.string().optional(),
+    endDate: z.coerce.date().optional(),
     venue: z.string(),
     // A Google Maps link, if you have one.
     mapUrl: z.string().url().optional(),
@@ -32,6 +33,7 @@ const events = defineCollection({
     registerUrl: z.string().url().optional(),
     // Set to true while you're still writing it. Drafts never appear on the site.
     draft: z.boolean().default(false),
+    organizer: z.enum(['oia', 'external']).default('oia'),
   }),
 });
 
