@@ -5,7 +5,89 @@ import { site } from '../site.config';
 // Edit this list to change the guide. Each section renders as a block, and
 // the side navigation is generated from the same titles — add a section here
 // and a link appears automatically, nothing else to update.
+//
+// A section can be one of three shapes:
+//   - places:  a directory of links (see Food)
+//   - image:   a single image instead of text (see Travel)
+//   - table:   a two-column table, written either as
+//        items:  [[term, description], ...]            (one simple table)
+//        groups: [{ label, rows: [[term, description, optional badge]] }]
+//                                                      (table with sub-headings)
+//      Optional `cols: ['Left heading', 'Right heading']` renames the
+//      column headings. Defaults: items → Topic / Details,
+//      groups → Situation / What to do.
 const sections = [
+  {
+    title: 'Emergency',
+    groups: [
+      {
+        label: 'Call right away',
+        rows: [
+          [
+            'Medical emergency or fire',
+            'Ask for an ambulance. Give your location as clearly as you can and follow the operator\'s instructions.',
+            '119'
+          ],
+          [
+            'Police emergency',
+            'Call when you need urgent help from the police.',
+            '110'
+          ]
+        ]
+      },
+      {
+        label: 'Healthcare',
+        rows: [
+          [
+            'Feeling unwell',
+            'Start with a nearby clinic. Your university may have a list of clinics familiar with international students.'
+          ],
+          [
+            'Health insurance',
+            'Bring your insurance card. What you pay depends on your coverage and treatment.'
+          ],
+          [
+            'Large hospitals',
+            'May ask for a clinic referral or charge an extra fee without one. Check requirements before going.'
+          ],
+          [
+            'Language support',
+            'Look for clinics with multilingual staff, or ask your international office for recommendations.'
+          ]
+        ]
+      },
+      {
+        label: 'Lost items & paperwork',
+        rows: [
+          [
+            'Lost wallet or belongings',
+            'Report it at the nearest police station or kōban.'
+          ],
+          [
+            'Lost residence card',
+            'Contact the authorities and follow the current replacement process. Keep a photo or copy somewhere safe.'
+          ],
+          [
+            'Immigration questions',
+            'Use official Immigration Services Agency information, or ask your university\'s international student office.'
+          ],
+          [
+            'Housing problems',
+            'Keep your contract and all written messages. Your international office or a local consultation service can point you to support.'
+          ]
+        ]
+      },
+      {
+        label: 'Not sure?',
+        rows: [
+          [
+            'Ask the community',
+            'Ask the association. Someone may have faced the same situation and can point you to the right office.'
+          ]
+        ]
+      }
+    ]
+  },
 
   {
     title: 'Food',
@@ -62,95 +144,109 @@ const sections = [
 
   {
     title: 'Travel',
+    // The image lives in /public/faq/Travel.jpeg and is served from the site root.
+    image: {
+      src: '/faq/Travel.jpeg',
+      alt: 'Travel guide for Osaka covering the ICOCA card, trains and subways, bicycles, walking, and late-night travel.'
+    }
+  },
+
+  // {
+  //   title: 'Apps',
+  //   // The image lives in /public/faq/Travel.jpeg and is served from the site root.
+  //   image: {
+  //     src: '/faq/apps.jpeg',
+  //     alt: 'Life is easier online, hmmm...?'
+  //   }
+  // },
+  {
+    title: 'Apps',
+    cols: ['Apps', 'What it\'s for?'],
     items: [
       [
-        'ICOCA',
-        'An ICOCA card can be used on many trains, subways, buses, and participating stores across the Kansai region. It is one of the easiest ways to handle everyday transport.'
+        'Google Maps',
+        'Google Maps works well for routes, and Japanese apps like Jorudan or NAVITIME show platform numbers and last-train times. Check the last train before heading out at night.'
       ],
       [
-        'Trains and subways',
-        'Osaka has an extensive rail and subway network. Check the route and final destination carefully, as several different railway companies operate in the same areas.'
+        'Google Translate',
+        'Google Translate\'s camera mode is handy for reading menus, food labels, and letters. Download the Japanese language pack so it works offline.'
       ],
       [
-        'Bicycles',
-        'A bicycle can be convenient for short trips and commuting. Make sure your bicycle is properly registered and follow local traffic rules.'
+        'Payments',
+        'Mobile payment apps such as PayPay are widely accepted and often run discounts. Keep some cash as a backup.'
       ],
       [
-        'Walking',
-        'Many neighbourhoods around universities and railway stations are highly walkable. Exploring your immediate area on foot is often the easiest way to find supermarkets, pharmacies, restaurants, and other useful services.'
-      ],
-      [
-        'Late-night travel',
-        'Train and bus services generally become less frequent late at night and eventually stop. Check the last train before travelling, particularly when attending events in central Osaka.'
+        'Tabelog',
+        'Tabelog is the main Japanese restaurant site, and Google Maps reviews are also useful. Filter by "vegetarian" or "halal" where available, but confirm ingredients directly.'
       ]
     ]
   },
-
   {
-    title: 'Healthcare',
+    title: 'Day trips',
+    cols: ['Place', 'Why go'],
     items: [
       [
-        'Finding a clinic',
-        'For routine medical problems, a nearby clinic is usually a useful first point of contact. Your university may maintain a list of hospitals and clinics that are familiar with international students.'
+        'Kyoto',
+        'Temples, old streets, and autumn colours, about 30 to 45 minutes by train. Popular spots get very crowded on weekends and in peak seasons, so go early.'
       ],
       [
-        'Health insurance',
-        'If you are enrolled in a public health insurance scheme, bring your insurance information when visiting a medical facility. The amount you pay at the clinic depends on your insurance coverage and the treatment you receive.'
+        'Nara',
+        'Free-roaming deer, Todai-ji, and a relaxed pace. Easy to cover in a half day.'
       ],
       [
-        'Large hospitals',
-        'Some large hospitals may recommend visiting a local clinic first or may charge additional fees when you visit without a referral. Check the hospital’s current requirements before going.'
+        'Hyogo',
+        'Kobe, scenic coastlines, Mount Rokko, and Arima Onsen. Easy to reach from Osaka, with Awaji Island also nearby.'
       ],
       [
-        'Language support',
-        'If you are not comfortable communicating in Japanese, look for clinics offering multilingual support or ask your university international office for recommendations.'
+        'Himeji',
+        'Home to Himeji Castle, one of Japan\'s best-preserved castles. Plan a few hours for the castle and grounds.'
       ],
       [
-        'Emergency',
-        'For a serious medical emergency, call 119. If you are unsure whether a situation requires emergency assistance, seek help rather than trying to manage a serious emergency alone.'
+        'Koyasan',
+        'A mountain temple town with temple lodgings (shukubo). A good choice if you want something quiet and different.'
+      ],
+      [
+        'Lake Biwa',
+        'Japan’s largest lake, known for beautiful scenery, cycling, and relaxing lakeside spots. Great for a slower day trip.'
       ]
     ]
   },
-
   {
-    title: 'Emergency',
+    title: 'Etiquettes',
     items: [
       [
-        'Lost residence card',
-        'If you lose your residence card, contact the appropriate authorities and follow the current replacement procedure. Keep a copy or photograph of your card somewhere secure to make the process easier.'
+        'Shoes',
+        'Take your shoes off at homes and some restaurants, clinics, and ryokan. Look for a raised entrance step or shoe lockers.'
       ],
       [
-        'Lost wallet or belongings',
-        'Contact the nearest police station or kōban and report lost property. Japanese police stations and kōban routinely handle lost-and-found reports.'
+        'Tipping',
+        'There is no tipping. Good service is expected as standard.'
       ],
       [
-        'Police emergency',
-        'Call 110 when you need emergency assistance from the police.'
+        'On trains',
+        'Keep your voice low, avoid phone calls, and put your bag on your lap or the rack if it\'s busy.'
       ],
       [
-        'Medical emergency',
-        'Call 119 for an ambulance or fire emergency. Give your location as clearly as possible and follow the operator’s instructions.'
+        'Escalators',
+        'In Osaka, people usually stand on the right and walk on the left, the reverse of Tokyo.'
       ],
       [
-        'Housing problems',
-        'For disputes with a landlord or property manager, keep copies of your contract and written communication. Your university international office or a local consultation service may be able to direct you to appropriate support.'
-      ],
-      [
-        'Immigration questions',
-        'For questions about your residence status, work permission, or other immigration matters, use official Immigration Services Agency information or consult your university’s international student office.'
-      ],
-      [
-        'Ask the community',
-        'If you are unsure where to start, ask the association. Someone in the community may have dealt with a similar situation and can help you identify the right office or service to contact.'
+        'Garbage',
+        'Bins in public are scarce, so carry your trash with you until you find one. Sorting rules at home are strict, so check your ward\'s schedule.'
       ]
     ]
-  },  
+  },
 ];
 
 const slugify = (s: string) =>
   s.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 const tagKey = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+
+// Table sections: `items` becomes one unlabelled group, `groups` is used as-is.
+const groupsOf = (s: any) => s.groups ?? [{ rows: s.items ?? [] }];
+const colsOf = (s: any) =>
+  s.cols ?? (s.groups ? ['Situation', 'What to do'] : ['Topic', 'Details']);
 ---
 
 <Base
@@ -211,15 +307,45 @@ const tagKey = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-');
                     ))}
                   </div>
                 </>
+              ) : s.image ? (
+                <a class="figure-link" href={s.image.src} target="_blank" rel="noopener">
+                  <img
+                    class="figure"
+                    src={s.image.src}
+                    alt={s.image.alt}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
               ) : (
-                <dl>
-                  {s.items.map(([term, body]) => (
-                    <div>
-                      <dt>{term}</dt>
-                      <dd>{body}</dd>
-                    </div>
-                  ))}
-                </dl>
+                <div class="table-wrap">
+                  <table class="quick">
+                    <thead>
+                      <tr>
+                        <th scope="col">{colsOf(s)[0]}</th>
+                        <th scope="col">{colsOf(s)[1]}</th>
+                      </tr>
+                    </thead>
+                    {groupsOf(s).map((g) => (
+                      <tbody>
+                        {g.label && (
+                          <tr class="group-row">
+                            <th colspan="2" scope="colgroup">{g.label}</th>
+                          </tr>
+                        )}
+                        {g.rows.map(([term, body, badge]) => (
+                          <tr>
+                            <th scope="row">
+                              {term}
+                              {badge && <span class="call">{badge}</span>}
+                            </th>
+                            <td>{body}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    ))}
+                  </table>
+                </div>
               )}
             </section>
           ))
@@ -324,22 +450,99 @@ const tagKey = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-');
     max-width: var(--measure);
   }
 
-  dl {
-    margin: 1.5rem 0 0;
-    display: grid;
-    gap: 1.5rem;
+  /* Image section (Travel) */
+  .figure-link {
+    display: block;
+    margin-top: 1.5rem;
   }
 
-  dt {
+  .figure {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--rule);
+    border-radius: 0.6rem;
+    background: var(--paper-sunk);
+  }
+
+  /* Tables (every items / groups section) */
+  .table-wrap {
+    margin-top: 1.5rem;
+    border: 1px solid var(--rule);
+    border-radius: 0.6rem;
+    overflow: hidden;
+  }
+
+  .quick {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .quick thead th {
+    text-align: left;
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--indigo-soft);
+    padding: 0.7rem 1rem;
+    background: var(--paper-sunk);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .quick .group-row th {
+    text-align: left;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--indigo);
+    padding: 0.55rem 1rem;
+    background: var(--paper-sunk);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .quick tbody:first-of-type .group-row th {
+    border-top: none;
+  }
+
+  .quick tbody tr:not(.group-row) th,
+  .quick tbody tr:not(.group-row) td {
+    padding: 0.75rem 1rem;
+    vertical-align: top;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .quick tbody tr:last-child th,
+  .quick tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .quick tbody tr:not(.group-row) th {
+    width: 11rem;
+    text-align: left;
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 1.05rem;
-    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+    color: var(--ink);
   }
 
-  dd {
-    margin: 0;
-    max-width: var(--measure);
+  .call {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #9b2c2c;
+    background: #fdeeee;
+    border: 1px solid #f1c4c4;
+    vertical-align: baseline;
   }
 
   /* Place directory */
@@ -469,6 +672,40 @@ const tagKey = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-');
     .place {
       flex-direction: column;
       align-items: flex-start;
+    }
+
+    /* Table rows stack on phones: term on top, description underneath. */
+    .quick thead {
+      display: none;
+    }
+
+    .quick,
+    .quick tbody,
+    .quick tr,
+    .quick th,
+    .quick td {
+      display: block;
+      width: 100%;
+    }
+
+    .quick tbody tr:not(.group-row) {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .quick tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .quick tbody tr:not(.group-row) th,
+    .quick tbody tr:not(.group-row) td {
+      padding: 0;
+      border: none;
+      width: auto;
+    }
+
+    .quick tbody tr:not(.group-row) td {
+      margin-top: 0.2rem;
     }
   }
 </style>
