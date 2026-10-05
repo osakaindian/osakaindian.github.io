@@ -35,13 +35,13 @@ export const nav = [
 export const team = [
   {
     name: 'Vidhan Kashyap',
-    role: 'President',
+    role: '',
     affiliation: 'The University of Osaka',
     photo: '/images/team/vidhan.jpg', // e.g. '/images/team/name.jpg' — blank shows initials instead
   },
   {
     name: 'Prof. Vikas Pandey',
-    role: 'Advisor',
+    role: '',
     affiliation: 'The University of Osaka',
     photo: '/images/team/vikas_ji.png',
   },
