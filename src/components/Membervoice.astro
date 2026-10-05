@@ -1,0 +1,125 @@
+---
+// Short member quotes. Aim for 3 to 6 real ones, placed just above the "New to Osaka?" call to action.
+//
+// Usage:
+//   import MemberVoice from '../components/MemberVoice.astro';
+//
+//   <MemberVoice
+//     quotes={[
+//       {
+//         text: 'I knew nobody when I arrived in April, and by May I had a friend group.',
+//         name: 'First name',
+//         detail: 'Where they study or work, and when they arrived'
+//       }
+//     ]}
+//   />
+interface Quote {
+  text: string;
+  name: string;
+  detail?: string;
+}
+
+interface Props {
+  quotes: Quote[];
+  heading?: string;
+}
+
+const { quotes, heading = 'From our members' } = Astro.props;
+---
+
+<section class="band">
+  <div class="wrap">
+    <h2>{heading}</h2>
+
+    <div class="voices" role="region" aria-label={heading} tabindex="0">
+      {
+        quotes.map((q) => (
+          <figure class="voice">
+            <blockquote>
+              <p>{q.text}</p>
+            </blockquote>
+            <figcaption>
+              <span class="who">{q.name}</span>
+              {q.detail && <span class="detail">{q.detail}</span>}
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .voices {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(23rem, 85%);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    padding-bottom: 1rem;
+  }
+
+  .voices:focus-visible {
+    outline: 2px solid var(--indigo);
+    outline-offset: 4px;
+  }
+
+  .voice {
+    margin: 0;
+    scroll-snap-align: start;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    border-left: 2px solid var(--marigold);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.25rem;
+  }
+
+  .voice blockquote {
+    margin: 0;
+  }
+
+  .voice blockquote p {
+    margin: 0;
+    max-width: none;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-transform: none;
+    color: var(--ink);
+  }
+
+  .voice blockquote p::before {
+    content: '\201C';
+  }
+
+  .voice blockquote p::after {
+    content: '\201D';
+  }
+
+  .voice figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .who {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+
+  .detail {
+    font-size: 0.88rem;
+    color: var(--indigo);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .voices {
+      scroll-behavior: smooth;
+    }
+  }
+</style>

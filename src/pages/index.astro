@@ -5,6 +5,9 @@ import Hero from '../components/Hero.astro';
 import EventRow from '../components/EventRow.astro';
 import { site, whoWeAre } from '../site.config';
 import { isUpcoming } from '../lib/date';
+import StatLine from '../components/Statline.astro';
+import PhotoStrip from '../components/Photostrip.astro';
+import MemberVoice from '../components/Membervoice.astro';
 
 const all = (await getCollection('events', ({ data }) => !data.draft)).sort(
   (a, b) => a.data.date.getTime() - b.data.date.getTime()
@@ -28,7 +31,7 @@ const next = upcoming[0]
 
 <Base>
   <Hero next={next} />
-
+  <!-- <StatLine /> -->
   <section class="band">
     <div class="wrap">
       <h2>What’s coming up</h2>
@@ -55,6 +58,57 @@ const next = upcoming[0]
       }
     </div>
   </section>
+
+  <!-- <PhotoStrip /> -->
+
+  {
+    recent.length > 0 && (
+      <section class="band">
+        <div class="wrap">
+          <h2>Recently</h2>
+          <div class="list">
+            {recent.map((e) => (
+              <EventRow
+                slug={e.id}
+                title={e.data.title}
+                date={e.data.date}
+                endTime={e.data.endTime}
+                venue={e.data.venue}
+                summary={e.data.summary}
+                past
+              />
+            ))}
+          </div>
+          <p class="more"><a href="/events/">All past events</a></p>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- <MemberVoice quotes={
+    [
+    {
+      text: 'REPLACE WITH A REAL QUOTE',
+      name: 'First name',
+      detail: 'Where they study or work, and when they arrived'
+    },
+    {
+      text: 'REPLACE WITH A REAL QUOTE',
+      name: 'First name',
+      detail: 'Where they study or work, and when they arrived'
+    },
+    {
+      text: 'REPLACE WITH A REAL QUOTE',
+      name: 'First name',
+      detail: 'Where they study or work, and when they arrived'
+    },
+    {
+      text: 'REPLACE WITH A REAL QUOTE',
+      name: 'First name',
+      detail: 'Where they study or work, and when they arrived'
+    },
+    ]
+    }/> -->
 
   <section class="band band--sunk">
     <div class="wrap two">
@@ -93,30 +147,6 @@ const next = upcoming[0]
       </dl>
     </div>
   </section>
-
-  {
-    recent.length > 0 && (
-      <section class="band">
-        <div class="wrap">
-          <h2>Recently</h2>
-          <div class="list">
-            {recent.map((e) => (
-              <EventRow
-                slug={e.id}
-                title={e.data.title}
-                date={e.data.date}
-                endTime={e.data.endTime}
-                venue={e.data.venue}
-                summary={e.data.summary}
-                past
-              />
-            ))}
-          </div>
-          <p class="more"><a href="/events/">All past events</a></p>
-        </div>
-      </section>
-    )
-  }
 
   <section class="band band--ink">
     <div class="wrap join">
