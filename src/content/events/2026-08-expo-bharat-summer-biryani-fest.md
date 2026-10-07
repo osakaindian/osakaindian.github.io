@@ -5,7 +5,7 @@ endData: 2026-10-18
 endTime: "17:00"
 venue: Expo '70 Commemorative Park, Upper Plaza (万博記念公園)
 mapUrl: https://maps.google.com/?q=Expo+70+Commemorative+Park+Senri-Banpaku-Koen+Suita+Osaka
-summary: Expo Bharat Fest 2026 AUTUMN, organized by the Japan Expo Bharat Association, features the Biryani Festival, a gathering of authentic biryani from across Japan, along with food trucks, stalls, a flea market, and more. (Listed for information, not organized by us.)
+summary: Expo Bharat Fest 2026 AUTUMN, organized by the Japan Expo Bharat Association, features the Biryani Festival, a gathering of authentic biryani from across Japan, along with food trucks, stalls, a flea market, and more.
 registerUrl: https://www.expo-bharat.jp/bharat-fes2nd
 cover: /events/expo-bharat-fest-2026-summer.jpeg
 organizer: external

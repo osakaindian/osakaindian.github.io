@@ -5,7 +5,7 @@ endData: 2026-06-19
 endTime: ""
 venue: MyDome Osaka, 3F Hall (マイドームおおさか 3階ホール)
 mapUrl: https://maps.google.com/?q=MyDome+Osaka+2-5+Honmachibashi+Chuo-ku+Osaka
-summary: The 3rd India Fashion & Lifestyle Show Osaka 2026, held June 17 to 19 and organized by JIIPA, brought together more than 60 leading Indian exporters showcasing apparel, textiles, home furnishings & crafts, and leather. (Listed for information, not organized by us.)
+summary: The 3rd India Fashion & Lifestyle Show Osaka 2026, held June 17 to 19 and organized by JIIPA, brought together more than 60 leading Indian exporters showcasing apparel, textiles, home furnishings & crafts, and leather. 
 registerUrl: https://india-trend-fair.jp/ifls/itf/en/
 cover: /events/indian_fashion_2026.jpeg
 organizer: external

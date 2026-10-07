@@ -5,7 +5,7 @@ endTime: "" # TODO: add once the official program is announced
 endData: 2026-10-17
 venue: Yodogawa Riverbed, Osaka (淀川河川敷)
 mapUrl: https://maps.google.com/?q=Yodogawa+Fireworks+Juso+Osaka
-summary: Osaka's big autumn fireworks festival lights up the sky over the Yodogawa River with around 20,000 fireworks, including music-synchronized displays. Free to watch, with paid seating also available. (Listed for information, not organized by us.)
+summary: Osaka's big autumn fireworks festival lights up the sky over the Yodogawa River with around 20,000 fireworks, including music-synchronized displays. Free to watch, with paid seating also available. 
 registerUrl: https://www.yodohanabi.com/
 cover: /events/yodogawa_fireworks.jpg
 organizer: external
