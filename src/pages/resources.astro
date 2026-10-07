@@ -263,7 +263,7 @@ const colsOf = (s: any) =>
   </section>
 
   <section class="band top">
-    <div class="wrap layout">
+    <div class="wrap wrap--narrow">
       <nav class="toc" aria-label="Sections on this page">
         <p class="toc-label">On this page</p>
         <ul>
@@ -641,7 +641,7 @@ const colsOf = (s: any) =>
   /* Below this width the side nav sits above the content as a horizontal
      scroller instead of squeezing a two-column layout onto a phone. */
   @media (max-width: 42rem) {
-    .layout {
+    /* .layout {
       grid-template-columns: 1fr;
     }
 
@@ -667,7 +667,7 @@ const colsOf = (s: any) =>
 
     .toc a:hover {
       border-color: var(--indigo-soft);
-    }
+    } */
 
     .place {
       flex-direction: column;
