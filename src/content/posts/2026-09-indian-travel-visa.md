@@ -9,74 +9,64 @@ draft: false
 ---
 
 <a id="top"></a>
-# ✈️ Travelling from Japan as an Indian Student
 
-Living in Japan gives us many opportunities to travel abroad—for conferences, academic programs, university visits, internships, holidays, or simply to explore a new country.
+Travelling on an **Indian passport** takes a bit more planning. Many countries need a visa, and even a simple connecting flight can involve immigration, a transit visa, or a change of airport.
 
-But travelling on an **Indian passport** can require a little more planning. Many countries require a visa, and even a simple connecting flight can become confusing when the connection involves immigration, a transit visa, or a change of airport.
+This guide answers the questions that come up most: **Do I need a visa? Can I leave the airport? What if I have to change airports? How long should the connection be?**
 
-Many students also travel back to India during university holidays to spend time with family.
+> **Heads up:** Visa, immigration and airline rules change. Always confirm the current requirements with the embassy, airport or airline before you travel.
 
-This guide is meant to answer some of the practical questions that come up when planning these trips:
+**Jump to:** [Japan ↔ India](#japan-india) · [Transit hubs](#transit-hubs) · [China](#china) · [Hong Kong](#hong-kong) · [Bangkok](#bangkok) · [US, Europe, Australia](#other-countries) · [Checklist](#checklist)
 
-**Do I need a visa? Can I leave the airport during transit? What happens if I have to change airports? How much time should I leave between flights?**
+---
 
-The information below is particularly aimed at **Indian passport holders living in Japan**.
+## The short version
 
-> **Important:** Visa, immigration, and airline rules can change. The information below is intended as a practical guide based on commonly used routes. Always confirm the current requirements before travelling.
+<a id="transit-hubs"></a>
 
-## 📑 Table of Contents
+The three most common stopovers between Japan and India, at a glance:
 
-- [🇮🇳 Japan → India](#japan-india)
-  - [🇯🇵 Returning to Japan](#returning-to-japan)
-- [🇨🇳 China](#china)
-  - [🏙️ Shanghai](#shanghai)
-  - [🏙️ Beijing](#beijing)
-  - [🛂 Chinese visa](#chinese-visa)
-- [🇭🇰 Hong Kong](#hong-kong)
-- [🇹🇭 Thailand / Bangkok](#thailand-bangkok)
-- [🇺🇸 United States](#united-states)
-- [🇪🇺 Europe / Schengen Area](#europe-schengen)
-- [🇦🇺 Australia](#australia)
-- [💴 Flight Costs](#flight-costs)
-- [🎒 Before You Fly](#before-you-fly)
-- [🌏 The Golden Rule](#golden-rule)
+| Hub | Staying airside | Leaving the airport | Biggest trap |
+|---|---|---|---|
+| 🇨🇳 **China** | 24-hour visa-free transit, only if you stay in the designated transit area | Chinese visa or entry permission needed | Changing airports (Hongqiao → Pudong) |
+| 🇭🇰 **Hong Kong** | No registration needed | Free Pre-arrival Registration (PAR), up to 14 days | Forgetting PAR on a long layover |
+| 🇹🇭 **Bangkok** | Straightforward | 30-day visa exemption for tourism | BKK vs DMK are different airports |
+
+> **Golden rule:** Don't just ask *"Is there a cheap flight?"* Ask **"What exactly happens between these two flights?"**
 
 ---
 
 <a id="japan-india"></a>
-## 🇮🇳 Japan → India
+## 🇮🇳 Japan ↔ India
 
-There are many flight options between Japan and India. Depending on the airline, season, destination, and how early you book, you may find tickets from around **¥40,000–¥90,000**, although both cheaper and more expensive options are possible.
+### Flight costs
 
-A direct flight to Delhi may cost around **¥65,000** under normal conditions. If you book relatively close to the travel date, such as around one month before departure, prices can reach around **¥80,000 or more**.
+| Booking | Typical price |
+|---|---|
+| Overall range | ¥40,000 – ¥90,000 |
+| Direct to Delhi, normal conditions | around ¥65,000 |
+| Booked about 1 month before | ¥80,000 or more |
 
-Connecting flights are often cheaper, but the cheapest ticket is not necessarily the easiest one.
+Connecting flights are often cheaper, but the cheapest ticket is not always the easiest. A low fare can hide:
 
-Before booking, check:
+- A very long layover
+- An airport change
+- A transit visa
+- Baggage re-check
+- A risky short connection
 
-- Which airport you arrive at
-- Which airport you depart from
-- Whether you need a transit visa
-- Whether you need to collect your baggage
-- How long the connection is
-- Whether you need to change airports
+Sometimes paying a little more for a simpler route is worth it.
 
-<a id="returning-to-japan"></a>
-### 🇯🇵 Returning to Japan
+### Returning to Japan
 
-If you are living in Japan with a valid Residence Card, you do **not** need to obtain a new Japanese visa every time you return from India.
+With a valid **Residence Card** you do **not** need a new Japanese visa each time. Eligible residents can use the **Special Re-entry Permit** and return within **one year of departure**, as long as their period of stay doesn't expire before then.
 
-For a temporary trip abroad, eligible residents can generally use the **Special Re-entry Permit** system and return within **one year of departure**, provided their period of stay does not expire before then.
-
-Before leaving Japan:
+Before you leave:
 
 1. Carry your **passport and Residence Card**.
-2. Complete the applicable **special re-entry procedure** at the airport.
+2. Complete the **special re-entry procedure** at the airport.
 3. Indicate that you intend to return to Japan.
-4. Make sure you return within the permitted period.
-
-Do not confuse the original Japanese visa in your passport with your current residence status in Japan. For residents temporarily travelling abroad, the Residence Card and applicable re-entry procedure are important for returning to Japan.
+4. Return within the permitted period.
 
 [⬆ Back to top](#top)
 
@@ -85,90 +75,32 @@ Do not confuse the original Japanese visa in your passport with your current res
 <a id="china"></a>
 ## 🇨🇳 China
 
-China is a common transit point between Japan and India, but Indian passport holders need to pay particular attention to the exact transit arrangement.
+China is a common transit point, but the exact arrangement matters a lot.
 
-China has a **24-hour visa-free transit facility** for eligible international transit passengers, but it generally requires passengers to remain within the designated transit area. If you need to leave the airport or pass through immigration, different entry requirements may apply.
+- The **24-hour visa-free transit** exists, but generally requires you to stay in the designated transit area.
+- If you must leave the airport or pass through immigration, different entry rules apply.
+- The longer **240-hour visa-free scheme does not currently include India.**
 
-China's longer **240-hour visa-free transit scheme does not currently include India** among its eligible nationalities.
+### Shanghai: two airports
 
-Because of this, the airport and itinerary you choose can make a big difference.
+| Route | What it means |
+|---|---|
+| Tokyo → **Pudong** → Delhi | Same airport. You can generally stay within the transit process if your itinerary qualifies. |
+| Tokyo → **Hongqiao** → **Pudong** → Delhi | Airport change. You must leave one airport and travel to another, so **don't assume you can do it without Chinese entry permission.** |
 
-<a id="shanghai"></a>
-### 🏙️ Shanghai
+If you can't avoid an airport change:
 
-Shanghai has two major airports:
+- Check the visa requirement **before booking**
+- Check whether your itinerary qualifies for a transit exemption
+- Leave a large buffer for immigration, baggage, the trip between airports, and check-in
 
-- **Shanghai Hongqiao International Airport (SHA)**
-- **Shanghai Pudong International Airport (PVG)**
+### Beijing
 
-This is very important when booking your flight.
+A connection of 1 to 1.5 hours at **Beijing Capital (PEK)** may be possible on paper, but it is risky. A 30 to 45 minute delay on your Tokyo flight leaves almost no time. Choose a longer connection if you can, and check whether your itinerary qualifies for transit.
 
-#### ✈️ Same airport
+### Chinese visa
 
-For example:
-
-**Tokyo → Pudong → Delhi**
-
-If both flights use Pudong and your itinerary qualifies for the applicable transit arrangement, you can generally remain within the airport's transit process without entering China.
-
-#### 🚕 Changing airports
-
-Now consider:
-
-**Tokyo → Hongqiao → Pudong → Delhi**
-
-This is completely different.
-
-You have to leave one airport and travel to another. This means you need to pass through the relevant immigration/entry procedures.
-
-For an Indian passport holder, **do not assume that you can make this transfer without Chinese entry permission**.
-
-If your itinerary does not qualify for a transit exemption, you will need the appropriate Chinese visa or entry permission **before travelling**.
-
-Do not book an airport-change connection assuming that because both airports are in Shanghai, it is treated as a normal transit.
-
-If you do have to change airports:
-
-- Check the visa requirement before booking.
-- Check whether your specific itinerary qualifies for a transit exemption.
-- Leave a large time buffer.
-- Allow time for immigration.
-- Allow time to collect baggage if necessary.
-- Allow time for the journey between airports.
-- Allow time for check-in for the next flight.
-
-**Practical rule:**
-
-> **Same Shanghai airport = much simpler.**  
-> **Hongqiao → Pudong = treat it as an airport transfer requiring entry into China unless you have confirmed that your itinerary qualifies for an exemption.**
-
-<a id="beijing"></a>
-### 🏙️ Beijing
-
-Beijing is another common transit point.
-
-You will frequently see **Beijing Capital International Airport (PEK)** on flight itineraries.
-
-A connection of around **1–1.5 hours** may technically be possible depending on the itinerary, but it is risky.
-
-If your Tokyo → Beijing flight is delayed by even 30–45 minutes, you may have very little time left for the next flight.
-
-If possible, choose a longer connection rather than the shortest possible one.
-
-Also check whether your specific itinerary qualifies for China's transit arrangements before booking.
-
-<a id="chinese-visa"></a>
-### 🛂 Chinese visa
-
-If your itinerary requires you to enter China and you do not qualify for a transit exemption, **arrange the appropriate Chinese visa before travelling**.
-
-The Chinese visa application process itself is not necessarily difficult, but the requirements can be very specific.
-
-Follow the application instructions exactly.
-
-If the application asks for a particular document, photograph, format, or piece of information, provide it exactly as requested.
-
-Do not assume that a different format will be accepted simply because it worked for someone else.
+If you need to enter China and don't qualify for an exemption, get the visa **before travelling**. The process isn't hard, but the requirements are specific. Provide every document, photo and detail **exactly as requested**. A format that worked for someone else may not be accepted for you.
 
 [⬆ Back to top](#top)
 
@@ -177,303 +109,105 @@ Do not assume that a different format will be accepted simply because it worked 
 <a id="hong-kong"></a>
 ## 🇭🇰 Hong Kong
 
-Hong Kong is another popular transit point between Japan and India.
+Hong Kong is an easy transit point for Indian passport holders.
 
-For Indian passport holders, **direct airside transit without entering Hong Kong does not require Pre-arrival Registration (PAR)**.
+| Situation | What to do |
+|---|---|
+| Staying airside, e.g. Tokyo → Hong Kong → Delhi | **No PAR required** |
+| Leaving the airport on a long layover | Complete the **free Pre-arrival Registration (PAR)** before travelling |
 
-### ✈️ Staying inside the airport
-
-For example:
-
-**Tokyo → Hong Kong → Delhi**
-
-If you remain in the airport's transit area and continue to your next flight, you generally do not need to obtain Hong Kong PAR simply for the transit.
-
-This makes Hong Kong a relatively straightforward transit point when you have a normal connecting itinerary.
-
-### 🌆 Leaving the airport
-
-The situation is different if you have a long layover and want to leave the airport.
-
-Indian passport holders who want to enter Hong Kong generally need to complete the **free Pre-arrival Registration (PAR)** before travelling, unless they qualify for an exemption.
-
-Eligible Indian nationals can visit Hong Kong visa-free for up to **14 days** under the PAR system.
-
-So:
-
-**Staying airside → No PAR required**
-
-**Leaving the airport → Complete PAR before travelling**
-
-If you have separate tickets, also check whether you need to collect your baggage and check in again.
+Eligible Indian nationals can stay in Hong Kong visa-free for up to **14 days** under PAR. If you're on separate tickets, also check whether you need to collect your baggage and check in again.
 
 [⬆ Back to top](#top)
 
 ---
 
-<a id="thailand-bangkok"></a>
-## 🇹🇭 Thailand / Bangkok
+<a id="bangkok"></a>
+## 🇹🇭 Bangkok
 
-Bangkok is another very common connecting point between Japan and India.
+Bangkok has **two international airports**, so always check the code when booking:
 
-The most important thing to remember is that Bangkok has **two major international airports**:
+- **BKK**: Suvarnabhumi
+- **DMK**: Don Mueang
 
-- **Suvarnabhumi Airport (BKK)**
-- **Don Mueang International Airport (DMK)**
+| Route | What it means |
+|---|---|
+| Tokyo → **BKK** → Delhi | Same airport, much easier. |
+| Tokyo → **BKK** → **DMK** → Delhi | Airport change. The trip across the city can take **an hour or more** depending on traffic. |
 
-Always check the airport code when booking.
+Indian ordinary passport holders currently get a **30-day visa exemption for tourism**, so you don't need a Thai tourist visa in advance for a short tourist visit. That makes a long same-airport layover a good chance to see the city.
 
-### ✈️ Same airport
-
-For example:
-
-**Tokyo → BKK → Delhi**
-
-If both flights use the same airport, the connection is much easier.
-
-If you have a long layover and want to leave the airport, Indian ordinary passport holders currently benefit from **Thailand's 30-day visa exemption for tourism**.
-
-Therefore, for an eligible short tourist visit, **you currently do not need to obtain a Thai tourist visa in advance**.
-
-### 🚕 Changing airports
-
-Now consider:
-
-**Tokyo → BKK → DMK → Delhi**
-
-You need to leave one airport and travel across Bangkok to the other.
-
-The journey can take around **one hour or more**, depending heavily on traffic.
-
-Because you have to leave the airport, you need to satisfy Thailand's entry requirements.
-
-For Indian ordinary passport holders, the current **30-day visa exemption for tourism** means that an eligible traveller does not currently need to obtain a Thai tourist visa in advance.
-
-However, you still need enough time for:
-
-- Immigration
-- Baggage collection
-- Travelling between airports
-- Traffic
-- Check-in for the next flight
-
-**Not recommended if you have a lot of luggage or a short connection.**
-
-### 🌆 Leaving the airport during a long layover
-
-If both flights use the same airport and you have a long layover, you can currently enter Thailand for tourism under the applicable **30-day visa-exemption arrangement** for Indian passport holders.
-
-This can make Bangkok a convenient place for a longer layover if you have enough time.
+For an airport change you still need time for immigration, baggage, traffic and check-in. **Not recommended with lots of luggage or a short connection.**
 
 [⬆ Back to top](#top)
 
 ---
 
-<a id="united-states"></a>
-## 🇺🇸 United States
+<a id="other-countries"></a>
+## 🌍 Visas for US, Europe & Australia
 
-### 🛂 B1/B2 visa
+| | 🇺🇸 United States | 🇪🇺 Schengen Area | 🇦🇺 Australia |
+|---|---|---|---|
+| **Visa** | B1/B2 for tourism and many conference trips | Schengen visa | Visa required, type depends on purpose |
+| **Process** | DS-160, fee, appointment, interview, passport return | Apply through the country responsible for your itinerary | Official Australian immigration system |
+| **Timing** | Varies. Don't assume one week. | Can be slow in busy periods | Varies |
 
-For tourism and many conference-related trips, **Indian passport holders generally need a B1/B2 visa**.
+**Apply early** for all three.
 
-A typical application involves:
+### Documents for conferences and academic trips
 
-1. Completing the **DS-160**.
-2. Paying the visa application fee.
-3. Scheduling the required appointment.
-4. Attending the interview.
-5. Waiting for processing and passport return.
+Keep these ready (not every country needs every item):
 
-If your documents are complete and an appointment is available, the process can move relatively quickly.
-
-However, appointment availability and processing times vary, so do not assume that the visa will always be issued within one week.
-
-### 🎓 Conference travel
-
-If you are travelling to the United States for a conference, keep the following documents ready:
-
-- Conference invitation
-- Registration confirmation
-- University information
-- Travel plan
-- Accommodation details
-
-These documents help explain the purpose of your visit.
-
-[⬆ Back to top](#top)
-
----
-
-<a id="europe-schengen"></a>
-## 🇪🇺 Europe / Schengen Area
-
-### 🛂 Schengen visa
-
-For short visits to the Schengen Area, **Indian passport holders generally need a Schengen visa**.
-
-You normally apply through the country responsible for your application based on your itinerary.
-
-Processing can take some time, especially during busy travel periods.
-
-Apply well before your planned departure.
-
-### 🎓 Academic travel
-
-For conferences, academic programs, or university visits, you may need:
-
-- Invitation letter
-- Conference registration
+- Conference invitation and registration confirmation
 - Letter from your university
-- Accommodation details
-- Flight itinerary
-- Financial documents
-- Travel insurance
+- Accommodation details and flight itinerary
+- Travel plan
+- Financial documents and travel insurance (Schengen)
 
-For university-related programs, the host professor or university may need to provide an **invitation letter**.
-
-If you are participating in an academic program, ask for this document early rather than waiting until the visa application deadline.
+For university programs, the host professor or university may need to provide an **invitation letter**. Ask for it early, not at the visa deadline.
 
 [⬆ Back to top](#top)
 
 ---
 
-<a id="australia"></a>
-## 🇦🇺 Australia
+<a id="checklist"></a>
+## 🎒 Before you fly
 
-### 🛂 Visa
+**🇯🇵 Japan**
 
-For Indian passport holders, **a visa is required to visit Australia**.
+- ☐ Passport valid
+- ☐ Residence Card valid
+- ☐ Special re-entry procedure completed
+- ☐ Return date within the permitted period
 
-The appropriate visa depends on the purpose of your trip, such as tourism, business, or attending an academic event.
+**✈️ Flight**
 
-Apply through the official Australian immigration system and prepare documents explaining your purpose of travel.
+- ☐ Airport codes checked
+- ☐ Connection time checked
+- ☐ Airport change checked
+- ☐ Baggage allowance and transfer checked
+- ☐ Separate-ticket connection identified
 
-### 🎓 Conference travel
+**🛂 Visa**
 
-If you are attending a conference or academic event, keep your:
+- ☐ Destination visa checked
+- ☐ Transit visa checked
+- ☐ Airport-change visa requirement checked
+- ☐ Invitation letter obtained if needed
+- ☐ Application submitted early
 
-- Conference invitation
-- Registration confirmation
-- University documents
-- Accommodation information
-- Travel plans
+---
 
-ready for the application.
+## 🌏 Ask these before you book
 
-Apply early because processing times can vary.
+- **Tokyo → Shanghai → Delhi**: which Shanghai airport?
+- **Tokyo → Hong Kong → Delhi**: am I staying airside or entering Hong Kong?
+- **Tokyo → Bangkok → Delhi**: is it BKK → BKK or BKK → DMK?
+
+**Check the route. Check the airport. Check the visa. Then book.** Safe travels! 🇮🇳 🇯🇵
 
 [⬆ Back to top](#top)
 
 ---
 
-<a id="flight-costs"></a>
-## 💴 Flight Costs
-
-As a general reference, flights between Japan and India can range from approximately **¥40,000 to ¥90,000**, depending on the airline, destination, season, and booking date.
-
-A direct flight to Delhi may be around **¥65,000** under normal conditions.
-
-If you book only around one month before travelling, you may see prices around **¥80,000 or more**.
-
-Connecting flights are often cheaper.
-
-However, when comparing flights, don't look only at the ticket price.
-
-A cheaper flight may involve:
-
-- A very long layover
-- An airport change
-- A transit visa
-- Baggage re-check
-- Multiple immigration procedures
-- A risky connection
-
-Sometimes paying a little more for a simpler route is worth it.
-
-[⬆ Back to top](#top)
-
----
-
-<a id="before-you-fly"></a>
-## 🎒 Before You Fly
-
-Before leaving Japan, check all of the following.
-
-### 🇯🇵 Japan
-
-☐ Passport is valid
-
-☐ Residence Card is valid
-
-☐ Special re-entry procedure completed
-
-☐ Return date is within the permitted period
-
-### ✈️ Flight
-
-☐ Airport code checked
-
-☐ Connection time checked
-
-☐ Airport change checked
-
-☐ Baggage allowance checked
-
-☐ Baggage transfer checked
-
-☐ Separate-ticket connection identified
-
-### 🛂 Visa
-
-☐ Destination visa checked
-
-☐ Transit visa checked
-
-☐ Airport-change visa requirement checked
-
-☐ Invitation letter obtained if needed
-
-☐ Visa application completed early
-
-[⬆ Back to top](#top)
-
----
-
-<a id="golden-rule"></a>
-## 🌏 The Golden Rule
-
-When searching for an international flight, don't just ask:
-
-**"Is there a cheap flight?"**
-
-Ask:
-
-**"What exactly happens between these two flights?"**
-
-For example:
-
-**Tokyo → Shanghai → Delhi**
-
-→ Which Shanghai airport?
-
-**Tokyo → Hong Kong → Delhi**
-
-→ Am I staying airside or entering Hong Kong?
-
-**Tokyo → Bangkok → Delhi**
-
-→ Is it BKK → BKK or BKK → DMK?
-
-These small details can completely change what you need to do.
-
-A little preparation before booking can save you from a lot of trouble at the airport.
-
-**Check the route. Check the airport. Check the visa. Then book.**
-
-Safe travels! 🇮🇳 🇯🇵 🌏
-
-[⬆ Back to top](#top)
-
----
-
-*This article is intended as a practical guide for Indian students living in Japan. Visa, transit, immigration, and airline requirements can change. Always confirm the current requirements with the relevant embassy, immigration authority, airport, or airline before travelling.*
+*This article is a practical guide for Indian students living in Japan. Visa, transit, immigration and airline requirements can change. Always confirm the current requirements with the relevant embassy, immigration authority, airport or airline before travelling.*
