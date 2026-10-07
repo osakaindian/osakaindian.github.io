@@ -1,6 +1,6 @@
 ---
 title: "Choosing a SIM in Japan"
-date: 2026-09-04T09:00
+date: 2026-09-21T09:00
 category: community
 author: OIA Committee
 summary: Not sure which phone plan to pick? Here's how Japan's mobile market is organized and which type of provider fits your situation.

@@ -1,6 +1,6 @@
 ---
 title: "Just Landed in Japan? Your First-Weeks Admin Checklist"
-date: 2026-09-04T09:00
+date: 2026-10-01T09:00
 category: community
 author: OIA Committee
 summary: Residence card, health insurance, My Number, SIM, bank account and more. Here is what to sort out after arriving in Japan, in the order that makes life easiest.
