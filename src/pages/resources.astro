@@ -264,8 +264,8 @@ const colsOf = (s: any) =>
 
   <section class="band top">
     <div class="wrap wrap--narrow">
-      <nav class="toc" aria-label="Sections on this page">
-        <p class="toc-label">On this page</p>
+      <nav class="jump" aria-label="Sections on this page">
+        <span class="jump-label">On this page</span>
         <ul>
           {
             sections.map((s) => (
@@ -371,18 +371,18 @@ const colsOf = (s: any) =>
 
   /* wrap--narrow caps line length for reading; this page needs the wider
      wrap so the side nav has somewhere to sit. */
-  .layout {
+  /* .layout {
     display: grid;
     grid-template-columns: 14rem minmax(0, 1fr);
     gap: clamp(2rem, 5vw, 4rem);
     align-items: start;
-  }
+  } */
 
   .content {
     max-width: 48rem;
   }
 
-  .toc {
+  /* .toc {
     position: sticky;
     top: 1.5rem;
   }
@@ -419,7 +419,7 @@ const colsOf = (s: any) =>
   .toc a:hover {
     color: var(--ink);
     border-left-color: var(--indigo-soft);
-  }
+  } */ 
 
   .caveat {
     background: var(--paper-sunk);
@@ -475,6 +475,8 @@ const colsOf = (s: any) =>
 
   .quick {
     width: 100%;
+    min-width: 0;          /* cancels the global 720px */
+    table-layout: auto;    /* cancels the global fixed layout */
     border-collapse: collapse;
     font-size: 0.95rem;
     line-height: 1.45;
@@ -641,35 +643,26 @@ const colsOf = (s: any) =>
   /* Below this width the side nav sits above the content as a horizontal
      scroller instead of squeezing a two-column layout onto a phone. */
   @media (max-width: 42rem) {
-    /* .layout {
-      grid-template-columns: 1fr;
+
+    .jump {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
     }
 
-    .toc {
-      position: static;
+    .jump ul {
+      flex-wrap: nowrap;
       overflow-x: auto;
-      padding-bottom: 0.5rem;
-    }
-
-    .toc ul {
-      display: flex;
-      gap: 0.5rem;
-      border-left: none;
+      width: 100%;
       white-space: nowrap;
+      scrollbar-width: none;
     }
 
-    .toc a {
-      border: 1px solid var(--rule);
-      border-radius: 999px;
-      padding: 0.35rem 0.9rem;
-      margin-left: 0;
+    .jump ul::-webkit-scrollbar {
+      display: none;
     }
 
-    .toc a:hover {
-      border-color: var(--indigo-soft);
-    } */
-     
-    .toc ul {
+    /* .toc ul {
       flex-wrap: nowrap;
       overflow-x: auto;
       padding-bottom: 0.4rem;
@@ -678,7 +671,7 @@ const colsOf = (s: any) =>
 
     .toc ul::-webkit-scrollbar {
       display: none;
-    }
+    } */
 
     .place {
       flex-direction: column;
