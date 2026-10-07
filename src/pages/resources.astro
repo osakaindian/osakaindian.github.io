@@ -668,6 +668,17 @@ const colsOf = (s: any) =>
     .toc a:hover {
       border-color: var(--indigo-soft);
     } */
+     
+    .toc ul {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 0.4rem;
+      scrollbar-width: none;
+    }
+
+    .toc ul::-webkit-scrollbar {
+      display: none;
+    }
 
     .place {
       flex-direction: column;
