@@ -180,4 +180,36 @@ const multiDay = d.endDate && weekdayDate(d.endDate) !== weekdayDate(d.date);
   .prose :global(li) {
     margin-bottom: 0.4rem;
   }
+
+  /* Markdown tables inside event posts: fit the screen instead of
+    inheriting the global 720px minimum width. */
+  .prose :global(table) {
+    width: 100%;
+    min-width: 0;          /* cancels the global 720px */
+    table-layout: auto;    /* cancels the global fixed layout */
+    margin: 1.5rem 0 2rem;
+  }
+
+  .prose :global(th),
+  .prose :global(td) {
+    overflow-wrap: anywhere;
+  }
+  .prose :global(thead:has(th:empty)) {
+    display: none;
+  }
+  @media (max-width: 42rem) {
+    .prose :global(table) {
+      font-size: 0.9rem;
+    }
+
+    .prose :global(th),
+    .prose :global(td) {
+      padding: 0.6em 0.7em;
+    }
+
+    /* Keep the time / label column from hogging the width */
+    .prose :global(tbody td:first-child) {
+      width: 32%;
+    }
+  }
 </style>
