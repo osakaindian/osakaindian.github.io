@@ -1,8 +1,8 @@
 ---
 title: India Mela Kobe 2026
 date: 2026-10-10T11:00:00+09:00 # TODO: confirm date and start time
-endTime: "" # TODO: confirm
 endData: 2026-10-12
+endTime: "" # TODO: confirm
 venue: Meriken Park, Kobe (神戸メリケンパーク) # TODO: confirm venue
 mapUrl: https://maps.google.com/?q=Meriken+Park+Kobe
 summary: India Mela Kobe 2026, one of the biggest Indian cultural festivals in Japan, celebrating Indian music, dance, food, and culture, with the support of the Consulate General of India, Osaka-Kobe. 
