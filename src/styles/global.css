@@ -323,3 +323,17 @@ tbody td:first-child {
   margin-top: 1.5rem;
   font-size: 0.95rem;
 }
+.form textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+.form .btn {
+  justify-self: start;
+  cursor: pointer;
+}
+
+.form .btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
