@@ -6,6 +6,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '0 15 * * *'   # every day at 15:00 UTC = 00:00 JST
 
 permissions:
   contents: read
