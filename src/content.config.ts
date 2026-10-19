@@ -8,7 +8,6 @@ import { glob } from 'astro/loaders';
 export const postCategories = [
   { slug: 'announcements', label: 'Announcements' },
   { slug: 'community', label: 'Community' },
-  { slug: 'research', label: 'Research' },
   { slug: 'opportunities', label: 'Opportunities' },
 ] as const;
 

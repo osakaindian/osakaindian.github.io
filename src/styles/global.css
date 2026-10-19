@@ -266,3 +266,60 @@ tbody td:first-child {
   color: var(--indigo);
   /* white-space: nowrap;  <- removed so long labels can wrap */
 }
+
+
+.form {
+  display: grid;
+  gap: 1.1rem;
+  margin-top: 1rem;
+}
+
+.form label {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.form label span {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--indigo-soft);
+}
+
+.form input[type='text'],
+.form input[type='email'],
+.form textarea {
+  font: inherit;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: inherit;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: 2px solid var(--marigold);
+  outline-offset: 1px;
+}
+
+.form .btn {
+  justify-self: start;
+}
+
+.status {
+  margin: 0;
+  min-height: 1.5em;
+  color: var(--indigo);
+}
+
+/* Spam trap: hidden from people, bots tend to tick it */
+.hp {
+  position: absolute;
+  left: -9999px;
+}
+
+.fallback {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}

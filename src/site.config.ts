@@ -20,6 +20,8 @@ export const site = {
   },
   // The form new members fill in. Any Google Form link works.
   joinFormUrl: '',
+  // ...existing settings
+  contactFormKey: 'a1af640c-3eff-43ca-899e-07288f182b6a',
 };
 
 export const nav = [
@@ -65,3 +67,4 @@ export const whoWeAre = [
     note: 'Alumni who continue to contribute to and support the Indian community in Osaka. People who studied here and stayed in touch.',
   },
 ];
+
