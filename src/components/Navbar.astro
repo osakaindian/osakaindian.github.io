@@ -16,13 +16,27 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
     </a>
 
     <nav aria-label="Main">
-      <ul>
+      <ul class="menu">
         {
           nav.map((item) => (
-            <li>
+            <li class:list={['item', { 'has-sub': item.children }]}>
               <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
                 {item.label}
               </a>
+              {item.children && (
+                <ul class="sub">
+                  {item.children.map((c) => (
+                    <li>
+                      <a
+                        href={`${c.href}/`}
+                        aria-current={isCurrent(c.href) ? 'page' : undefined}
+                      >
+                        {c.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))
         }
@@ -54,7 +68,6 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
     color: var(--ink);
   }
 
-  /* A marigold bloom reduced to its simplest form: a filled disc inside a ring. */
   .brand-logo {
     width: 5rem;
     height: 3rem;
@@ -81,7 +94,8 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
     letter-spacing: 0.01em;
   }
 
-  nav ul {
+  /* Top-level menu only (.menu), so the dropdown list isn't laid out as a row */
+  .menu {
     display: flex;
     flex-wrap: wrap;
     gap: 0.35rem 1.35rem;
@@ -90,7 +104,11 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
     padding: 0;
   }
 
-  nav a {
+  .item {
+    position: relative;
+  }
+
+  .menu a {
     font-family: var(--font-display);
     font-size: 0.95rem;
     text-decoration: none;
@@ -99,20 +117,83 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
     border-bottom: 2px solid transparent;
   }
 
-  nav a:hover {
+  .menu a:hover {
     border-bottom-color: var(--marigold);
     color: var(--ink);
   }
 
-  nav a[aria-current='page'] {
+  .menu a[aria-current='page'] {
     border-bottom-color: var(--indigo);
+  }
+
+  /* Small caret on items that have a dropdown */
+  .has-sub > a::after {
+    content: '';
+    display: inline-block;
+    width: 0.35em;
+    height: 0.35em;
+    margin-left: 0.4em;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: translateY(-0.15em) rotate(45deg);
+  }
+
+  /* Dropdown */
+  .sub {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -0.75rem;
+    min-width: 12rem;
+    margin: 0;
+    padding: 0.5rem 0 0.4rem;
+    list-style: none;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 0.4rem;
+    box-shadow: 0 6px 18px rgba(17, 26, 51, 0.1);
+    z-index: 30;
+  }
+
+  .sub a {
+    display: block;
+    padding: 0.5rem 1rem;
+    border-bottom: none;
+    white-space: nowrap;
+  }
+
+  .sub a:hover {
+    background: var(--paper-sunk);
+    border-bottom: none;
+  }
+
+  .sub a[aria-current='page'] {
+    border-bottom: none;
+    color: var(--indigo);
+    font-weight: 600;
+  }
+
+  .has-sub:hover .sub,
+  .has-sub:focus-within .sub {
+    display: block;
+  }
+
+  @media (max-width: 42rem) {
+    /* No hover on phones: FAQ opens the topics page instead */
+    .sub {
+      display: none !important;
+    }
+
+    .has-sub > a::after {
+      display: none;
+    }
   }
 
   @media (max-width: 34rem) {
     .brand-full {
       display: none;
     }
-    nav a {
+    .menu a {
       font-size: 0.9rem;
     }
   }

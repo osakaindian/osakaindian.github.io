@@ -1,0 +1,70 @@
+---
+import Base from '../../layouts/Base.astro';
+import GuideSection from '../../components/GuideSection.astro';
+import { sections, slugify } from '../../data/guide';
+import { withBase } from '../../lib/base';
+
+export function getStaticPaths() {
+  return sections.map((s) => ({
+    params: { slug: slugify(s.title) },
+    props: { section: s },
+  }));
+}
+
+const { section } = Astro.props;
+---
+
+<Base title={section.title} description={section.blurb ?? `${section.title}: a practical guide for living in Osaka.`}>
+  <section class="band head">
+    <div class="wrap wrap--narrow">
+      <p class="back"><a href={withBase('/resources/')}>All topics</a></p>
+      <h1>{section.title}</h1>
+      {section.intro && <p class="lede">{section.intro}</p>}
+    </div>
+  </section>
+
+  <section class="band top">
+    <div class="wrap wrap--narrow">
+      <GuideSection section={section} />
+
+      <p class="caveat">
+        This guide is based on experiences shared by members of our community. Procedures can
+        change, so please confirm important matters with your municipality, university, or the
+        relevant office.
+      </p>
+
+      <nav class="more" aria-label="Other topics">
+        {sections
+          .filter((s) => s !== section)
+          .map((s) => (
+            <a href={withBase(`/resources/${slugify(s.title)}/`)}>{s.title}</a>
+          ))}
+      </nav>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .head { padding-block: clamp(2.5rem, 6vw, 4rem) 0; }
+  .top { padding-top: 2rem; }
+  .back { font-family: var(--font-display); font-size: 0.9rem; margin-bottom: 1.25rem; }
+  .caveat {
+    margin-top: 2.5rem;
+    background: var(--paper-sunk);
+    border-left: 4px solid var(--indigo-soft);
+    padding: 1rem 1.2rem;
+    font-size: 0.95rem;
+    color: var(--indigo);
+    max-width: none;
+  }
+  .more { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .more a {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    padding: 0.35rem 0.8rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    text-decoration: none;
+  }
+  .more a:hover { background: var(--paper-sunk); }
+</style>

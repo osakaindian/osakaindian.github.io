@@ -1,0 +1,281 @@
+---
+const { section: s } = Astro.props;
+const tagKey = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+const groupsOf = (s: any) => s.groups ?? [{ rows: s.items ?? [] }];
+const colsOf = (s: any) =>
+  s.cols ?? (s.groups ? ['Situation', 'What to do'] : ['Topic', 'Details']);
+---
+
+{
+  s.places ? (
+    <div class="place-list">
+      {s.places.map((place: any) => (
+        <a class="place" href={place.url} target="_blank" rel="noopener">
+          <div class="place-main">
+            <span class="place-name">{place.name}</span>
+            <span class="place-area">{place.area}</span>
+          </div>
+          <div class="tags">
+            {place.types.map((type: string) => (
+              <span class="tag" data-tag={tagKey(type)}>{type}</span>
+            ))}
+          </div>
+        </a>
+      ))}
+    </div>
+  ) : s.image ? (
+    <a class="figure-link" href={s.image.src} target="_blank" rel="noopener">
+      <img class="figure" src={s.image.src} alt={s.image.alt} loading="lazy" decoding="async" />
+    </a>
+  ) : (
+    <div class="table-wrap">
+      <table class="quick">
+        <thead>
+          <tr>
+            <th scope="col">{colsOf(s)[0]}</th>
+            <th scope="col">{colsOf(s)[1]}</th>
+          </tr>
+        </thead>
+        {groupsOf(s).map((g: any) => (
+          <tbody>
+            {g.label && (
+              <tr class="group-row">
+                <th colspan="2" scope="colgroup">{g.label}</th>
+              </tr>
+            )}
+            {g.rows.map(([term, body, badge]: string[]) => (
+              <tr>
+                <th scope="row">
+                  {term}
+                  {badge && <span class="call">{badge}</span>}
+                </th>
+                <td>{body}</td>
+              </tr>
+            ))}
+          </tbody>
+        ))}
+      </table>
+    </div>
+  )
+}
+
+<style>
+  .figure-link {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .figure {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--rule);
+    border-radius: 0.6rem;
+    background: var(--paper-sunk);
+  }
+
+  .table-wrap {
+    margin-top: 0.5rem;
+    border: 1px solid var(--rule);
+    border-radius: 0.6rem;
+    overflow: hidden;
+  }
+
+  .quick {
+    width: 100%;
+    min-width: 0;
+    table-layout: auto;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .quick thead th {
+    text-align: left;
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--indigo-soft);
+    padding: 0.7rem 1rem;
+    background: var(--paper-sunk);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .quick .group-row th {
+    text-align: left;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--indigo);
+    padding: 0.55rem 1rem;
+    background: var(--paper-sunk);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .quick tbody:first-of-type .group-row th {
+    border-top: none;
+  }
+
+  .quick tbody tr:not(.group-row) th,
+  .quick tbody tr:not(.group-row) td {
+    padding: 0.75rem 1rem;
+    vertical-align: top;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .quick tbody tr:last-child th,
+  .quick tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .quick tbody tr:not(.group-row) th {
+    width: 11rem;
+    text-align: left;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+
+  .call {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #9b2c2c;
+    background: #fdeeee;
+    border: 1px solid #f1c4c4;
+    vertical-align: baseline;
+  }
+
+  .place-list {
+    margin-top: 0.5rem;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .place {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid var(--rule);
+    border-radius: 0.6rem;
+    text-decoration: none;
+    color: inherit;
+    background: var(--paper);
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .place:hover {
+    border-color: var(--indigo-soft);
+    background: var(--paper-sunk);
+  }
+
+  .place-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 10rem;
+  }
+
+  .place-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--indigo);
+  }
+
+  .place-area {
+    font-size: 0.85rem;
+    color: var(--ink);
+    opacity: 0.65;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tag {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: var(--paper-sunk);
+    color: var(--indigo);
+    border: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+
+  .tag[data-tag='vegetarian'] {
+    color: #3f7d4a;
+    border-color: #bfe0c4;
+    background: #eef8ef;
+  }
+
+  .tag[data-tag='halal'] {
+    color: #8a5a10;
+    border-color: #ecd6ab;
+    background: #fbf3e3;
+  }
+
+  .tag[data-tag='groceries'] {
+    color: var(--indigo);
+    border-color: var(--rule);
+    background: var(--paper-sunk);
+  }
+
+  @media (max-width: 42rem) {
+    .place {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .quick thead {
+      display: none;
+    }
+
+    .quick,
+    .quick tbody,
+    .quick tr,
+    .quick th,
+    .quick td {
+      display: block;
+      width: 100%;
+    }
+
+    .quick tbody tr:not(.group-row) {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .quick tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .quick tbody tr:not(.group-row) th,
+    .quick tbody tr:not(.group-row) td {
+      padding: 0;
+      border: none;
+      width: auto;
+    }
+
+    .quick tbody tr:not(.group-row) td {
+      margin-top: 0.2rem;
+    }
+  }
+</style>

@@ -2,6 +2,7 @@
 // Everything a future committee is likely to change lives in this one file.
 // Edit it on github.com directly — no need to run the site locally.
 // ---------------------------------------------------------------------------
+import { topics } from './data/guide';
 
 export const site = {
   name: 'Osaka Indian Association',
@@ -27,7 +28,7 @@ export const site = {
 export const nav = [
   { href: '/events', label: 'Events' },
   { href: '/posts', label: 'Posts' },
-  { href: '/resources', label: 'FAQ' },
+  { href: '/resources', label: 'FAQ', children: topics },
   { href: '/team', label: 'Team' },
   { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact' },

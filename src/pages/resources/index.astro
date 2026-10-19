@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import { sections, slugify } from '../../data/guide';
+import { withBase } from '../../lib/base';
+---
+
+<Base title="FAQ" description="Practical notes for Indians arriving in Osaka.">
+  <section class="band head">
+    <div class="wrap wrap--narrow">
+      <h1>Living in Osaka</h1>
+      <p class="lede">
+        A practical guide to settling in and everyday life in Osaka. Pick a topic to get started.
+      </p>
+    </div>
+  </section>
+
+  <section class="band top">
+    <div class="wrap wrap--narrow">
+      <div class="grid">
+        {sections.map((s) => (
+          <a class="card" href={withBase(`/resources/${slugify(s.title)}/`)}>
+            <h2>{s.title}</h2>
+            {s.blurb && <p>{s.blurb}</p>}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .head { padding-block: clamp(2.5rem, 6vw, 4rem) 0; }
+  .top { padding-top: 2.5rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 1rem; }
+  .card {
+    display: block;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--rule);
+    border-radius: 0.6rem;
+    text-decoration: none;
+    color: inherit;
+    background: var(--paper);
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .card:hover { border-color: var(--indigo-soft); background: var(--paper-sunk); }
+  .card h2 { font-size: 1.25rem; margin: 0 0 0.3rem; }
+  .card h2::after { display: none; } /* removes the global marigold underline */
+  .card p { margin: 0; font-size: 0.95rem; color: var(--indigo); }
+</style>
