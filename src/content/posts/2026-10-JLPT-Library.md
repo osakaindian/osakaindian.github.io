@@ -8,59 +8,92 @@ cover: /posts/japanese-youtube-library.png
 draft: false
 ---
 
-*Thank you to the community members who gathered and shared these materials.*
-
-**Find your level, open the relevant section, and follow the resources and plan step by step.**
+There are thousands of Japanese resources out there, and most guides dump all of them on you at once. This one works differently: **find your level, open that section, and ignore the rest** until you need it.
 
 ## Not sure of your level?
 
-| If this sounds like you... | Start here |
-|---|---|
-| I can't read hiragana or katakana yet | **Level 0** |
-| I know the basics and can introduce myself, order food, ask simple questions | **Level 1** |
-| I can have simple daily conversations but struggle with news, forms, or fast speech | **Level 2** |
-| I can follow most daily life and study, but want to sound natural or handle work and academic Japanese | **Level 3** |
+<div class="table-scroll">
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>JLPT (roughly)</th>
+<th>Sounds like you</th>
+<th>Main goal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Level 0</strong></td>
+<td>Before N5</td>
+<td>You can't read hiragana or katakana yet</td>
+<td>Learn kana and a few survival phrases</td>
+</tr>
+<tr>
+<td><strong>Level 1</strong></td>
+<td>N5 to N4</td>
+<td>You know the basics: you can introduce yourself, order food, and ask simple questions</td>
+<td>Core grammar, everyday vocabulary, and speaking from day one</td>
+</tr>
+<tr>
+<td><strong>Level 2</strong></td>
+<td>N3</td>
+<td>You can manage simple daily conversations but struggle with news, forms, or fast speech</td>
+<td>Reading and listening in volume, and linking ideas together</td>
+</tr>
+<tr>
+<td><strong>Level 3</strong></td>
+<td>N2 and above</td>
+<td>You can follow daily life and study, but want to sound natural or handle work and academic Japanese</td>
+<td>Keigo, academic and work vocabulary, and natural expression</td>
+</tr>
+</tbody>
+</table>
+</div>
 
-*The levels roughly match JLPT: Level 0 is before N5, Level 1 is N5 to N4, Level 2 is N3, and Level 3 is N2 and above. You don't need to take the JLPT to use this guide.*
+*JLPT levels are only a rough guide. You don't need to take the test to use this guide.*
 
 ## Pick your level
 
-Each level has a short list of playlists to start with. If you want more choice, open **"See all playlists"** at the bottom of your level.
+**Tap a level card to open it.** Each level has a short list of playlists to start with. If you want more choice, open **"See all playlists"** at the bottom of your level.
 
-<details>
-<summary><strong>Level 0: Complete beginner</strong></summary>
+<details style="border:1px solid rgba(128,128,128,.4);border-radius:12px;padding:0 16px;margin:14px 0;overflow:hidden;">
+<summary style="cursor:pointer;margin:0 -16px;padding:16px;font-size:1.1em;background:rgba(99,102,241,.14);"><span style="display:inline-block;padding:2px 10px;margin-right:8px;border-radius:999px;background:rgba(99,102,241,.3);font-size:.7em;font-weight:700;letter-spacing:.06em;vertical-align:middle;">LEVEL 0</span><strong>🌱 Complete beginner</strong><span style="opacity:.7;font-size:.85em;"> · before N5</span></summary>
 
 **Goal for the first month:** read hiragana and katakana, and survive daily situations (greetings, shops, restaurants, trains).
- 
+
 **Focus on**
- 
+
 - Hiragana, then katakana. Most people manage each in one to two weeks of short daily practice.
 - 50 to 100 survival phrases, not grammar theory.
 - Listening to the sounds of Japanese. The pronunciation is simpler than most languages.
+
 **Resources**
- 
+
 - **Textbook:** Genki I or Minna no Nihongo I. Pick one and stick with it.
 - **Free courses:** The Japan Foundation's *Irodori* and *Marugoto* online courses are designed for people living in Japan.
 - **Apps:** Any kana trainer (Tofugu's guides are popular), plus Anki or a similar flashcard app.
 - **In person:** Ask your university or local international association about free beginner classes. Many are run by volunteers.
+
 **Free kana resources to start with**
- 
+
 - [Learn ALL Hiragana/Katakana in 1 Hour](https://tofugu.com/japanese-learning-resources-database/hiragana-katakana-in-1-hour-how-to-write-and-read-japanese): two one-hour YouTube lessons, one for hiragana and one for katakana, taught by a native speaker. Each character comes with stroke order and a memory picture. This page links to the videos and explains how they work.
 - **10-Day Hiragana Challenge** and **10-Day Katakana Challenge** (JapanesePod101 on YouTube): the same lessons cut into short daily videos. Search the exact titles on YouTube. They're a good fit if an hour at a time is too much.
 - [Tofugu: Learn Hiragana, the Ultimate Guide](https://www.tofugu.com/japanese/learn-hiragana/): a free written guide with pronunciation, memory pictures, and a quiz. Good if you prefer reading to watching.
+
 **Suggested order:** hiragana first, then katakana. Don't try to learn both at the same time, because some characters look alike.
- 
+
 **Advice**
- 
+
 - Don't start with kanji yet. Kana first, then kanji slowly alongside vocabulary.
 - Use what you learn the same day: say "arigatou gozaimasu" at the convenience store, read the signs on your commute.
 
 **Common mistake:** relying on romaji for too long. It feels easier now, but it slows you down badly later.
- 
+
 </details>
 
-<details>
-<summary><strong>Level 1: Beginner (N5 to N4)</strong></summary>
+<details style="border:1px solid rgba(128,128,128,.4);border-radius:12px;padding:0 16px;margin:14px 0;overflow:hidden;">
+<summary style="cursor:pointer;margin:0 -16px;padding:16px;font-size:1.1em;background:rgba(99,102,241,.14);"><span style="display:inline-block;padding:2px 10px;margin-right:8px;border-radius:999px;background:rgba(99,102,241,.3);font-size:.7em;font-weight:700;letter-spacing:.06em;vertical-align:middle;">LEVEL 1</span><strong>🌿 Beginner</strong><span style="opacity:.7;font-size:.85em;"> · N5 to N4</span></summary>
 
 **Goal:** hold simple conversations, read short texts with furigana, and learn your first 300 to 500 kanji over time.
 
@@ -85,58 +118,236 @@ Each level has a short list of playlists to start with. If you want more choice,
 - [N5 Listening](https://www.youtube.com/playlist?list=PLmMaLPtNRl6WLg2aTM1bE0Zk5mTR6Xa1u): 24 short listening practices.
 - [N4 vocabulary with sample sentences](https://www.youtube.com/watch?v=EVtaWQrHasQ): when you're ready to move up.
 
-<details>
-<summary>See all N5 and N4 playlists</summary>
+<details style="margin:12px 0;">
+<summary style="cursor:pointer;padding:10px 14px;border:1px dashed rgba(128,128,128,.6);border-radius:8px;font-weight:600;">📚 See all N5 and N4 playlists</summary>
 
 **N5**
 
 <div class="table-scroll">
-
-| Playlist | Skill | Size | Notes |
-|---|---|---|---|
-| [Learn All 800 JLPT N5 Vocabulary](https://www.youtube.com/watch?v=nuI4OgsJv_Q) | Vocabulary | 1h 52m | Words only |
-| [719 N5 Vocabulary with Sample Sentences](https://www.youtube.com/watch?v=vyB-TQNLWfY) | Vocabulary | 2h 22m | Watch after the video above |
-| [Minna no Nihongo Vocabulary](https://www.youtube.com/playlist?list=PLag_mhJfCJ-038RtKIdpE4KSi4t-Z98UT) | Vocabulary | 50 videos | Covers N5 and N4 |
-| [Online Japanese Kanji Course (N5)](https://www.youtube.com/playlist?list=PL8dhMOKO4oIc0ERE84XYa_SEtx4S2R6IW) | Kanji | 18 videos | In Japanese |
-| [Minna no Nihongo Grammar](https://www.youtube.com/playlist?list=PLag_mhJfCJ-18WyYoklCPxIpYbeRgmWLJ) | Grammar | 50 videos | Covers N5 and N4 |
-| [JLPT N5 grammar](https://www.youtube.com/playlist?list=PLY94j5ZZrtXbS8jlLmf-SUSIR2ytwV1SF) | Grammar | 45 videos | |
-| [JLPT N5 grammar (short lessons)](https://www.youtube.com/playlist?list=PLd5-Wp_4tLqaDGh1kvlS_N0X3O_bTaKar) | Grammar | 16 videos | |
-| [Complete N5 Grammar Video(Game) Textbook](https://www.youtube.com/watch?v=_ojVS-KgDEg) | Grammar | 2h 10m | Game-style explanations |
-| [N5 and N4 Adjectives and Verbs (日本語の森)](https://www.youtube.com/watch?v=27MDjnm4qN8) | Grammar | 46 min | Best after the basics |
-| [JLPT N5 Lessons](https://www.youtube.com/playlist?list=PL8dhMOKO4oIfIe7XxG0sRUe4wv5YOZOXe) | All skills | 60 videos | In Japanese, exam-focused |
-| [N5 Listening (Airi sensei)](https://www.youtube.com/playlist?list=PLmrns23EUQtOaXd0_DzG3oTeUjsR4fGcZ) | Listening | 17 videos | In Japanese |
-| [N5 Listening](https://www.youtube.com/playlist?list=PLmMaLPtNRl6WLg2aTM1bE0Zk5mTR6Xa1u) | Listening | 24 videos | Practice |
-| [Listening JLPT N5 Tanki Master](https://www.youtube.com/watch?v=BKCfQvFUrBE) | Listening | 21 min | Practice |
-| [JLPT N5 Practice](https://www.youtube.com/playlist?list=PLa4W8jZ2svQx-50rNIJQog1yr-ghVivsF) | Practice | 5 videos | General revision |
-| [N5 Practice Test in 40 minutes](https://www.youtube.com/watch?v=vSVqPhHWgIU) | Mock test | 44 min | Quick full run |
-| [N5 Drills: Practice Test Questions](https://www.youtube.com/playlist?list=PLMP8b3W1auVk8Kv15mMGqFmid1DyftgN1) | Mock test | 3 videos | |
-| [N5 Practice Test (all sections)](https://www.youtube.com/playlist?list=PLFMQlYp0WLkim7HKTYkyVusV2v34udttX) | Mock test | about 32 videos | |
-| [JLPT N5 Test Preparation](https://www.youtube.com/playlist?list=PLY94j5ZZrtXZBNzCqjU9yPsoG0-tmyi75) | Mock test | 4 videos | |
-| [JLPT N5 mock test](https://www.youtube.com/playlist?list=PLdUx4oR3tBFNNxtoLiCzMlfCY8hA1ZFma) | Mock test | 3 videos | |
-
+<table>
+<thead>
+<tr>
+<th>Playlist</th>
+<th>Skill</th>
+<th>Size</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.youtube.com/watch?v=nuI4OgsJv_Q">Learn All 800 JLPT N5 Vocabulary</a></td>
+<td>Vocabulary</td>
+<td>1h 52m</td>
+<td>Words only</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/watch?v=vyB-TQNLWfY">719 N5 Vocabulary with Sample Sentences</a></td>
+<td>Vocabulary</td>
+<td>2h 22m</td>
+<td>Watch after the video above</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLag_mhJfCJ-038RtKIdpE4KSi4t-Z98UT">Minna no Nihongo Vocabulary</a></td>
+<td>Vocabulary</td>
+<td>50 videos</td>
+<td>Covers N5 and N4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PL8dhMOKO4oIc0ERE84XYa_SEtx4S2R6IW">Online Japanese Kanji Course (N5)</a></td>
+<td>Kanji</td>
+<td>18 videos</td>
+<td>In Japanese</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLag_mhJfCJ-18WyYoklCPxIpYbeRgmWLJ">Minna no Nihongo Grammar</a></td>
+<td>Grammar</td>
+<td>50 videos</td>
+<td>Covers N5 and N4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLY94j5ZZrtXbS8jlLmf-SUSIR2ytwV1SF">JLPT N5 grammar</a></td>
+<td>Grammar</td>
+<td>45 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLd5-Wp_4tLqaDGh1kvlS_N0X3O_bTaKar">JLPT N5 grammar (short lessons)</a></td>
+<td>Grammar</td>
+<td>16 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/watch?v=_ojVS-KgDEg">Complete N5 Grammar Video(Game) Textbook</a></td>
+<td>Grammar</td>
+<td>2h 10m</td>
+<td>Game-style explanations</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/watch?v=27MDjnm4qN8">N5 and N4 Adjectives and Verbs (日本語の森)</a></td>
+<td>Grammar</td>
+<td>46 min</td>
+<td>Best after the basics</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PL8dhMOKO4oIfIe7XxG0sRUe4wv5YOZOXe">JLPT N5 Lessons</a></td>
+<td>All skills</td>
+<td>60 videos</td>
+<td>In Japanese, exam-focused</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLmrns23EUQtOaXd0_DzG3oTeUjsR4fGcZ">N5 Listening (Airi sensei)</a></td>
+<td>Listening</td>
+<td>17 videos</td>
+<td>In Japanese</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLmMaLPtNRl6WLg2aTM1bE0Zk5mTR6Xa1u">N5 Listening</a></td>
+<td>Listening</td>
+<td>24 videos</td>
+<td>Practice</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/watch?v=BKCfQvFUrBE">Listening JLPT N5 Tanki Master</a></td>
+<td>Listening</td>
+<td>21 min</td>
+<td>Practice</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLa4W8jZ2svQx-50rNIJQog1yr-ghVivsF">JLPT N5 Practice</a></td>
+<td>Practice</td>
+<td>5 videos</td>
+<td>General revision</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/watch?v=vSVqPhHWgIU">N5 Practice Test in 40 minutes</a></td>
+<td>Mock test</td>
+<td>44 min</td>
+<td>Quick full run</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLMP8b3W1auVk8Kv15mMGqFmid1DyftgN1">N5 Drills: Practice Test Questions</a></td>
+<td>Mock test</td>
+<td>3 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLFMQlYp0WLkim7HKTYkyVusV2v34udttX">N5 Practice Test (all sections)</a></td>
+<td>Mock test</td>
+<td>about 32 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLY94j5ZZrtXZBNzCqjU9yPsoG0-tmyi75">JLPT N5 Test Preparation</a></td>
+<td>Mock test</td>
+<td>4 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLdUx4oR3tBFNNxtoLiCzMlfCY8hA1ZFma">JLPT N5 mock test</a></td>
+<td>Mock test</td>
+<td>3 videos</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </div>
+
 
 **N4**
 
 <div class="table-scroll">
-
-| Playlist | Skill | Size | Notes |
-|---|---|---|---|
-| [Learn All 700 JLPT N4 Vocabulary](https://www.youtube.com/watch?v=iZypHFBocOg) | Vocabulary | 1h 47m | Words only |
-| [800 N4 Vocabulary with Sample Sentences](https://www.youtube.com/watch?v=EVtaWQrHasQ) | Vocabulary | 4h 26m | Watch after the one above |
-| [Online Japanese Kanji Course (N4)](https://www.youtube.com/playlist?list=PL8dhMOKO4oIcujg_bycyWsCUdWlBoDGVG) | Kanji | 41 videos | In Japanese |
-| [JLPT N4 grammar](https://www.youtube.com/playlist?list=PLY94j5ZZrtXZOIcskAfJvA5v5BnyqxvjT) | Grammar | 76 videos | |
-| [JLPT N4 grammar (short lessons)](https://www.youtube.com/playlist?list=PLd5-Wp_4tLqZ0YftzgzXYIDh8UzkhOlKz) | Grammar | 35 videos | |
-| [Complete N4 Grammar Video(Game) Textbook](https://www.youtube.com/watch?v=M0yEOIEuaDg) | Grammar | 4h 13m | Game-style explanations |
-| [JLPT N4 Mimikara Oboeru](https://www.youtube.com/watch?v=4EhkBtZJ5go) | Grammar | 1h 16m | Based on the Mimikara Oboeru book |
-| [JLPT N4 Lessons](https://www.youtube.com/playlist?list=PL8dhMOKO4oIdteGnmMdiUXJnB1-3IfmKA) | All skills | 75 videos | In Japanese, exam-focused |
-| [N4 Listening](https://www.youtube.com/playlist?list=PLmMaLPtNRl6VEnFxK1UbPXbGVmdiL-rDm) | Listening | 20 videos | Practice |
-| [N4 Listening Practice with answers](https://www.youtube.com/playlist?list=PLMP8b3W1auVm_0GisNEHRmR8IRXqJ52HM) | Listening | 6 videos | |
-| [JLPT N4 Test Preparation](https://www.youtube.com/playlist?list=PLY94j5ZZrtXa8CC7b-TUVCT8OMDPDTZVk) | Revision | 12 videos | |
-| [N4 Practice Test (all sections)](https://www.youtube.com/playlist?list=PLFMQlYp0WLkjsM-taWMm__pgLSvuWEIEK) | Mock test | 60 videos | |
-| [N4 Practice Test Questions](https://www.youtube.com/playlist?list=PLMP8b3W1auVmGBGF-0wpNerqhllhvUHeM) | Mock test | 12 videos | Multiple choice |
-
+<table>
+<thead>
+<tr>
+<th>Playlist</th>
+<th>Skill</th>
+<th>Size</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.youtube.com/watch?v=iZypHFBocOg">Learn All 700 JLPT N4 Vocabulary</a></td>
+<td>Vocabulary</td>
+<td>1h 47m</td>
+<td>Words only</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/watch?v=EVtaWQrHasQ">800 N4 Vocabulary with Sample Sentences</a></td>
+<td>Vocabulary</td>
+<td>4h 26m</td>
+<td>Watch after the one above</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PL8dhMOKO4oIcujg_bycyWsCUdWlBoDGVG">Online Japanese Kanji Course (N4)</a></td>
+<td>Kanji</td>
+<td>41 videos</td>
+<td>In Japanese</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLY94j5ZZrtXZOIcskAfJvA5v5BnyqxvjT">JLPT N4 grammar</a></td>
+<td>Grammar</td>
+<td>76 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLd5-Wp_4tLqZ0YftzgzXYIDh8UzkhOlKz">JLPT N4 grammar (short lessons)</a></td>
+<td>Grammar</td>
+<td>35 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/watch?v=M0yEOIEuaDg">Complete N4 Grammar Video(Game) Textbook</a></td>
+<td>Grammar</td>
+<td>4h 13m</td>
+<td>Game-style explanations</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/watch?v=4EhkBtZJ5go">JLPT N4 Mimikara Oboeru</a></td>
+<td>Grammar</td>
+<td>1h 16m</td>
+<td>Based on the Mimikara Oboeru book</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PL8dhMOKO4oIdteGnmMdiUXJnB1-3IfmKA">JLPT N4 Lessons</a></td>
+<td>All skills</td>
+<td>75 videos</td>
+<td>In Japanese, exam-focused</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLmMaLPtNRl6VEnFxK1UbPXbGVmdiL-rDm">N4 Listening</a></td>
+<td>Listening</td>
+<td>20 videos</td>
+<td>Practice</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLMP8b3W1auVm_0GisNEHRmR8IRXqJ52HM">N4 Listening Practice with answers</a></td>
+<td>Listening</td>
+<td>6 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLY94j5ZZrtXa8CC7b-TUVCT8OMDPDTZVk">JLPT N4 Test Preparation</a></td>
+<td>Revision</td>
+<td>12 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLFMQlYp0WLkjsM-taWMm__pgLSvuWEIEK">N4 Practice Test (all sections)</a></td>
+<td>Mock test</td>
+<td>60 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLMP8b3W1auVmGBGF-0wpNerqhllhvUHeM">N4 Practice Test Questions</a></td>
+<td>Mock test</td>
+<td>12 videos</td>
+<td>Multiple choice</td>
+</tr>
+</tbody>
+</table>
 </div>
+
 
 </details>
 
@@ -149,8 +360,8 @@ Each level has a short list of playlists to start with. If you want more choice,
 
 </details>
 
-<details>
-<summary><strong>Level 2: Lower intermediate (N3)</strong></summary>
+<details style="border:1px solid rgba(128,128,128,.4);border-radius:12px;padding:0 16px;margin:14px 0;overflow:hidden;">
+<summary style="cursor:pointer;margin:0 -16px;padding:16px;font-size:1.1em;background:rgba(99,102,241,.14);"><span style="display:inline-block;padding:2px 10px;margin-right:8px;border-radius:999px;background:rgba(99,102,241,.3);font-size:.7em;font-weight:700;letter-spacing:.06em;vertical-align:middle;">LEVEL 2</span><strong>🌳 Lower intermediate</strong><span style="opacity:.7;font-size:.85em;"> · N3</span></summary>
 
 **Goal:** understand everyday Japanese at normal speed and read real material (menus, notices, simple articles).
 
@@ -177,27 +388,96 @@ This is the level where many people feel stuck. The textbook becomes less useful
 - [N3 Listening](https://www.youtube.com/playlist?list=PLmMaLPtNRl6Wbhayed2ldA3YAaNnvTvlk): 12 listening practices.
 - [All N3 Grammar in 3 hours](https://www.youtube.com/watch?v=s6bZA2xVBkE): save this one for revision, not first-time learning.
 
-<details>
-<summary>See all N3 playlists</summary>
+<details style="margin:12px 0;">
+<summary style="cursor:pointer;padding:10px 14px;border:1px dashed rgba(128,128,128,.6);border-radius:8px;font-weight:600;">📚 See all N3 playlists</summary>
 
 <div class="table-scroll">
-
-| Playlist | Skill | Size | Notes |
-|---|---|---|---|
-| [N3ことば vocabulary](https://www.youtube.com/playlist?list=PLINFE8v4DOhsnhC58pqjXBCSNpU66tTG8) | Vocabulary | 60 videos | |
-| [JLPT N3 Kanji Course](https://www.youtube.com/playlist?list=PL8dhMOKO4oIci3dWCy7Ta4XrUqPDaLwkl) | Kanji | 18 videos | In Japanese |
-| [JLPT N3 文法 Grammar](https://www.youtube.com/playlist?list=PLINFE8v4DOhtEDGM22q0GQj7K8Os9c0ZQ) | Grammar | 20 videos | |
-| [N3文法 grammar](https://www.youtube.com/playlist?list=PLINFE8v4DOhuc4Up1z-hGiqj51aGxVQIb) | Grammar | 38 videos | Longer series |
-| [All N3 Grammar in 3 hours](https://www.youtube.com/watch?v=s6bZA2xVBkE) | Grammar | 2h 32m | Revision, not first learning |
-| [JLPT N3 Lessons](https://www.youtube.com/playlist?list=PL8dhMOKO4oIeNQ7RCzC-FSUzpTPA3efas) | All skills | 35 videos | In Japanese. The reading section is tough |
-| [JLPT N3 (short lessons)](https://www.youtube.com/playlist?list=PLd5-Wp_4tLqbynXBv5hl47SLlN7R-syMO) | All skills | 11 videos | |
-| [日本語の森 N3 summary series](https://www.youtube.com/watch?v=cy0209fGREc) | All skills | 5h 39m | Good for review |
-| [Japanese JLPT N3 (book-based)](https://www.youtube.com/playlist?list=PLUiWStHaiFLRmRU3_i7QKbrEdUddpXtwm) | All skills | 10 videos | Follows books |
-| [N3 Listening](https://www.youtube.com/playlist?list=PLmMaLPtNRl6Wbhayed2ldA3YAaNnvTvlk) | Listening | 12 videos | Practice |
-| [JLPT N3 Test Preparation](https://www.youtube.com/playlist?list=PLY94j5ZZrtXaV35x7s4J2Fi6XeTE8gkUo) | Revision | 2 videos | |
-| [N3 Practice Test (all sections)](https://www.youtube.com/playlist?list=PLFMQlYp0WLkjDnSCGBLkZ55qNsUNte4gW) | Mock test | 14 videos | |
-
+<table>
+<thead>
+<tr>
+<th>Playlist</th>
+<th>Skill</th>
+<th>Size</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLINFE8v4DOhsnhC58pqjXBCSNpU66tTG8">N3ことば vocabulary</a></td>
+<td>Vocabulary</td>
+<td>60 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PL8dhMOKO4oIci3dWCy7Ta4XrUqPDaLwkl">JLPT N3 Kanji Course</a></td>
+<td>Kanji</td>
+<td>18 videos</td>
+<td>In Japanese</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLINFE8v4DOhtEDGM22q0GQj7K8Os9c0ZQ">JLPT N3 文法 Grammar</a></td>
+<td>Grammar</td>
+<td>20 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLINFE8v4DOhuc4Up1z-hGiqj51aGxVQIb">N3文法 grammar</a></td>
+<td>Grammar</td>
+<td>38 videos</td>
+<td>Longer series</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/watch?v=s6bZA2xVBkE">All N3 Grammar in 3 hours</a></td>
+<td>Grammar</td>
+<td>2h 32m</td>
+<td>Revision, not first learning</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PL8dhMOKO4oIeNQ7RCzC-FSUzpTPA3efas">JLPT N3 Lessons</a></td>
+<td>All skills</td>
+<td>35 videos</td>
+<td>In Japanese. The reading section is tough</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLd5-Wp_4tLqbynXBv5hl47SLlN7R-syMO">JLPT N3 (short lessons)</a></td>
+<td>All skills</td>
+<td>11 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/watch?v=cy0209fGREc">日本語の森 N3 summary series</a></td>
+<td>All skills</td>
+<td>5h 39m</td>
+<td>Good for review</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLUiWStHaiFLRmRU3_i7QKbrEdUddpXtwm">Japanese JLPT N3 (book-based)</a></td>
+<td>All skills</td>
+<td>10 videos</td>
+<td>Follows books</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLmMaLPtNRl6Wbhayed2ldA3YAaNnvTvlk">N3 Listening</a></td>
+<td>Listening</td>
+<td>12 videos</td>
+<td>Practice</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLY94j5ZZrtXaV35x7s4J2Fi6XeTE8gkUo">JLPT N3 Test Preparation</a></td>
+<td>Revision</td>
+<td>2 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLFMQlYp0WLkjDnSCGBLkZ55qNsUNte4gW">N3 Practice Test (all sections)</a></td>
+<td>Mock test</td>
+<td>14 videos</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </div>
+
 
 </details>
 
@@ -211,8 +491,8 @@ This is the level where many people feel stuck. The textbook becomes less useful
 
 </details>
 
-<details>
-<summary><strong>Level 3: Upper intermediate and advanced (N2 and above)</strong></summary>
+<details style="border:1px solid rgba(128,128,128,.4);border-radius:12px;padding:0 16px;margin:14px 0;overflow:hidden;">
+<summary style="cursor:pointer;margin:0 -16px;padding:16px;font-size:1.1em;background:rgba(99,102,241,.14);"><span style="display:inline-block;padding:2px 10px;margin-right:8px;border-radius:999px;background:rgba(99,102,241,.3);font-size:.7em;font-weight:700;letter-spacing:.06em;vertical-align:middle;">LEVEL 3</span><strong>🏔️ Upper intermediate and advanced</strong><span style="opacity:.7;font-size:.85em;"> · N2 and above</span></summary>
 
 **Goal:** use Japanese for academic work, job hunting, and natural conversation with different levels of politeness.
 
@@ -236,55 +516,182 @@ This is the level where many people feel stuck. The textbook becomes less useful
 - [Business Japanese](https://www.youtube.com/playlist?list=PL8dhMOKO4oIfVXkm0zvbID6X0Be1QjdKb): 29 videos, useful for part-time jobs and job hunting.
 - [N1 Listening](https://www.youtube.com/playlist?list=PLmMaLPtNRl6X4VR6RgZWVNEvD59FIimTH): 22 listening practices.
 
-<details>
-<summary>See all N2, N1 and beyond-the-exam playlists</summary>
+<details style="margin:12px 0;">
+<summary style="cursor:pointer;padding:10px 14px;border:1px dashed rgba(128,128,128,.6);border-radius:8px;font-weight:600;">📚 See all N2, N1 and beyond-the-exam playlists</summary>
 
 **N2**
 
 <div class="table-scroll">
-
-| Playlist | Skill | Size | Notes |
-|---|---|---|---|
-| [N2ことば vocabulary](https://www.youtube.com/playlist?list=PLINFE8v4DOhuHjElR2LXixfqKKnlXoq92) | Vocabulary | 53 videos | |
-| [N2文字語彙 vocabulary](https://www.youtube.com/playlist?list=PLINFE8v4DOhsAtDcYXPfzeJspc0ReT-TU) | Vocabulary | 18 videos | |
-| [N2文法 grammar VS](https://www.youtube.com/playlist?list=PLINFE8v4DOhvV5tJT77oF92vIwLLl6wAA) | Grammar | 30 videos | Compares similar patterns |
-| [JLPT N2 文法 Grammar](https://www.youtube.com/playlist?list=PLINFE8v4DOhuZsIMdGYo9b5z0zSGKzLFN) | Grammar | 24 videos | |
-| [N2文法 grammar](https://www.youtube.com/playlist?list=PLINFE8v4DOhtU2L8_mKQzjMuZBHWPFp9S) | Grammar | 23 videos | |
-| [N2文法 grammar for JLPT](https://www.youtube.com/playlist?list=PLINFE8v4DOhv4nJgXQAymC0KLemkcE_61) | Grammar | 12 videos | |
-| [N2文法 grammar TEST](https://www.youtube.com/playlist?list=PLINFE8v4DOhs_bKmzvhi4IxeKxX-LvtYF) | Practice test | 20 videos | |
-| [All N2 Grammar in 1 hour](https://www.youtube.com/watch?v=nhP_VZtAuro) | Grammar | 1h 12m | Revision |
-| [JLPT N2 Lessons](https://www.youtube.com/playlist?list=PL8dhMOKO4oIcIXvnamu4K-kMjjdw8bpGR) | All skills | 30 videos | In Japanese |
-| [Japanese JLPT N2 (book-based)](https://www.youtube.com/playlist?list=PLUiWStHaiFLRLMA7xwR-KRMU-hNnopsN7) | All skills | 7 videos | Follows books |
-| [N2 Listening](https://www.youtube.com/playlist?list=PLmMaLPtNRl6WUkgK_yfrnVuAfP1sLIYjB) | Listening | 18 videos | Practice |
-
+<table>
+<thead>
+<tr>
+<th>Playlist</th>
+<th>Skill</th>
+<th>Size</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLINFE8v4DOhuHjElR2LXixfqKKnlXoq92">N2ことば vocabulary</a></td>
+<td>Vocabulary</td>
+<td>53 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLINFE8v4DOhsAtDcYXPfzeJspc0ReT-TU">N2文字語彙 vocabulary</a></td>
+<td>Vocabulary</td>
+<td>18 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLINFE8v4DOhvV5tJT77oF92vIwLLl6wAA">N2文法 grammar VS</a></td>
+<td>Grammar</td>
+<td>30 videos</td>
+<td>Compares similar patterns</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLINFE8v4DOhuZsIMdGYo9b5z0zSGKzLFN">JLPT N2 文法 Grammar</a></td>
+<td>Grammar</td>
+<td>24 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLINFE8v4DOhtU2L8_mKQzjMuZBHWPFp9S">N2文法 grammar</a></td>
+<td>Grammar</td>
+<td>23 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLINFE8v4DOhv4nJgXQAymC0KLemkcE_61">N2文法 grammar for JLPT</a></td>
+<td>Grammar</td>
+<td>12 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLINFE8v4DOhs_bKmzvhi4IxeKxX-LvtYF">N2文法 grammar TEST</a></td>
+<td>Practice test</td>
+<td>20 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/watch?v=nhP_VZtAuro">All N2 Grammar in 1 hour</a></td>
+<td>Grammar</td>
+<td>1h 12m</td>
+<td>Revision</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PL8dhMOKO4oIcIXvnamu4K-kMjjdw8bpGR">JLPT N2 Lessons</a></td>
+<td>All skills</td>
+<td>30 videos</td>
+<td>In Japanese</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLUiWStHaiFLRLMA7xwR-KRMU-hNnopsN7">Japanese JLPT N2 (book-based)</a></td>
+<td>All skills</td>
+<td>7 videos</td>
+<td>Follows books</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLmMaLPtNRl6WUkgK_yfrnVuAfP1sLIYjB">N2 Listening</a></td>
+<td>Listening</td>
+<td>18 videos</td>
+<td>Practice</td>
+</tr>
+</tbody>
+</table>
 </div>
+
 
 **N1**
 
 <div class="table-scroll">
-
-| Playlist | Skill | Size | Notes |
-|---|---|---|---|
-| [N1文字語彙 vocabulary](https://www.youtube.com/playlist?list=PLINFE8v4DOhthPUCUteRuOQnPoIIWeDlz) | Vocabulary | 9 videos | |
-| [N1文字語彙 vocabulary for JLPT](https://www.youtube.com/playlist?list=PLINFE8v4DOhupm4ogTh9NENENrvqJJATR) | Vocabulary | 10 videos | |
-| [JLPT N1 Grammar](https://www.youtube.com/playlist?list=PL-BKXm34J3LmhwJtvYKpCcYWpdhoEYf-f) | Grammar | 103 videos | Biggest N1 grammar series here |
-| [All N1 Grammar in about 1 hour](https://www.youtube.com/watch?v=GRmHoGeFBjA) | Grammar | 1h 04m | Revision |
-| [JLPT N1 Lessons](https://www.youtube.com/playlist?list=PL8dhMOKO4oIfv3pOLqSZohqOQNC8UMu2m) | All skills | 30 videos | In Japanese |
-| [N1 Listening](https://www.youtube.com/playlist?list=PLmMaLPtNRl6X4VR6RgZWVNEvD59FIimTH) | Listening | 22 videos | Practice |
-| [Japanese JLPT N1 (listening)](https://www.youtube.com/playlist?list=PLUiWStHaiFLR_XZ_8W-jyu438aBM0SCSQ) | Listening | 4 videos | |
-
+<table>
+<thead>
+<tr>
+<th>Playlist</th>
+<th>Skill</th>
+<th>Size</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLINFE8v4DOhthPUCUteRuOQnPoIIWeDlz">N1文字語彙 vocabulary</a></td>
+<td>Vocabulary</td>
+<td>9 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLINFE8v4DOhupm4ogTh9NENENrvqJJATR">N1文字語彙 vocabulary for JLPT</a></td>
+<td>Vocabulary</td>
+<td>10 videos</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PL-BKXm34J3LmhwJtvYKpCcYWpdhoEYf-f">JLPT N1 Grammar</a></td>
+<td>Grammar</td>
+<td>103 videos</td>
+<td>Biggest N1 grammar series here</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/watch?v=GRmHoGeFBjA">All N1 Grammar in about 1 hour</a></td>
+<td>Grammar</td>
+<td>1h 04m</td>
+<td>Revision</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PL8dhMOKO4oIfv3pOLqSZohqOQNC8UMu2m">JLPT N1 Lessons</a></td>
+<td>All skills</td>
+<td>30 videos</td>
+<td>In Japanese</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLmMaLPtNRl6X4VR6RgZWVNEvD59FIimTH">N1 Listening</a></td>
+<td>Listening</td>
+<td>22 videos</td>
+<td>Practice</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLUiWStHaiFLR_XZ_8W-jyu438aBM0SCSQ">Japanese JLPT N1 (listening)</a></td>
+<td>Listening</td>
+<td>4 videos</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </div>
+
 
 **Beyond the exam**
 
 <div class="table-scroll">
-
-| Playlist | Skill | Size | Notes |
-|---|---|---|---|
-| [Business Japanese](https://www.youtube.com/playlist?list=PL8dhMOKO4oIfVXkm0zvbID6X0Be1QjdKb) | Work Japanese | 29 videos | Useful for part-time jobs and job hunting |
-| [オノマトペ Onomatopoeia](https://www.youtube.com/playlist?list=PLINFE8v4DOhuoBEL5pkoZ_7ZO-rXPrDsG) | Vocabulary | 27 videos | Sound words that make speech sound natural (N2 to N1) |
-
+<table>
+<thead>
+<tr>
+<th>Playlist</th>
+<th>Skill</th>
+<th>Size</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PL8dhMOKO4oIfVXkm0zvbID6X0Be1QjdKb">Business Japanese</a></td>
+<td>Work Japanese</td>
+<td>29 videos</td>
+<td>Useful for part-time jobs and job hunting</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/playlist?list=PLINFE8v4DOhuoBEL5pkoZ_7ZO-rXPrDsG">オノマトペ Onomatopoeia</a></td>
+<td>Vocabulary</td>
+<td>27 videos</td>
+<td>Sound words that make speech sound natural (N2 to N1)</td>
+</tr>
+</tbody>
+</table>
 </div>
+
 
 </details>
 
@@ -297,13 +704,12 @@ This is the level where many people feel stuck. The textbook becomes less useful
 
 </details>
 
-
 ## More resources: the OIA Japanese library
- 
+
 We also keep a shared folder with extra study material, including PDFs and podcasts, that goes beyond the YouTube playlists above.
- 
+
 **[Open the Japanese library on Google Drive](https://drive.google.com/drive/folders/11jWZpLgEWkVO4AJq5t9ZVbMiYBmhPiiT?usp=sharing)**
- 
+
 Use it the same way as the rest of this guide: look only at the files that match your level, and ignore the rest until you need them. These materials are for personal study, so please don't share them outside the community.
 
 ## Advice that applies at every level
