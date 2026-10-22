@@ -3,7 +3,7 @@ title: "Learning Japanese: Resources and Advice by Level"
 date: 2026-10-22T09:00
 category: community
 author: OIA Committee
-summary: Don't know where to start, or stuck at a plateau? Pick your level and see only what's relevant to you, including free YouTube playlists for N5 to N1 and honest advice from the community.
+summary: Don't know where to start? Pick your level and start learning from N5 to N1. Gambare!
 cover: /posts/japanese-youtube-library.png
 draft: false
 ---
