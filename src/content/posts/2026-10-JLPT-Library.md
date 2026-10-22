@@ -7,6 +7,7 @@ summary: Don't know where to start, or stuck at a plateau? Pick your level and s
 cover: /posts/japanese-youtube-library.png
 draft: false
 ---
+*Thank you to the community members who gathered and shared these materials.*
 
 There are thousands of Japanese resources out there, and most guides dump all of them on you at once. This one works differently: **find your level, open that section, and ignore the rest** until you need it.
 
