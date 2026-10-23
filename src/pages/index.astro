@@ -33,13 +33,61 @@ const next = heroEvent
       venue: heroEvent.data.venue,
     }
   : undefined;
+
+const latestPosts = (await getCollection('posts', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const shownPosts = latestPosts.slice(0, 3);
 ---
 
 <Base>
-  <Hero next={next} />
+  <Hero
+    next={next}
+    latest={shownPosts[0] && {
+      slug: shownPosts[0].id,
+      title: shownPosts[0].data.title,
+    }}
+  />
   <!-- <StatLine /> -->
 
-  <section class="band">
+  {
+    shownPosts.length > 0 && (
+      <section class="band band--posts">
+        <div class="wrap">
+          <h2>Latest posts</h2>
+          <ul class="posts">
+            {shownPosts.map((p) => (
+              <li>
+                <a href={`/posts/${p.id}/`} class:list={['post', { 'post--img': p.data.cover }]}>
+                  {p.data.cover && (
+                    <div class="post-media">
+                      <img src={p.data.cover} alt="" loading="lazy" decoding="async" />
+                    </div>
+                  )}
+                  <div class="post-text">
+                    <time datetime={p.data.date.toISOString()}>
+                      {p.data.date.toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric',
+                      })}
+                    </time>
+                    <span class="post-title">{p.data.title}</span>
+                    {p.data.summary && <span class="post-summary">{p.data.summary}</span>}
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+          {latestPosts.length > shownPosts.length && (
+            <p class="more"><a href="/posts/">See more posts →</a></p>
+          )}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- <section class="band">
     <div class="wrap">
       <h2>What’s coming up</h2>
       {
@@ -71,11 +119,11 @@ const next = heroEvent
         )
       }
     </div>
-  </section>
+  </section> -->
 
   <!-- <PhotoStrip /> -->
 
-  {
+  <!-- {
     recent.length > 0 && (
       <section class="band">
         <div class="wrap">
@@ -98,7 +146,7 @@ const next = heroEvent
         </div>
       </section>
     )
-  }
+  } -->
 
   <!-- <MemberVoice quotes={
     [
@@ -123,7 +171,7 @@ const next = heroEvent
       detail: 'Where they study or work, and when they arrived'
     },
     ]
-    }/> -->
+  }/> -->
 
   <section class="band band--sunk">
     <div class="wrap about">
@@ -211,5 +259,97 @@ const next = heroEvent
   .quiet-on-ink:hover {
     background: var(--paper);
     color: var(--ink);
+  }
+
+  .posts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .posts li + li {
+    border-top: 1px solid var(--rule);
+  }
+
+  .posts a {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1.1rem 0;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .posts a.post--img {
+    grid-template-columns: 240px 1fr;
+    align-items: center;
+  }
+
+  .post-text {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .post-media {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--rule);
+    border-radius: 10px;
+    border: 1px solid var(--rule);
+  }
+
+  .post-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .posts a:hover .post-media img {
+    transform: scale(1.04);
+  }
+
+  @media (max-width: 640px) {
+    .posts a.post--img {
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .post-media img {
+      transition: none;
+    }
+    .posts a:hover .post-media img {
+      transform: none;
+    }
+  }
+
+  .posts time {
+    font-size: 0.85rem;
+    color: var(--indigo);
+  }
+
+  .post-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.15rem;
+  }
+
+  .post-summary {
+    max-width: 60ch;
+    color: var(--indigo);
+  }
+
+  .posts a:hover .post-title {
+    text-decoration: underline;
+    text-decoration-color: var(--marigold);
+    text-underline-offset: 0.2em;
+  }
+
+  .band--posts {
+    padding-top: calc(var(--step) * 0.5);
   }
 </style>

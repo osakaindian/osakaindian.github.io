@@ -9,9 +9,10 @@ interface Props {
     date: Date;
     venue: string;
   };
+  latest?: { slug: string; title: string };
 }
 
-const { next } = Astro.props;
+const { next, latest } = Astro.props;
 ---
 
 <section class="hero">
@@ -33,13 +34,17 @@ const { next } = Astro.props;
               {weekdayDate(next.date)}, {time(next.date)} · {next.venue}
             </span>
           </a>
+        ) : latest ? (
+          <a class="next" href={`/posts/${latest.slug}/`}>
+            <span class="next-label">No event scheduled — latest guide</span>
+            <span class="next-title">{latest.title}</span>
+            <span class="next-meta">Read it here</span>
+          </a>
         ) : (
           <div class="next next--empty">
             <span class="next-label">Next gathering</span>
             <span class="next-title">Being planned</span>
-            <span class="next-meta">
-              Join the mailing list and you’ll hear about it first.
-            </span>
+            <span class="next-meta">Events usually go up two to three weeks ahead.</span>
           </div>
         )
       }
