@@ -1,6 +1,16 @@
 export const slugify = (s: string) =>
   s.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
+export type Contact = { label: string; href: string };
+
+// Tap-to-call. The pill shows the number unless you pass a label.
+export const tel = (number: string, label = number): Contact => ({
+  label,
+  href: 'tel:' + number.replace(/[^\d+#]/g, '').replace('#', '%23'),
+});
+
+// External link, rendered as a chip under the description.
+export const link = (label: string, href: string): Contact => ({ label, href });
 
 export const sections = [
   {
@@ -10,14 +20,101 @@ export const sections = [
         label: 'Call right away',
         rows: [
           [
-            'Medical emergency or fire',
-            'Ask for an ambulance. Give your location as clearly as you can and follow the operator\'s instructions.',
-            '119'
+            'Fire or ambulance',
+            'Say "Kaji desu" (fire) or "Kyūkyū desu" (ambulance). Then give your address or a nearby landmark. Stay on the line and follow the operator. Do not hang up first.',
+            tel('119')
           ],
           [
-            'Police emergency',
-            'Call when you need urgent help from the police.',
-            '110'
+            'Police',
+            'Crime, accident, threat, or missing person. Say "Keisatsu" and your location.',
+            tel('110')
+          ],
+          [
+            'Not sure if it is an ambulance case?',
+            'Non-life-threatening but urgent. Available in many areas, not all. Check your city.',
+            tel('#7119')
+          ],
+          [
+            'Need help in English (24/7)',
+            'Japan Helpline is a nationwide non-profit emergency assistance line in multiple languages. Use it when you do not know who to call.',
+            tel('0570-000-911')
+          ]
+        ]
+      },
+      {
+        label: 'Earthquake',
+        rows: [
+          [
+            'DO: during shaking',
+            'Drop, cover your head, and hold on under a sturdy table. Move away from windows, shelves, and glass. Open a door only if it is safe to do so.'
+          ],
+          [
+            'DO: after shaking stops',
+            'Turn off gas and heaters. Put on shoes, because broken glass is common. Check on neighbors. Expect aftershocks.'
+          ],
+          [
+            'DO: near the sea or a river',
+            'Move to high ground or a tall building right away. Do not wait for an official warning. Tsunami can arrive in minutes and come in several waves.'
+          ],
+          [
+            'DON\'T',
+            'Do not run outside during shaking, use elevators, or go back to the coast "to look". Do not light flames until you check for gas leaks.'
+          ],
+          [
+            'Official info (JMA)',
+            'Earthquake, tsunami, typhoon, and volcano warnings in English from the Japan Meteorological Agency.',
+            link('JMA English', 'https://www.jma.go.jp/jma/indexe.html')
+          ],
+          [
+            'Tsunami warnings',
+            'Check the current tsunami advisories and warnings.',
+            link('JMA tsunami info', 'https://www.jma.go.jp/en/tsunami/')
+          ]
+        ]
+      },
+      {
+        label: 'Typhoon & heavy rain',
+        rows: [
+          [
+            'DO: before',
+            'Check JMA typhoon information. Charge your phone, store water and food, secure the balcony, and learn your nearest shelter from the city hazard map.',
+            link('JMA typhoon info', 'https://www.jma.go.jp/jma/indexe.html')
+          ],
+          [
+            'DO: during',
+            'Stay indoors, away from windows. If an evacuation instruction is issued for your area, go to the designated shelter or a higher floor.'
+          ],
+          [
+            'DON\'T',
+            'Do not go near rivers, rice fields, or the coast. Do not walk or drive through flooded roads. Water that looks shallow can hide open drains.'
+          ],
+          [
+            'Alert levels',
+            'Level 3: prepare to evacuate, especially if you need extra time. Level 4: evacuate now. Learn these before the season starts.'
+          ]
+        ]
+      },
+      {
+        label: 'Alerts & apps (install now)',
+        rows: [
+          [
+            'Safety tips',
+            'Push alerts for earthquakes, tsunami, and weather warnings in several languages. Made by the Japan Tourism Agency. Also shows evacuation advice.',
+            link('Get the app', 'https://www.jnto.go.jp/safety-tips/eng/')
+          ],
+          [
+            'NHK World-Japan',
+            'English news and emergency updates.',
+            link('NHK World-Japan', 'https://www3.nhk.or.jp/nhkworld/')
+          ],
+          [
+            'Disaster Message Dial',
+            'When phone lines are jammed after a disaster, record or listen to a safety message for a family member.',
+            tel('171')
+          ],
+          [
+            'Tip',
+            'After a disaster, use text, LINE, or data instead of calls. Calls overload the network.'
           ]
         ]
       },
@@ -26,19 +123,29 @@ export const sections = [
         rows: [
           [
             'Feeling unwell',
-            'Start with a nearby clinic. Your university may have a list of clinics familiar with international students.'
+            'Start with a nearby clinic. Your university health center or international office may have a list of clinics familiar with international students.'
           ],
           [
-            'Health insurance',
-            'Bring your insurance card. What you pay depends on your coverage and treatment.'
+            'Bring with you',
+            'Insurance card, residence card, student ID, and a list of your medications and allergies. A translation app helps.'
           ],
           [
             'Large hospitals',
-            'May ask for a clinic referral or charge an extra fee without one. Check requirements before going.'
+            'May charge an extra fee without a clinic referral, except in emergencies. Check before going.'
           ],
           [
             'Language support',
             'Look for clinics with multilingual staff, or ask your international office for recommendations.'
+          ],
+          [
+            'Mental health: English',
+            'You do not have to handle it alone. TELL Lifeline offers counseling in English. Your university counseling center is also free or low-cost.',
+            tel('03-5774-0992')
+          ],
+          [
+            'Mental health: 24h, many languages',
+            'Yorisoi Hotline offers 24h support with foreign-language options.',
+            tel('0120-279-338')
           ]
         ]
       },
@@ -47,25 +154,51 @@ export const sections = [
         rows: [
           [
             'Lost wallet or belongings',
-            'Report it at the nearest police station or kōban.'
+            'Report it at the nearest police station or kōban. Ask for a receipt or report number.'
           ],
           [
             'Lost residence card',
-            'Contact the authorities and follow the current replacement process. Keep a photo or copy somewhere safe.'
+            'Report it to the police and get the report receipt. Then apply for reissue at the Regional Immigration Services Bureau within 14 days. Bring your passport and photo. Keep a copy of the card somewhere safe.'
+          ],
+          [
+            'Lost passport',
+            'Report to the police, then contact your embassy or consulate for a replacement.'
           ],
           [
             'Immigration questions',
-            'Use official Immigration Services Agency information, or ask your university\'s international student office.'
+            'Foreign Residents Support Center (FRESC) offers multilingual consultation. Use official Immigration Services Agency information.',
+            [tel('0570-011000'), link('Immigration Services Agency', 'https://www.isa.go.jp/en/')]
           ],
           [
             'Housing problems',
-            'Keep your contract and all written messages. Your international office or a local consultation service can point you to support.'
+            'Keep your contract and all written messages. Your international office or local city consultation service for foreign residents can help.'
+          ]
+        ]
+      },
+      {
+        label: 'General DON\'Ts',
+        rows: [
+          [
+            'Do not wait',
+            'If you are unsure whether something is serious, call. Operators would rather get an unnecessary call than a late one.'
+          ],
+          [
+            'Do not spread rumors',
+            'After disasters, rely on JMA, your city, NHK, and your university. Do not share unverified posts.'
+          ],
+          [
+            'Do not ignore evacuation orders',
+            'Leaving early is safer than being rescued later.'
           ]
         ]
       },
       {
         label: 'Not sure?',
         rows: [
+          [
+            'Ask your university',
+            'International student office first. They know local offices and can contact them in Japanese for you.'
+          ],
           [
             'Ask the community',
             'Ask the association. Someone may have faced the same situation and can point you to the right office.'

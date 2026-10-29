@@ -4,6 +4,11 @@ const tagKey = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 const groupsOf = (s: any) => s.groups ?? [{ rows: s.items ?? [] }];
 const colsOf = (s: any) =>
   s.cols ?? (s.groups ? ['Situation', 'What to do'] : ['Topic', 'Details']);
+
+// third slot of a row: string | Contact | Contact[] | undefined
+const asList = (c: any): any[] => (c == null || c === '' ? [] : Array.isArray(c) ? c : [c]);
+const isCall = (c: any) => typeof c === 'object' && c.href?.startsWith('tel:');
+const isLink = (c: any) => typeof c === 'object' && !c.href?.startsWith('tel:');
 ---
 
 {
@@ -43,15 +48,36 @@ const colsOf = (s: any) =>
                 <th colspan="2" scope="colgroup">{g.label}</th>
               </tr>
             )}
-            {g.rows.map(([term, body, badge]: string[]) => (
-              <tr>
-                <th scope="row">
-                  {term}
-                  {badge && <span class="call">{badge}</span>}
-                </th>
-                <td>{body}</td>
-              </tr>
-            ))}
+            {g.rows.map((row: any[]) => {
+              const [term, body, contact] = row;
+              const items = asList(contact);
+              const plain = items.filter((c) => typeof c === 'string');
+              const calls = items.filter(isCall);
+              const links = items.filter(isLink);
+              return (
+                <tr>
+                  <th scope="row">
+                    {term}
+                    {plain.map((b) => <span class="call">{b}</span>)}
+                    {calls.map((c) => (
+                      <a class="call call--tap" href={c.href}>{c.label}</a>
+                    ))}
+                  </th>
+                  <td>
+                    {body}
+                    {links.length > 0 && (
+                      <div class="links">
+                        {links.map((c) => (
+                          <a class="chip" href={c.href} target="_blank" rel="noopener noreferrer">
+                            {c.label} ↗
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         ))}
       </table>
@@ -277,5 +303,36 @@ const colsOf = (s: any) =>
     .quick tbody tr:not(.group-row) td {
       margin-top: 0.2rem;
     }
+
+    /* tappable phone pill */
+    a.call--tap {
+      text-decoration: none;
+      cursor: pointer;
+      padding: 0.3rem 0.7rem;       /* bigger touch target */
+    }
+    a.call--tap::before { content: '📞 '; }
+    a.call--tap:hover { background: #f9dede; }
+    a.call--tap:focus-visible { outline: 2px solid #9b2c2c; outline-offset: 2px; }
+
+    /* website chips */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+    .chip {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--indigo-soft);
+      border-radius: 999px;
+      color: var(--indigo);
+      text-decoration: none;
+      background: var(--paper);
+    }
+    .chip:hover { background: var(--paper-sunk); }
+    .chip:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
   }
 </style>
